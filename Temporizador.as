@@ -11,6 +11,7 @@
 
 		public var Dia_var = 1;
 		public var Semana_var = 1;
+		public var Mes_var = 1;
 		public var Hora_var = 0;
 		public var Hora_Dia_var = 0;// se incrementa cada hora
 		public var Horas_para_Dia = 10;// variable que determina el día
@@ -33,20 +34,21 @@
 				_timer.start();
 			}
 		}
-		
+
 		public function Start()
 		{
-			
-				_timer.start();
-			
+
+			_timer.start();
+
 		}
-		
+
 		public function Pausar()
 		{
-				if(Pausado == false){
+			if (Pausado == false)
+			{
 				_timer.stop();
 				Pausado = true;
-				}
+			}
 		}
 
 
@@ -63,9 +65,6 @@
 				Hora_Dia_var = 0;
 				Dale = true;
 				Temp = 1;
-				
-				
-
 				// semana
 				Dia_Semana = Dia_Semana + 1;
 				if (Dia_Semana == Dias_para_Semana)
@@ -73,6 +72,11 @@
 					Semana_var = Semana_var + 1;
 					Dia_Semana = 0;
 					trace("Semana  " + Semana_var);
+					if (Semana_var == 5)
+				{
+					Mes_var = Mes_var + 1;
+				}
+					
 				}
 			}
 		}

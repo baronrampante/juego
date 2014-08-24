@@ -345,12 +345,14 @@
 			
 			//Pagar cuota
 			
-			if (Time.Dia_var == 2 && pago_cuota == false){
+			if (Time.Dia_var == 2 && Time.Hora_Dia_var == 1 && pago_cuota == false){
 				Placa_financiera.candado.visible = false;
+				Asesora_MC2.visible = true;
+				Asesora_MC2.Texto.text = "Tenés que pagar";
 			}
 			
 			//Pagar cuota2
-			if (Time.Dia_var == 4 && pago_cuota_mes2 == false){
+			if (Time.Dia_var == 4 && Time.Hora_Dia_var == 1 && pago_cuota_mes2 == false){
 				Placa_financiera.candado.visible = false;
 			}
 			
@@ -366,7 +368,7 @@
 				Ya_pidio = true;
 			}
 			
-			if (Cliente_Stage == false && Time.Dia_var == 2 && Ya_jugo == false)
+			if (Cliente_Stage == false && Time.Semana_var == 2 && Ya_jugo == false)
 			{
 				
 				Cliente_MC.Velocidad_var = Velocidad_var;
@@ -423,7 +425,7 @@
 			Dinero.text = String(Dinero_var);
 			Comunidad.text = Comunidad_var;
 			Placa_financiera.txt_total_capital.text = Dinero_var;
-			Placa_financiera.txt_mes.text = String(Semana_var);
+			Placa_financiera.txt_mes.text = String(Time.Mes_var);
 			Placa_financiera.txt_cuota.text = String(Cuota_Banco);
 			Placa_financiera.txt_gastos_fijos.text = String(Gastos_Fijos);
 			Placa_financiera.txt_gastos_personales.text = String(Gastos_Personales);
