@@ -102,6 +102,7 @@
 		
 		// Cargar peli
 		
+		public var peli2:URLRequest;
 		public var peli:URLRequest;
 		public var cargador:Loader;
 		public var pelicula:Object;
@@ -335,9 +336,7 @@
 			
 			Cliente_Stage = Cliente_MC.cliente_stage;
 			
-			if (Comunidad_var < 50){
-				Texto.text = "comunidad baja";
-			}
+			
 			
 			if (Dinero_var < 50){
 				Texto.text = "dinero bajo";
@@ -345,52 +344,59 @@
 			
 			//Pagar cuota
 			
-			if (Time.Dia_var == 2 && Time.Hora_Dia_var == 1 && pago_cuota == false){
+			if (Time.Semana_var == Time.Pagar_Primera_Cuota && Time.Hora_Dia_var == 1 && pago_cuota == false){
 				Placa_financiera.candado.visible = false;
 				Asesora_MC2.visible = true;
 				Asesora_MC2.Texto.text = "Tenés que pagar";
 			}
 			
 			//Pagar cuota2
-			if (Time.Dia_var == 4 && Time.Hora_Dia_var == 1 && pago_cuota_mes2 == false){
+			if (Time.Dia_var == Time.Pagar_Segunda_Cuota && Time.Hora_Dia_var == 1 && pago_cuota_mes2 == false){
 				Placa_financiera.candado.visible = false;
 			}
 			
 			//Comunidad;
-			if (Cliente_Stage == false && Time.Dia_var == 8 && Ya_pidio == false)
+			if (Cliente_Stage == false && Time.Dia_var == Time.Pedido_Comunidad_1 && Ya_pidio == false)
 			{
 				Pedido_Comunidad_MC.visible = true;
-				/*var urlSWF:URLRequest = new URLRequest("carpinteria1.swf");
-				var cargarSWF:Loader = new Loader();
-				cargarSWF.load(urlSWF);
-				this.addChild(cargarSWF);*/
-				
 				Ya_pidio = true;
 			}
 			
-			if (Cliente_Stage == false && Time.Semana_var == 2 && Ya_jugo == false)
+			
+			if (Time.Dia_var == (Time.Segundo_Pedido_Comunidad - 1)){
+				Ya_pidio = false;
+			}
+			
+			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Pedido_Comunidad && Ya_pidio == false)
 			{
-				
-				Cliente_MC.Velocidad_var = Velocidad_var;
-				//addChildAt(Carga_MC,40);
+				Pedido_Comunidad_MC.visible = true;
+				Ya_pidio = true;
+			}
+			
+			if (Comunidad_var < 50){
+				Texto.text = "comunidad baja";
+			}
+			
+			//Segundo Juego
+			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_pidio == false)
+			{
+				peli2 = new URLRequest("carpinteria1.swf");
+				var cargarSWF:Loader = new Loader();
+				cargarSWF.load(peli2);
+				this.addChild(cargarSWF);
+				}
+			
+			//Primer Juego
+			if (Cliente_Stage == false && Time.Dia_var == Time.Primer_Juego && Ya_jugo == false)
+			{
+				//Cliente_MC.Velocidad_var = Velocidad_var;
 				Cargar();
 				Time.Pausar();
 				Ya_jugo = true;
 			}
 			
 			
-			if (Time.Dia_var == 10){
-				Ya_pidio = false;
-			}
-			
-			if (Cliente_Stage == false && Time.Semana_var == 3 && Ya_pidio == false)
-			{
-				Pedido_Comunidad_MC.visible = true;
-				Ya_pidio = true;
-			}
-			
-			
-			
+						
 			//Malo;
 			if (Cliente_Stage == false && Time.Semana_var == 4)
 			{
@@ -494,7 +500,6 @@
 				
 			}
 			//fnBuscar_Trabajo();
-			
 		}
 
 
@@ -516,8 +521,6 @@
 		{
 			return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
 		}
-		
-		
 
 
 		//Botones en general

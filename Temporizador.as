@@ -22,6 +22,14 @@
 		public var Temp = 0;
 		public var Pausado = false;
 
+		public var Pagar_Primera_Cuota = 5;// en semanas
+		public var Pagar_Segunda_Cuota = 9;// en semanas
+		public var Pedido_Comunidad_1 = 8;// pedido comunidad en días
+		public var Segundo_Pedido_Comunidad = 15;// segundo pedido de la comunidad
+
+		public var Segundo_Juego = 10;// días para segundo juego
+		public var Primer_Juego = 2;//días para primer juego
+
 		public function Temporizador()
 		{
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -73,10 +81,10 @@
 					Dia_Semana = 0;
 					trace("Semana  " + Semana_var);
 					if (Semana_var == 5)
-				{
-					Mes_var = Mes_var + 1;
-				}
-					
+					{
+						Mes_var = Mes_var + 1;
+					}
+
 				}
 			}
 		}
