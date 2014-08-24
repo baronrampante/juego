@@ -5,15 +5,15 @@ Metadatos
 ---------
 Bytes         Valor
 ----------    -----
-      1212    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-01T10:56:23-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-08-24T13:56:43-03:00</xmp:MetadataDate> <xmp:ModifyDate>2014-08-24T13:56:43-03:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:D53D67BCA62BE4119D2F823518451601</stRef:instanceID> <stRef:documentID>xmp.did:563D2447B4DBE311B3CBCE8AFF5748A2</stRef:documentID> <stRef:originalDocumentID>xmp.did:03DD269238D1E3119BD8D1629C5814D8</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:39413029AE2BE4119D2F823518451601</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:39413029AE2BE4119D2F823518451601</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:03DD269238D1E3119BD8D1629C5814D8</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1212    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-01T10:56:23-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-08-24T14:20:38-03:00</xmp:MetadataDate> <xmp:ModifyDate>2014-08-24T14:20:38-03:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:4FB04D5FB02BE41181EDBB03AAB1EB4C</stRef:instanceID> <stRef:documentID>xmp.did:563D2447B4DBE311B3CBCE8AFF5748A2</stRef:documentID> <stRef:originalDocumentID>xmp.did:03DD269238D1E3119BD8D1629C5814D8</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:55B04D5FB02BE41181EDBB03AAB1EB4C</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:55B04D5FB02BE41181EDBB03AAB1EB4C</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:03DD269238D1E3119BD8D1629C5814D8</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Fotograma #    Bytes de fotograma    Bytes totales    Escena
 -----------    ------------------    -------------    ------
-          1               2527436          2527436    Escena 1 (Fotograma de exportación para clases de AS 3.0)
+          1               2527487          2527487    Escena 1 (Fotograma de exportación para clases de AS 3.0)
 
 Escena      Bytes de forma    Bytes de texto    Bytes de ActionScript
 --------    --------------    --------------    ---------------------
-Escena 1                50               618                    34493
+Escena 1                50               618                    34586
 
 Símbolo                       Bytes de forma    Bytes de texto    Bytes de ActionScript
 --------------------------    --------------    --------------    ---------------------
@@ -143,31 +143,31 @@ Símbolo1                                  0                 0                  
 
 Nombre de fuente                   Bytes         Caracteres
 -------------------------------    ----------    ----------
-HelveticaNeueLTStd-BdCn Negrita          2648     $:ABCDEGILMNOPRSTUes 
+HelveticaNeueLTStd-BdCn Negrita          2647     $:ABCDEGILMNOPRSTUes 
 Helvetica-Bold Negrita                   1346    ATabefjlnosí
-ArialMT  18 pts                         15453     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ˆ˜–—‘’‚“”„†‡•…‰‹›€™
+ArialMT  18 pts                         15452     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ˆ˜–—‘’‚“”„†‡•…‰‹›€™
 Helvetica                                3177     $-:ABCDEFGIJLNOPRSTUadeimns 
 Arial-BoldMT Negrita                    12553     !$,.02346:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ¡áéíóú
-ArialMT                                 17206     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ íˆ˜–—‘’‚“”„†‡•…‰‹›€™
+ArialMT                                 17205     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ íˆ˜–—‘’‚“”„†‡•…‰‹›€™
 
 Bytes de ActionScript    Ubicación
 ---------------------    ---------
-                34493    Escena 1:Fotograma 1
+                34586    Escena 1:Fotograma 1
 
 Mapa de bits                                  Comprimido    Original      Compresión
 ------------------------------------------    ----------    ----------    ----------
-Fondo_Barraca_referencia con personaje.jpg         65659       3840000    Calidad JPEG=50
+Fondo_Barraca_referencia con personaje.jpg         65658       3840000    Calidad JPEG=50
 cierra circular.png                                 7814        264552    Calidad JPEG=50
 caladora de banco.png                               8889        215460    Calidad JPEG=50
 cafetera.png                                        4056         79648    Calidad JPEG=50
 pinturas.png                                        4192         88320    Calidad JPEG=50
-sierra de cinta.png                                 9140        347352    Calidad JPEG=50
+sierra de cinta.png                                 9139        347352    Calidad JPEG=50
 caladora.png                                        3313         85184    Calidad JPEG=50
 icono - hora.png                                    1825         31304    Sin pérdida
 icono_tiempo.png                                    4248         13688    Sin pérdida
 icono_dinero.png                                    3936         13688    Sin pérdida
 icono_material.png                                  6003         13456    Sin pérdida
-icono_comunidad.png                                 4264         13688    Sin pérdida
+icono_comunidad.png                                 4263         13688    Sin pérdida
 boton_cancelar.png                                  1473         14144    Sin pérdida
 boton_no.png                                        1829         22176    Sin pérdida
 boton_si.png                                        1831         18032    Sin pérdida
@@ -181,13 +181,13 @@ boton_panel.png                                      816          2852    Sin p�
 1.png                                               1191         34608    Sin pérdida
 2.png                                               1317         34608    Sin pérdida
 3.png                                               1280         34608    Sin pérdida
-4.png                                               1263         34608    Sin pérdida
-1.png                                               1168         34608    Sin pérdida
+4.png                                               1262         34608    Sin pérdida
+1.png                                               1167         34608    Sin pérdida
 2.png                                               1309         34608    Sin pérdida
 3.png                                               1251         34608    Sin pérdida
 4.png                                               1226         34608    Sin pérdida
 01.png                                              9975        217000    Calidad JPEG=50
-02.png                                              8216        217000    Calidad JPEG=50
+02.png                                              8215        217000    Calidad JPEG=50
 03.png                                              9562        217000    Calidad JPEG=50
 04.png                                              8190        217000    Calidad JPEG=50
 05.png                                              8049        217000    Calidad JPEG=50
@@ -199,7 +199,7 @@ boton_panel.png                                      816          2852    Sin p�
 btn_cerrar.png                                       928          6160    Sin pérdida
 boton_salir.png                                     1035          5824    Sin pérdida
 CH_asesora.png                                     17593        782400    Calidad JPEG=50
-fondo_dialogo.png                                   4156        911812    Calidad JPEG=50
+fondo_dialogo.png                                   4155        911812    Calidad JPEG=50
 CLICK.png                                            464          1600    Sin pérdida
 btn_verde.png                                        487         11520    Sin pérdida
 candado.png                                          824          1700    Sin pérdida
@@ -224,13 +224,13 @@ boton_aceptar.png                                   1424         14144    Sin p�
 boton_siguiente.png                                 1417         13056    Sin pérdida
 boton_instrucciones.png                             1865         18360    Sin pérdida
 boton_jugar.png                                     1262         18496    Sin pérdida
-img_barrio.jpg                                     94366       3840000    Calidad JPEG=50
+img_barrio.jpg                                     94364       3840000    Calidad JPEG=50
 icono_asesora_mouseover.png                         5590         11448    Sin pérdida
 btn_pausa.png                                       3459         13924    Sin pérdida
 btn_play.png                                        3595         13924    Sin pérdida
 icono_asistente.png                                 4703         12064    Sin pérdida
 icono_asistente_mouseover.png                       4771         12064    Sin pérdida
-icono_aserradero.png                                7129         18760    Sin pérdida
+icono_aserradero.png                                7128         18760    Sin pérdida
 boton_arreglar.png                                  1211          9072    Sin pérdida
 VECINA ESPALDAS 01.png                              6345        243712    Calidad JPEG=50
 VECINA ESPALDAS 02.png                              6332        243712    Calidad JPEG=50
@@ -248,7 +248,7 @@ VECINA ESPALDAS 05.png                              6224        243712    Calida
 02.png                                              8207        390000    Calidad JPEG=50
 03.png                                              7649        390000    Calidad JPEG=50
 04.png                                              8131        390000    Calidad JPEG=50
-05.png                                              7781        390000    Calidad JPEG=50
+05.png                                              7780        390000    Calidad JPEG=50
 06.png                                              8386        390000    Calidad JPEG=50
 01.png                                              7233        309400    Calidad JPEG=50
 02.png                                              6309        309400    Calidad JPEG=50
@@ -259,10 +259,10 @@ VECINA ESPALDAS 05.png                              6224        243712    Calida
 00.png                                              6960        268800    Calidad JPEG=50
 01.png                                              6566        268800    Calidad JPEG=50
 02.png                                              6513        268800    Calidad JPEG=50
-03.png                                              6397        268800    Calidad JPEG=50
+03.png                                              6396        268800    Calidad JPEG=50
 04.png                                              6632        268800    Calidad JPEG=50
 05.png                                              6428        268800    Calidad JPEG=50
-V01.png                                            10810        380400    Calidad JPEG=50
+V01.png                                            10809        380400    Calidad JPEG=50
 V02.png                                            11360        380400    Calidad JPEG=50
 V03.png                                            10490        380400    Calidad JPEG=50
 V04.png                                             9046        380400    Calidad JPEG=50
@@ -272,7 +272,7 @@ V07.png                                             9697        380400    Calida
 V08.png                                             7782        380400    Calidad JPEG=50
 01.png                                              7689        365840    Calidad JPEG=50
 02.png                                              7123        365840    Calidad JPEG=50
-03.png                                              7034        365840    Calidad JPEG=50
+03.png                                              7033        365840    Calidad JPEG=50
 04.png                                              5810        365840    Calidad JPEG=50
 05.png                                              7476        365840    Calidad JPEG=50
 06.png                                              7264        365840    Calidad JPEG=50
@@ -283,15 +283,15 @@ V08.png                                             7782        380400    Calida
 03.png                                             13304        519480    Calidad JPEG=50
 04.png                                             13338        519480    Calidad JPEG=50
 05.png                                             12374        519480    Calidad JPEG=50
-06.png                                             13052        519480    Calidad JPEG=50
+06.png                                             13051        519480    Calidad JPEG=50
 07.png                                             13726        519480    Calidad JPEG=50
 07.png                                              8554        378160    Calidad JPEG=50
-02.png                                              8691        378160    Calidad JPEG=50
-03.png                                              8528        378160    Calidad JPEG=50
+02.png                                              8690        378160    Calidad JPEG=50
+03.png                                              8527        378160    Calidad JPEG=50
 04.png                                              8805        378160    Calidad JPEG=50
 05.png                                              8730        378160    Calidad JPEG=50
 06.png                                              8672        378160    Calidad JPEG=50
-fondo 1200 x 800.jpg                               53859       3840000    Calidad JPEG=50
+fondo 1200 x 800.jpg                               53858       3840000    Calidad JPEG=50
 score.png                                           2892         48764    Sin pérdida
 CH_mormon.png                                      14946        782400    Calidad JPEG=50
 CH_vieja.png                                       14330        782400    Calidad JPEG=50
@@ -305,18 +305,18 @@ fondo_lista.png                                     3098        664048    Sin p�
 mesa 01.png                                         6313        250000    Calidad JPEG=50
 banco.png                                           6279        250000    Calidad JPEG=50
 mesa de luz 04.png                                  9136        250000    Calidad JPEG=50
-banquito roto.png                                   6640        250000    Calidad JPEG=50
-mesa 02.png                                         7835        250000    Calidad JPEG=50
+banquito roto.png                                   6639        250000    Calidad JPEG=50
+mesa 02.png                                         7834        250000    Calidad JPEG=50
 silla rota 02.png                                   8090        250000    Calidad JPEG=50
 precio.png                                          5374         66044    Sin pérdida
-icono_ayuda.png                                     1494         10608    Calidad JPEG=50
+icono_ayuda.png                                     1493         10608    Calidad JPEG=50
 icono_ayuda_mouseover.png                           1542         10608    Calidad JPEG=50
 comunidad.png                                       5563         66044    Sin pérdida
 icono_compras.png                                   5125         11660    Sin pérdida
 icono_trabajos_mouseover.png                        4245         10608    Sin pérdida
 reloj.png                                           5673         65888    Sin pérdida
 fondo_ventana_barraca.png                           5555        620704    Sin pérdida
-CH_malefico.png                                    11300        782400    Calidad JPEG=50
+CH_malefico.png                                    11299        782400    Calidad JPEG=50
 
 Sonidos de eventos: 11KHz Mono 16 kbps MP3
 
@@ -326,18 +326,18 @@ Nombre de sonido                  Bytes         Formato
 mp_sfx_trabajorealizado_V2.mp3         17611    11KHz Mono 16 kbps MP3
 mp_sfx_trabajodeclinado.mp3            10231    11KHz Mono 16 kbps MP3
 mp_sfx_trabajoaceptado.mp3              8578    11KHz Mono 16 kbps MP3
-mp_sfx_silbido4.mp3                    63858    11KHz Mono 16 kbps MP3
-mp_sfx_silbido3.mp3                    39721    11KHz Mono 16 kbps MP3
-mp_sfx_silbido2.mp3                    71254    11KHz Mono 16 kbps MP3
-mp_sfx_silbido1.mp3                    71254    11KHz Mono 16 kbps MP3
-mp_sfx_mouseover.mp3                    4685    11KHz Mono 16 kbps MP3
+mp_sfx_silbido4.mp3                    63857    11KHz Mono 16 kbps MP3
+mp_sfx_silbido3.mp3                    39720    11KHz Mono 16 kbps MP3
+mp_sfx_silbido2.mp3                    71253    11KHz Mono 16 kbps MP3
+mp_sfx_silbido1.mp3                    71253    11KHz Mono 16 kbps MP3
+mp_sfx_mouseover.mp3                    4684    11KHz Mono 16 kbps MP3
 mp_sfx_ingresos.mp3                    14417    11KHz Mono 16 kbps MP3
 mp_sfx_egresos.mp3                     15585    11KHz Mono 16 kbps MP3
 mp_sfx_clientesesperando.mp3           19089    11KHz Mono 16 kbps MP3
 mp_sfx_clienteenojadoOP2.mp3           14417    11KHz Mono 16 kbps MP3
 mp_sfx_clickgenerico.mp3                6241    11KHz Mono 16 kbps MP3
-mp_musica_menuinicial.mp3             687900    11KHz Mono 16 kbps MP3
-mp_ambiente_carpinteria.mp3           167498    11KHz Mono 16 kbps MP3
+mp_musica_menuinicial.mp3             687888    11KHz Mono 16 kbps MP3
+mp_ambiente_carpinteria.mp3           167495    11KHz Mono 16 kbps MP3
 
 
 

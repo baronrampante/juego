@@ -113,6 +113,8 @@
 		var Mi_Trabajo:Array = new Array();
 		var mult = 0;//multiplicador
 		var Gastos = 0;
+		var pago_cuota = false;
+		var pago_cuota_mes2 = false;
 
 		//Clientes
 		var Cliente_Stage = false;
@@ -174,9 +176,6 @@
 
 		public function init():void
 		{
-			
-			
-
 			_timer.start();
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -302,12 +301,17 @@
 		//Pagar gastos mensuales
 		public function fnPlaca_Financiera_pagar(event:MouseEvent):void
 		{
+			
+			if (Placa_financiera.candado.visible == false){
 			//Gastos = Sueldos + Gastos_Personales + Gastos_Fijos + Cuota_Banco;
 			if (Gastos >= Dinero_var ){
 				Texto.text = "no tenes dinero";
 			}
 			else {
 				Dinero_var = Dinero_var - Gastos;
+				Placa_financiera.candado.visible = true;
+				pago_cuota = true;
+			}
 			}
 		}
 
@@ -336,7 +340,17 @@
 				Texto.text = "dinero bajo";
 			}
 			
-
+			//Pagar cuota
+			
+			if (Time.Dia_var == 2 && pago_cuota == false){
+				Placa_financiera.candado.visible = false;
+			}
+			
+			//Pagar cuota2
+			if (Time.Mes_var == 2 && pago_cuota_mes2 == false){
+				Placa_financiera.candado.visible = false;
+			}
+			
 			//Comunidad;
 			if (Cliente_Stage == false && Time.Semana_var == 2 && Ya_pidio == false)
 			{
@@ -357,7 +371,6 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo = true;
-				
 			}
 			
 			
