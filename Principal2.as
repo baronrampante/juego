@@ -126,6 +126,7 @@
 		var Client:Clientes = new Clientes();
 		var Cliente = 0;
 		var Nuevo_Cliente = "";
+		var Viejo_Cliente = "";
 		
 
 		//Materiales
@@ -1021,14 +1022,27 @@
 		
 		
 		// Función de nuev o cliente
+		
+		public function Hola_Cliente():void{
+			Nuevo_Cliente = Client.Cliente[(randomRange(0, 4))];
+			Texto.text = Nuevo_Cliente + "   " + Viejo_Cliente;
+			if (Viejo_Cliente == Nuevo_Cliente){
+				Hola_Cliente();
+			}
+			else 
+			{
+				Nuevos_Cliente();
+			}
+		}
 
-		public function Hola_Cliente():void
+		public function Nuevos_Cliente():void
 		{
 			//_timer_espera_cliente.start();
 			//trace(Lista_Trab.Trabajo[6]);
 			//switch (Lista_Trab.Trabajo[6])
-			Nuevo_Cliente = Client.Cliente[(randomRange(0, 4))];
-			Texto.text = Nuevo_Cliente;
+			
+			//Texto.text = Nuevo_Cliente;
+			Viejo_Cliente = Nuevo_Cliente;
 			switch (Nuevo_Cliente)
 			{
 				case "Martín" :
