@@ -347,7 +347,7 @@
 			}
 			
 			//Pagar cuota2
-			if (Time.Mes_var == 2 && pago_cuota_mes2 == false){
+			if (Time.Semana_var == 8 && pago_cuota_mes2 == false){
 				Placa_financiera.candado.visible = false;
 			}
 			
