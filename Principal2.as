@@ -302,8 +302,8 @@
 		public function fnPlaca_Financiera_pagar(event:MouseEvent):void
 		{
 			
-			if (Placa_financiera.candado.visible == false){
-			//Gastos = Sueldos + Gastos_Personales + Gastos_Fijos + Cuota_Banco;
+			if (Placa_financiera.candado.visible == false && pago_cuota_mes2 == false){
+			
 			if (Gastos >= Dinero_var ){
 				Texto.text = "no tenes dinero";
 			}
@@ -311,6 +311,9 @@
 				Dinero_var = Dinero_var - Gastos;
 				Placa_financiera.candado.visible = true;
 				pago_cuota = true;
+				/*if (pago_cuota == true && pago_cuota_mes2 == false){
+					pago_cuota_mes2 =true;
+				}*/
 			}
 			}
 		}
@@ -347,12 +350,12 @@
 			}
 			
 			//Pagar cuota2
-			if (Time.Semana_var == 8 && pago_cuota_mes2 == false){
+			if (Time.Dia_var == 4 && pago_cuota_mes2 == false){
 				Placa_financiera.candado.visible = false;
 			}
 			
 			//Comunidad;
-			if (Cliente_Stage == false && Time.Semana_var == 2 && Ya_pidio == false)
+			if (Cliente_Stage == false && Time.Dia_var == 8 && Ya_pidio == false)
 			{
 				Pedido_Comunidad_MC.visible = true;
 				/*var urlSWF:URLRequest = new URLRequest("carpinteria1.swf");
@@ -403,7 +406,7 @@
 				i = i+1;
 			}
 			
-			if (Cliente_Stage == false && Time.Dia_var == 5 && Ya_pidio == false == Flag_Juego == false)
+			if (Cliente_Stage == false && Time.Dia_var == 16 && Ya_pidio == false == Flag_Juego == false)
 			{
 				Flag_Juego = true;
 				(root.loaderInfo.loader.root as Object).cargar2();
