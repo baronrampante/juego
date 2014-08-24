@@ -1,0 +1,344 @@
+﻿micro1.swf Informe de película
+-------------------------------
+
+Metadatos
+---------
+Bytes         Valor
+----------    -----
+      1212    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-01T10:56:23-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-08-24T13:56:43-03:00</xmp:MetadataDate> <xmp:ModifyDate>2014-08-24T13:56:43-03:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:D53D67BCA62BE4119D2F823518451601</stRef:instanceID> <stRef:documentID>xmp.did:563D2447B4DBE311B3CBCE8AFF5748A2</stRef:documentID> <stRef:originalDocumentID>xmp.did:03DD269238D1E3119BD8D1629C5814D8</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:39413029AE2BE4119D2F823518451601</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:39413029AE2BE4119D2F823518451601</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:03DD269238D1E3119BD8D1629C5814D8</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+
+Fotograma #    Bytes de fotograma    Bytes totales    Escena
+-----------    ------------------    -------------    ------
+          1               2527436          2527436    Escena 1 (Fotograma de exportación para clases de AS 3.0)
+
+Escena      Bytes de forma    Bytes de texto    Bytes de ActionScript
+--------    --------------    --------------    ---------------------
+Escena 1                50               618                    34493
+
+Símbolo                       Bytes de forma    Bytes de texto    Bytes de ActionScript
+--------------------------    --------------    --------------    ---------------------
+Animar 1                                   0                 0                        0
+Animar 2                                   0                 0                        0
+Animar 3                                   0                 0                        0
+Animar 4                                   0                 0                        0
+Animar 5                                   0                 0                        0
+Animar 6                                   0                 0                        0
+Animar 7                                   0                 0                        0
+Animar 8                                   0                 0                        0
+Animar 9                                   0                 0                        0
+Animar 10                                  0                 0                        0
+Animar 11                                  0                 0                        0
+Animar 12                                  0                 0                        0
+Aceptar                                    0                 0                        0
+Arreglar_si                                0                 0                        0
+Aserradero                                 0                 0                        0
+Asesora_BT                                 0                 0                        0
+Atras                                      0                 0                        0
+Ayuda_Boton                                0                 0                        0
+Ayudante_BT                                0                 0                        0
+boton                                     50                 0                        0
+Boton_Adelante                             0                 0                        0
+Boton_Cliente_Yes                          0                 0                        0
+boton1                                     0                 0                        0
+btn_cuentas                                0                 0                        0
+btn_play                                   0                 0                        0
+btn_pusa                                   0                 0                        0
+Cancelar                                   0                 0                        0
+candado                                    0                 0                        0
+cerrar                                    35                 0                        0
+Cerrar_Boton                               0                 0                        0
+Cerrar_Com                                51                 0                        0
+Comunidad_BT                               0                 0                        0
+COSO1                                      0                 0                        0
+Der_Ayuda                                  0                 0                        0
+Herramientas                               0                 0                        0
+Instruciones                               0                 0                        0
+Ir_Trabajos                                0                 0                        0
+Izq_Ayuda                                  0                 0                        0
+Jugar                                      0                 0                        0
+Resultado_Madera                           0               167                        0
+Siguiente                                  0                 0                        0
+btn_cerrar                                 0                 0                        0
+cargaexterna                              75                 0                        0
+Cargar                                     0                 0                        0
+Cargar2                                   34                 0                        0
+btn_cuentas                                0                 0                        0
+Clientes_coqueta                           0                 0                        0
+Globitos                                   0                 0                        0
+Clientes_mormon                            0                 0                        0
+Clientes_nena_avion                        0                 0                        0
+Clientes_punky                             0                 0                        0
+Clientes_vieja                             0                 0                        0
+Clientes_viejo                             0                 0                        0
+Malo                                       0               341                        0
+btn_aceptar                                0                 0                        0
+cuadrado                                  70                 0                        0
+cuota_2                                    0               134                        0
+cuota_uno                                  0               134                        0
+Empezar_BT                                48                 0                        0
+PERSONAJE_GLOBITO                          0                 0                        0
+PERSONAJE_GLOBITO CONTENTO                 0                 0                        0
+PERSONAJE_GLOBITO ENOJADO                  0                 0                        0
+btnCloseCommunity                          0                 0                        0
+btnClosePanel                              0                 0                        0
+buildingHitBox                            51                 0                        0
+imgCommunity                               0                 0                        0
+panelCommunity                             0                 0                        0
+textBubble                                 0                 0                        0
+acceptCommunityButton                      0                 0                        0
+cancelCommunityButton                      0                 0                        0
+communityWindow                            0                 0                        0
+acceptButton                               0                 0                        0
+cancelButton                               0                 0                        0
+jobCommunityIcon                           0                 0                        0
+jobMaterialIcon                            0                 0                        0
+jobMoneyIcon                               0                 0                        0
+jobTimeIcon                                0                 0                        0
+Cafetera                                   0                 0                        0
+Cafetera_MC                                0                 0                        0
+caladora_chica                           168                 0                        0
+caladora_grande                            0                 0                        0
+caladorita                                 0                 0                        0
+circular                                   0                 0                        0
+Pintura                                    0                 0                        0
+pinturita                                  0                 0                        0
+Sierra                                     0                 0                        0
+Sierra_Combinada                         536                 0                        0
+Sierra_de_Pie                              0                 0                        0
+taladr                                     0                 0                        0
+btn_popularidad                            0                 0                        0
+reloj                                      0               110                        0
+timeIcon                                   0                 0                        0
+Lista                                     51                 0                        0
+luz                                        0                 0                        0
+mesa                                       0                 0                        0
+MesaCentral                                0                 0                        0
+mesagrande                                 0                 0                        0
+silla                                      0                 0                        0
+Taburete                                   0                 0                        0
+Coqueta                                    0                 0                        0
+Jopito                                     0                 0                        0
+mormon                                     0                 0                        0
+Nena                                       0                 0                        0
+punk                                       0                 0                        0
+vieja                                      0                 0                        0
+viejo                                      0                 0                        0
+Asesora                                    0               456                        0
+Ayuda1                                     0              1038                        0
+Barraca                                    0                 0                        0
+Barrio_MC                                  0                71                        0
+Cliente1                                   0              1390                        0
+Ir_Barraca_Placa                           0               495                        0
+Madera                                     0               328                        0
+Malo                                       0               341                        0
+P_info_financiera                        198              1278                        0
+Pedido_Comunidad                           0                79                        0
+Placa_no_materiales                        0               355                        0
+Placa_Trabajos                             0               467                        0
+Textos_Asesora                             0                34                        0
+Símbolo 1                                51                 0                        0
+Símbolo 2                                51                 0                        0
+Símbolo 3                                 0                 0                        0
+Símbolo1                                  0                 0                        0
+
+Nombre de fuente                   Bytes         Caracteres
+-------------------------------    ----------    ----------
+HelveticaNeueLTStd-BdCn Negrita          2648     $:ABCDEGILMNOPRSTUes 
+Helvetica-Bold Negrita                   1346    ATabefjlnosí
+ArialMT  18 pts                         15453     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ˆ˜–—‘’‚“”„†‡•…‰‹›€™
+Helvetica                                3177     $-:ABCDEFGIJLNOPRSTUadeimns 
+Arial-BoldMT Negrita                    12553     !$,.02346:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ¡áéíóú
+ArialMT                                 17206     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ íˆ˜–—‘’‚“”„†‡•…‰‹›€™
+
+Bytes de ActionScript    Ubicación
+---------------------    ---------
+                34493    Escena 1:Fotograma 1
+
+Mapa de bits                                  Comprimido    Original      Compresión
+------------------------------------------    ----------    ----------    ----------
+Fondo_Barraca_referencia con personaje.jpg         65659       3840000    Calidad JPEG=50
+cierra circular.png                                 7814        264552    Calidad JPEG=50
+caladora de banco.png                               8889        215460    Calidad JPEG=50
+cafetera.png                                        4056         79648    Calidad JPEG=50
+pinturas.png                                        4192         88320    Calidad JPEG=50
+sierra de cinta.png                                 9140        347352    Calidad JPEG=50
+caladora.png                                        3313         85184    Calidad JPEG=50
+icono - hora.png                                    1825         31304    Sin pérdida
+icono_tiempo.png                                    4248         13688    Sin pérdida
+icono_dinero.png                                    3936         13688    Sin pérdida
+icono_material.png                                  6003         13456    Sin pérdida
+icono_comunidad.png                                 4264         13688    Sin pérdida
+boton_cancelar.png                                  1473         14144    Sin pérdida
+boton_no.png                                        1829         22176    Sin pérdida
+boton_si.png                                        1831         18032    Sin pérdida
+burbuja.png                                         1460         94192    Sin pérdida
+panel-comunidad.png                                23285        729600    Sin pérdida
+boton_panel.png                                      816          2852    Sin pérdida
+1.png                                                924         34608    Sin pérdida
+2.png                                               1123         34608    Sin pérdida
+3.png                                               1107         34608    Sin pérdida
+4.png                                               1140         34608    Sin pérdida
+1.png                                               1191         34608    Sin pérdida
+2.png                                               1317         34608    Sin pérdida
+3.png                                               1280         34608    Sin pérdida
+4.png                                               1263         34608    Sin pérdida
+1.png                                               1168         34608    Sin pérdida
+2.png                                               1309         34608    Sin pérdida
+3.png                                               1251         34608    Sin pérdida
+4.png                                               1226         34608    Sin pérdida
+01.png                                              9975        217000    Calidad JPEG=50
+02.png                                              8216        217000    Calidad JPEG=50
+03.png                                              9562        217000    Calidad JPEG=50
+04.png                                              8190        217000    Calidad JPEG=50
+05.png                                              8049        217000    Calidad JPEG=50
+01.png                                              7287        316400    Calidad JPEG=50
+02.png                                              6717        316400    Calidad JPEG=50
+03.png                                              6704        316400    Calidad JPEG=50
+04.png                                              6248        316400    Calidad JPEG=50
+05.png                                              6663        316400    Calidad JPEG=50
+btn_cerrar.png                                       928          6160    Sin pérdida
+boton_salir.png                                     1035          5824    Sin pérdida
+CH_asesora.png                                     17593        782400    Calidad JPEG=50
+fondo_dialogo.png                                   4156        911812    Calidad JPEG=50
+CLICK.png                                            464          1600    Sin pérdida
+btn_verde.png                                        487         11520    Sin pérdida
+candado.png                                          824          1700    Sin pérdida
+asesora_cuentas.png                                 5349        123264    Calidad JPEG=50
+fondo_ayuda.png                                     2220        620704    Sin pérdida
+boton_aceptar.png                                   1424         14144    Sin pérdida
+fondo_ayuda.png                                     2220        620704    Sin pérdida
+boton_flecha_siguiente.png                           170          3036    Sin pérdida
+boton_cerrar.png                                     701          6160    Sin pérdida
+icono_trabajos.png                                  4271         10608    Sin pérdida
+boton_flecha_atras.png                               182          3072    Sin pérdida
+barra_dinero.png                                    2342         53248    Calidad JPEG=50
+barra_comunidad.png                                 2477         51912    Calidad JPEG=50
+barra_tiempo.png                                    3454         60456    Calidad JPEG=50
+icono_aserradero.png                                1914         18760    Calidad JPEG=50
+iconos_barraca.png                                  4834         89652    Calidad JPEG=50
+icono_asesora.png                                   1530         11448    Calidad JPEG=50
+iconos_pausa.png                                    3210         74760    Calidad JPEG=50
+texto_suerte.png copia                              1527         37464    Sin pérdida
+CH_rep barrio.png                                  13411        782400    Calidad JPEG=50
+boton_aceptar.png                                   1424         14144    Sin pérdida
+boton_siguiente.png                                 1417         13056    Sin pérdida
+boton_instrucciones.png                             1865         18360    Sin pérdida
+boton_jugar.png                                     1262         18496    Sin pérdida
+img_barrio.jpg                                     94366       3840000    Calidad JPEG=50
+icono_asesora_mouseover.png                         5590         11448    Sin pérdida
+btn_pausa.png                                       3459         13924    Sin pérdida
+btn_play.png                                        3595         13924    Sin pérdida
+icono_asistente.png                                 4703         12064    Sin pérdida
+icono_asistente_mouseover.png                       4771         12064    Sin pérdida
+icono_aserradero.png                                7129         18760    Sin pérdida
+boton_arreglar.png                                  1211          9072    Sin pérdida
+VECINA ESPALDAS 01.png                              6345        243712    Calidad JPEG=50
+VECINA ESPALDAS 02.png                              6332        243712    Calidad JPEG=50
+VECINA ESPALDAS 03.png                              6581        243712    Calidad JPEG=50
+VECINA ESPALDAS 04.png                              6421        243712    Calidad JPEG=50
+VECINA ESPALDAS 06.png                              6288        243712    Calidad JPEG=50
+VECINA ESPALDAS 05.png                              6224        243712    Calidad JPEG=50
+01.png                                              9923        388440    Calidad JPEG=50
+02.png                                              9110        388440    Calidad JPEG=50
+03.png                                              8686        388440    Calidad JPEG=50
+04.png                                              9170        388440    Calidad JPEG=50
+05.png                                              8578        388440    Calidad JPEG=50
+06.png                                              9120        388440    Calidad JPEG=50
+01.png                                              9055        390000    Calidad JPEG=50
+02.png                                              8207        390000    Calidad JPEG=50
+03.png                                              7649        390000    Calidad JPEG=50
+04.png                                              8131        390000    Calidad JPEG=50
+05.png                                              7781        390000    Calidad JPEG=50
+06.png                                              8386        390000    Calidad JPEG=50
+01.png                                              7233        309400    Calidad JPEG=50
+02.png                                              6309        309400    Calidad JPEG=50
+03.png                                              6543        309400    Calidad JPEG=50
+04.png                                              6604        309400    Calidad JPEG=50
+05.png                                              6335        309400    Calidad JPEG=50
+06.png                                              6370        309400    Calidad JPEG=50
+00.png                                              6960        268800    Calidad JPEG=50
+01.png                                              6566        268800    Calidad JPEG=50
+02.png                                              6513        268800    Calidad JPEG=50
+03.png                                              6397        268800    Calidad JPEG=50
+04.png                                              6632        268800    Calidad JPEG=50
+05.png                                              6428        268800    Calidad JPEG=50
+V01.png                                            10810        380400    Calidad JPEG=50
+V02.png                                            11360        380400    Calidad JPEG=50
+V03.png                                            10490        380400    Calidad JPEG=50
+V04.png                                             9046        380400    Calidad JPEG=50
+V05.png                                            10761        380400    Calidad JPEG=50
+V06.png                                             9433        380400    Calidad JPEG=50
+V07.png                                             9697        380400    Calidad JPEG=50
+V08.png                                             7782        380400    Calidad JPEG=50
+01.png                                              7689        365840    Calidad JPEG=50
+02.png                                              7123        365840    Calidad JPEG=50
+03.png                                              7034        365840    Calidad JPEG=50
+04.png                                              5810        365840    Calidad JPEG=50
+05.png                                              7476        365840    Calidad JPEG=50
+06.png                                              7264        365840    Calidad JPEG=50
+07.png                                              6340        365840    Calidad JPEG=50
+08.png                                              6297        365840    Calidad JPEG=50
+01.png                                             12681        519480    Calidad JPEG=50
+02.png                                             12300        519480    Calidad JPEG=50
+03.png                                             13304        519480    Calidad JPEG=50
+04.png                                             13338        519480    Calidad JPEG=50
+05.png                                             12374        519480    Calidad JPEG=50
+06.png                                             13052        519480    Calidad JPEG=50
+07.png                                             13726        519480    Calidad JPEG=50
+07.png                                              8554        378160    Calidad JPEG=50
+02.png                                              8691        378160    Calidad JPEG=50
+03.png                                              8528        378160    Calidad JPEG=50
+04.png                                              8805        378160    Calidad JPEG=50
+05.png                                              8730        378160    Calidad JPEG=50
+06.png                                              8672        378160    Calidad JPEG=50
+fondo 1200 x 800.jpg                               53859       3840000    Calidad JPEG=50
+score.png                                           2892         48764    Sin pérdida
+CH_mormon.png                                      14946        782400    Calidad JPEG=50
+CH_vieja.png                                       14330        782400    Calidad JPEG=50
+CH_nena avion.png                                  14950        782400    Calidad JPEG=50
+CH_nena coqueta.png                                12443        782400    Calidad JPEG=50
+CH_Punky.png                                       17767       1034724    Calidad JPEG=50
+CH_viejito.png                                     14303        782400    Calidad JPEG=50
+fondo_ventana.png                                   4129       2186480    Sin pérdida
+fondo_postit.png                                    3944        844560    Sin pérdida
+fondo_lista.png                                     3098        664048    Sin pérdida
+mesa 01.png                                         6313        250000    Calidad JPEG=50
+banco.png                                           6279        250000    Calidad JPEG=50
+mesa de luz 04.png                                  9136        250000    Calidad JPEG=50
+banquito roto.png                                   6640        250000    Calidad JPEG=50
+mesa 02.png                                         7835        250000    Calidad JPEG=50
+silla rota 02.png                                   8090        250000    Calidad JPEG=50
+precio.png                                          5374         66044    Sin pérdida
+icono_ayuda.png                                     1494         10608    Calidad JPEG=50
+icono_ayuda_mouseover.png                           1542         10608    Calidad JPEG=50
+comunidad.png                                       5563         66044    Sin pérdida
+icono_compras.png                                   5125         11660    Sin pérdida
+icono_trabajos_mouseover.png                        4245         10608    Sin pérdida
+reloj.png                                           5673         65888    Sin pérdida
+fondo_ventana_barraca.png                           5555        620704    Sin pérdida
+CH_malefico.png                                    11300        782400    Calidad JPEG=50
+
+Sonidos de eventos: 11KHz Mono 16 kbps MP3
+
+
+Nombre de sonido                  Bytes         Formato
+------------------------------    ----------    -------
+mp_sfx_trabajorealizado_V2.mp3         17611    11KHz Mono 16 kbps MP3
+mp_sfx_trabajodeclinado.mp3            10231    11KHz Mono 16 kbps MP3
+mp_sfx_trabajoaceptado.mp3              8578    11KHz Mono 16 kbps MP3
+mp_sfx_silbido4.mp3                    63858    11KHz Mono 16 kbps MP3
+mp_sfx_silbido3.mp3                    39721    11KHz Mono 16 kbps MP3
+mp_sfx_silbido2.mp3                    71254    11KHz Mono 16 kbps MP3
+mp_sfx_silbido1.mp3                    71254    11KHz Mono 16 kbps MP3
+mp_sfx_mouseover.mp3                    4685    11KHz Mono 16 kbps MP3
+mp_sfx_ingresos.mp3                    14417    11KHz Mono 16 kbps MP3
+mp_sfx_egresos.mp3                     15585    11KHz Mono 16 kbps MP3
+mp_sfx_clientesesperando.mp3           19089    11KHz Mono 16 kbps MP3
+mp_sfx_clienteenojadoOP2.mp3           14417    11KHz Mono 16 kbps MP3
+mp_sfx_clickgenerico.mp3                6241    11KHz Mono 16 kbps MP3
+mp_musica_menuinicial.mp3             687900    11KHz Mono 16 kbps MP3
+mp_ambiente_carpinteria.mp3           167498    11KHz Mono 16 kbps MP3
+
+
+
+
