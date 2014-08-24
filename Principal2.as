@@ -78,6 +78,7 @@
 		var i = 0;
 		var Flag_Juego = false;
 		var Ya_jugo = false;
+		var Ya_jugo_2 = false;
 
 
 		//Timers
@@ -273,7 +274,7 @@
 				Time.Empezar(true);
 			}
 			
-			if (Ya_jugo == true){
+			if (Ya_jugo_2 == true){
 				Lista_Trab.fnHacer(true);
 			}
 			
@@ -378,12 +379,13 @@
 			}
 			
 			//Segundo Juego
-			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_pidio == false)
+			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				peli2 = new URLRequest("carpinteria1.swf");
 				var cargarSWF:Loader = new Loader();
 				cargarSWF.load(peli2);
 				this.addChild(cargarSWF);
+				Ya_jugo_2 = true;
 				}
 			
 			//Primer Juego
