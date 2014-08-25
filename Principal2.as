@@ -277,21 +277,12 @@
 			}
 			
 			
-			if (Cliente_Stage == true )
-			{
-				//Cliente_out();// ve si salió del Stage
-				//Cliente_var.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
+			if (en_proceso == false){
+				Lista_Trabajos.Arreglar_BT.gotoAndStop(1);
 			}
-
-			if (Cliente_Stage == false )//&& Buscar_flag == true
-			{
-				//Venite_Buscar();
+			else{
+				Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 			}
-
-			/*if (Cliente_Stage == true && Buscar_flag == true)
-			{
-				trace("Gracias  " + Buscar_flag);
-			}*/
 
 			
 		}
@@ -324,6 +315,9 @@
 		public function timerListener(e:TimerEvent):void
 		{
 			
+			
+			
+			
 			avance_porcentaje = avance_porcentaje - 1;
 			Texto.text = String(avance_porcentaje/porcentaje);
 
@@ -334,6 +328,7 @@
 			Cliente_MC.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
 			
 			Cliente_Stage = Cliente_MC.cliente_stage;
+			
 			
 			
 			
@@ -498,6 +493,7 @@
 				Trabajos[2]  = 0;
 				Trabajos[3] = 0;
 				en_proceso = false;
+				Lista_Trabajos.Arreglar_BT.gotoAndStop(1);
 				fnBuscar_Trabajo2();
 				
 			}
@@ -987,6 +983,7 @@
 						Trabajo_Que_se_Procesa.push(Trabajos[0 + mult]); //Dinero
 						Trabajo_Que_se_Procesa.push(Trabajos[6 + mult]); //Nombre
 						Trabajo_Que_se_Procesa.push(mult); //Posición
+						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 						
 						trace("Soy   " + Entrega + "   Nombres  " + Cliente + "Mult   " + mult);
 						

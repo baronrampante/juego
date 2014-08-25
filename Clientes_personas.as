@@ -26,11 +26,12 @@
 		{
 			if (_timer.currentCount == 15)
 			{
+				Irse = true;
 				this.globito.gotoAndPlay("mal");
 				this.gotoAndPlay("espalda");
 				_timer.stop();
 				_timer.reset();
-				Irse = true;
+				
 				irse();
 			}
 			this.x +=  Velocidad_var;
@@ -41,6 +42,7 @@
 				_timer.start();
 				Velocidad_var = 0;
 				this.gotoAndPlay("parado");
+				Irse = false;
 			}
 			if (this.x < 180)
 			{
@@ -52,6 +54,7 @@
 
 		public function irse():void
 		{
+			Irse = true;
 			_timer.stop();
 			_timer.reset();
 			this.gotoAndPlay("espalda");
