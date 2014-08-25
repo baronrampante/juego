@@ -830,6 +830,7 @@
 					Lista_Trabajos.Nena_MC.visible = false;
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
+					Lista_Trabajos.Raya.visible = false;
 					switch(client){
 					case "Julio":
 						Placa_Clientes.Punk_MC.visible = true;
@@ -993,12 +994,12 @@
 						Trabajo_Que_se_Procesa.push(Trabajos[6 + mult]); //Nombre
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
-						
-						trace("Soy   " + Entrega + "   Nombres  " + Cliente + "Mult   " + mult);
-						
 						Alfajias_Stock = Alfajias_Stock - Trabajos[3];
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
+						Lista_Trabajos.Raya.visible =true;
+						var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-650,-454,porcentaje,true);
+						
 					}
 						else
 						{
