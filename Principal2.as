@@ -170,11 +170,7 @@
 			
 		}
 		
-		/*public function Comunidad()
-		{
-			Comunidad_var=4;
-		}*/
-
+		
 		public function init():void
 		{
 			_timer.start();
@@ -283,15 +279,12 @@
 			else{
 				Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 			}
-
-			
 		}
 		
 		
 		//Pagar gastos mensuales
 		public function fnPlaca_Financiera_pagar(event:MouseEvent):void
 		{
-			
 			if (Placa_financiera.candado.visible == false && pago_cuota_mes2 == false){
 			
 			if (Gastos >= Dinero_var ){
@@ -439,31 +432,12 @@
 
 			//Trabajos = Lista_Trab.Trabajo;//Recibe el listado de los clientes armado en la otra clase
 
-			if (Lista_Trab.Nuevo_Cliente == 1 && Cliente_Stage == false && Time.Dale == true)
+			if (Lista_Trab.Nuevo_Cliente == 1 && Cliente_Stage == false && Time.Dale == true && Placa_Clientes.visible == false)
 			{
 				// Recibe el nombre del cliente;
 				Hola_Cliente();
 			}
 
-			// Si el Cliente está espera y 
-			/*if (_timer_espera_cliente.currentCount == 10 && Cliente_var.x == 600)
-			{
-				Cliente_var.gotoAndPlay("espalda");
-				Cliente_var.globito.gotoAndPlay("mal");
-				_timer_espera_cliente.reset();
-				_timer_espera_cliente.stop();
-				//var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,Cliente_var.x,100,Velocidad_var,true);
-				//var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,Cliente_var.y,474,Velocidad_var,true);
-				Cliente_var.visible = false;
-			}
-
-			// Empieza contador espera Cliente
-
-			if (Cliente_var.x == 600)
-			{
-				_timer_espera_cliente.start();
-			}*/
-			
 
 			Lista_Trabajos.Trabajo1.text = String(Trabajos[6] + " en espera");
 			Lista_Trabajos.Trabajo2.text = String(Trabajos[13] + " en espera");
@@ -669,7 +643,6 @@
 			switch (event.target.name)
 			{
 				case "Adelante" :
-
 					Ayuda_MC.nextFrame();
 					break;
 				case "Atriqui" :
@@ -832,6 +805,7 @@
 		public function fnBuscar_Trabajo2()
 		{
 					Venir_Buscar.text =(String(Trabajos_Terminados_Entrega[2] + " venite a buscar el laburo"));
+					var client = Trabajos_Terminados_Entrega[2];
 					Dinero_var = Dinero_var + (Trabajos_Terminados_Entrega[1]);
 					Trabajos.splice([Trabajos_Terminados_Entrega[3]], 7);
 					Trabajos_Terminados_Entrega.splice([0], 4);
@@ -841,11 +815,34 @@
 					Lista_Trabajos.Datos_Tablones.text = "";
 					Lista_Trabajos.Datos_Tiempo.text = "";
 					Lista_Trabajos.Datos_Precio.text = "";
-					
-					
 					Buscar = Nombre[1];
-					//Buscar_flag= false;
+					// Placa Clente buscar
+					Placa_Clientes.visible = true;
+					Placa_Clientes.gotoAndStop(5);
+					var Cliente_cara_var;
+					switch(client){
+					case "Julio":
+						Placa_Clientes.Punk_MC.visible = true;
+						break;
+					case "Olga":
+						Placa_Clientes.Vieja_MC.visible = true;
+						break;
+					case "Andrea":
+						Placa_Clientes.Coqueta_MC.visible = true;
+						break;
+					case "Gustavo":
+						Placa_Clientes.Viejo_MC.visible = true;
+						break;
+					case "Lucía":
+						Placa_Clientes.Nena_MC.visible = true;
+						break;
+					case "Martín":
+						Placa_Clientes.Mormon_MC.visible = true;
+						break;
 					}
+					
+					//Buscar_flag= false;
+				}
 
 
 
@@ -1038,11 +1035,6 @@
 
 		public function Nuevos_Cliente():void
 		{
-			//_timer_espera_cliente.start();
-			//trace(Lista_Trab.Trabajo[6]);
-			//switch (Lista_Trab.Trabajo[6])
-			
-			//Texto.text = Nuevo_Cliente;
 			Viejo_Cliente = Nuevo_Cliente;
 			switch (Nuevo_Cliente)
 			{
@@ -1250,14 +1242,21 @@
 					break;
 				case "No_BT" :
 					Placa_Clientes.gotoAndStop(3);
-					//fnClientes_Pedido_No();
-					
 					break;
 				case "Chau" :
 					Comunidad_var = Comunidad_var - 20;
 					Cliente_MC.irse();
 					fnClientes_Pedido_No();
-					
+					break;
+					case "Chau2" :
+					Placa_Clientes.visible = false;
+					Placa_Clientes.gotoAndStop(1);
+					Placa_Clientes.Mormon_MC.visible = false;
+					Placa_Clientes.Nena_MC.visible = false;
+					Placa_Clientes.Punk_MC.visible = false;
+					Placa_Clientes.Vieja_MC.visible = false;
+					Placa_Clientes.Viejo_MC.visible = false;
+					Placa_Clientes.Coqueta_MC.visible = false;
 					break;
 			}
 		}
