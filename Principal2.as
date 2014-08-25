@@ -819,7 +819,17 @@
 					// Placa Clente buscar
 					Placa_Clientes.visible = true;
 					Placa_Clientes.gotoAndStop(5);
-					var Cliente_cara_var;
+					Lista_Trabajos.Taburete_Roto.visible = false;
+					Lista_Trabajos.Silla_Roto.visible = false;
+					Lista_Trabajos.Mesa_Roto.visible = false;
+					Lista_Trabajos.Banquito_Roto.visible = false;
+					Lista_Trabajos.Mesita_Roto.visible = false;
+					Lista_Trabajos.Luz_Roto.visible = false;
+					Lista_Trabajos.Mormon_MC.visible = false;
+					Lista_Trabajos.Vieja_MC.visible = false;
+					Lista_Trabajos.Nena_MC.visible = false;
+					Lista_Trabajos.Coqueta_MC.visible = false;
+					Lista_Trabajos.Punk_MC.visible = false;
 					switch(client){
 					case "Julio":
 						Placa_Clientes.Punk_MC.visible = true;
@@ -905,8 +915,10 @@
 			Lista_Trabajos.Datos_Tiempo.text = String(Trabajos[1 + mult]);
 			Lista_Trabajos.Datos_Precio.text = String(Trabajos[0 + mult]);
 			Lista_Trabajos.Datos_Trabajo.text = String(Trabajos[5 + mult]);
+			Lista_Trabajos.Datos_Cliente.text = String(Trabajos[6 + mult]);
+			Lista_Trabajos.Datos_Alfajias.text = String(Trabajos[3 + mult]);
+			Lista_Trabajos.Datos_Tablones.text = String(Trabajos[2 + mult]);
 			Lista_Trabajos.Datos_Materiales.text = "Tablones " + String(Trabajos[2 + mult]) + "  Alfajías " + String(Trabajos[3 + mult]);
-			//Lista_Trabajos.Datos_Cliente.text = String(cara);
 			Lista_Trabajos.Mormon_MC.visible = false;
 			Lista_Trabajos.Vieja_MC.visible = false;
 			Lista_Trabajos.Nena_MC.visible = false;
@@ -1172,15 +1184,7 @@
 			Cliente_MC.adelante = true;
 			Cliente_MC.x=200;
 			Cliente_MC.y=500;
-			
-			
-			//_timer_jugador.start();
-			//Cliente_var.visible = true;
 			Cliente_Stage = true;
-			//_timer_espera_cliente.start();
-			//var Posicion_en_vertical =((randomRange(600,800)));
-			//var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,200,600,Velocidad_var,true);
-			//var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,474,Posicion_en_vertical,Velocidad_var,true);
 		}
 
 		function Mover_cliente_Buscar():void
@@ -1280,9 +1284,6 @@
 			Placa_Clientes.Vieja_MC.visible = false;
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
-			//Cliente_var.gotoAndPlay("espalda");
-			//var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,Cliente_var.x,100,Velocidad_var,true);
-			//var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,Cliente_var.y,474,Velocidad_var,true);
 			Cliente_var.visible= false;
 			Cliente_Stage = false;
 		}
@@ -1298,8 +1299,6 @@
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
 			Cliente_var.gotoAndPlay("espalda");
-			//var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,Cliente_var.x,100,Velocidad_var,true);
-			//var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,Cliente_var.y,474,Velocidad_var,true);
 			Cliente_var.visible= false;
 			Cliente_Stage = false;
 		}
@@ -1309,7 +1308,6 @@
 			Placa_Clientes.visible = false;
 			Placa_Clientes.gotoAndStop(1);
 			trace(Cliente_var);
-			//Buscar_flag = false;
 			Placa_Clientes.Mormon_MC.visible = false;
 			Placa_Clientes.Nena_MC.visible = false;
 			Placa_Clientes.Punk_MC.visible = false;
@@ -1317,9 +1315,6 @@
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
 			Cliente_var.gotoAndPlay("espalda");
-
-			//var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,Cliente_var.x,100,Velocidad_var,true);
-			//var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,Cliente_var.y,474,Velocidad_var,true);
 		}
 
 
