@@ -817,6 +817,8 @@
 					Lista_Trabajos.Datos_Precio.text = "";
 					Buscar = Nombre[1];
 					// Placa Clente buscar
+					Dinero_caida.Caida.Texto.text = Dinero_var;
+					Dinero_caida.gotoAndPlay(2);
 					Placa_Clientes.visible = true;
 					Placa_Clientes.gotoAndStop(5);
 					Lista_Trabajos.Taburete_Roto.visible = false;
@@ -831,6 +833,7 @@
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
+					
 					switch(client){
 					case "Julio":
 						Placa_Clientes.Punk_MC.visible = true;
