@@ -499,6 +499,8 @@
 				Trabajos_Terminados_Entrega.push(Trabajo_Que_se_Procesa[2]); // nombre
 				Trabajos_Terminados_Entrega.push(Trabajo_Que_se_Procesa[3]); // mult
 				Trabajo_Que_se_Procesa.splice([0], 4);
+				Trabajos[2]  = 0;
+				Trabajos[3] = 0;
 				en_proceso = false;
 				fnBuscar_Trabajo2();
 				
@@ -975,8 +977,10 @@
 
 		public function fnIniciar_Trabajo():void
 		{
+			Venir_Buscar.text = String(Trabajos[2]);
 			if (Cala_little_var == 1 && Combi_var == 1) {
 				if (Tablones_Stock > Trabajos[2] && Alfajias_Stock > Trabajos[3])
+				
 				{avance
 					if (en_proceso == false)
 					{
@@ -1003,7 +1007,9 @@
 					}
 				else 
 				{
+					if (Trabajos[0] > 1){
 					fnEn_Madera_pedido_Placa();
+					}
 				}
 			}
 			else 
@@ -1183,7 +1189,7 @@
 			Cliente_MC.y=500;
 			
 			
-			_timer_jugador.start();
+			//_timer_jugador.start();
 			//Cliente_var.visible = true;
 			Cliente_Stage = true;
 			//_timer_espera_cliente.start();
@@ -1212,8 +1218,13 @@
 			//{
 				//if (_timer_jugador.currentCount != 0)
 				//{// si se está yendo no se habilita la placa
+				if (Cliente_MC.Irse == false){
+					
+				
 					Placa_Clientes.visible = true;
 					Cliente_cara.visible = true;
+					
+					}
 					/*_timer_espera_cliente.stop();
 					_timer_espera_cliente.reset();
 					_timer_jugador.stop();

@@ -10,25 +10,27 @@
 		public var Velocidad_var = 0;
 		public var _timer:Timer = new Timer(1000);// se ejecuta cada un segundo
 		public var cliente_stage = true;
+		public var Irse = false;
+		
 
 
 		public function Clientes_personas()
 		{
 			// constructor code
-			_timer.start();
+			
 			addEventListener(Event.ENTER_FRAME, mover);
 		}
 
 
 		function mover(e:Event):void
 		{
-			if (_timer.currentCount == 10)
+			if (_timer.currentCount == 15)
 			{
 				this.globito.gotoAndPlay("mal");
 				this.gotoAndPlay("espalda");
 				_timer.stop();
 				_timer.reset();
-
+				Irse = true;
 				irse();
 			}
 			this.x +=  Velocidad_var;
@@ -36,6 +38,7 @@
 
 			if (this.x >= 500)
 			{
+				_timer.start();
 				Velocidad_var = 0;
 				this.gotoAndPlay("parado");
 			}
@@ -47,7 +50,7 @@
 			}
 		}
 
-		public function irse()
+		public function irse():void
 		{
 			_timer.stop();
 			_timer.reset();
