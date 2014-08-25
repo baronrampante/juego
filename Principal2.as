@@ -25,10 +25,6 @@
 
 
 
-	/*Se incorpoó _timer_jugador que comienza cuando entra un nuevo 
-	cliente en mover:cliente y se apaga cuando se abre la 
-	placa del cliente al tocar en el globito
-	*/
 
 
 	public class Principal2 extends MovieClip
@@ -189,7 +185,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("recoleccion_final.swf");
+			peli = new URLRequest("cortar_tronco_final2.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
