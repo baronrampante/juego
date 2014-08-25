@@ -53,6 +53,8 @@
 		var Trabajos_Terminados_Entrega:Array = [];// lista de trabajos terminados
 		var tiempo = 0;
 		var avance = 0;
+		var avance_porcentaje = 0;
+		var porcentaje = 0;
 		//public var _timer:Timer = new Timer(1000);// se ejecuta cada un segundo
 		var myprueba:prueba = new prueba();
 		var en_proceso = false;
@@ -249,7 +251,6 @@
 
 		public function Botones(evt:Event):void
 		{
-
 			Ayuda_MC.addEventListener(MouseEvent.MOUSE_DOWN, fnAdelante_Ayuda);
 			Asesora_start.addEventListener(MouseEvent.MOUSE_DOWN, fnAsesora_start);
 			Pedido_Comunidad_MC.addEventListener(MouseEvent.MOUSE_DOWN, fnPedido_Comunidad);
@@ -284,7 +285,6 @@
 			{
 				//Cliente_out();// ve si salió del Stage
 				//Cliente_var.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
-				
 			}
 
 			if (Cliente_Stage == false )//&& Buscar_flag == true
@@ -328,7 +328,8 @@
 		public function timerListener(e:TimerEvent):void
 		{
 			
-			
+			avance_porcentaje = avance_porcentaje - 1;
+			Texto.text = String(avance_porcentaje/porcentaje);
 
 			//llama a un nuevo cliente
 			Lista_Trab.Tiempo(Time.Hora_var);
@@ -980,14 +981,15 @@
 					if (en_proceso == false)
 					{
 						avance = Trabajos[1 + mult] + _timer.currentCount;
+						avance_porcentaje = Trabajos[1 + mult];
+						porcentaje = avance_porcentaje;
 						Trabajo_Que_se_Procesa.push(Trabajos[4 + mult]); //Tiempo
 						Trabajo_Que_se_Procesa.push(Trabajos[0 + mult]); //Dinero
 						Trabajo_Que_se_Procesa.push(Trabajos[6 + mult]); //Nombre
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						
 						trace("Soy   " + Entrega + "   Nombres  " + Cliente + "Mult   " + mult);
-						//trace(Entrega);
-						//trace(Cliente);
+						
 						Alfajias_Stock = Alfajias_Stock - Trabajos[3];
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
@@ -1021,11 +1023,11 @@
 		}
 		
 		
-		// Función de nuev o cliente
+		// Función de nuevo cliente
 		
 		public function Hola_Cliente():void{
 			Nuevo_Cliente = Client.Cliente[(randomRange(0, 4))];
-			Texto.text = Nuevo_Cliente + "   " + Viejo_Cliente;
+			//Texto.text = Nuevo_Cliente + "   " + Viejo_Cliente;
 			if (Viejo_Cliente == Nuevo_Cliente){
 				Hola_Cliente();
 			}
