@@ -500,12 +500,9 @@
 			
 			if (Trabajos[0] > 1){
 			for(var i:int=0; i<1; i++) {
-				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
-				
-				//numero = Trabajos[(i*multiplicador)+7];
-				//numero = numero - 1;
-				//Trabajos[(i*multiplicador)+7] = numero;
+				if (Trabajos[(i*multiplicador)+7] > 1){
 				Trabajos[(i*multiplicador)+7] = (Trabajos[(i*multiplicador)+7] - 1);
+				}
 				Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7] - 1);
 				//Trabajos[(i*multiplicador)+7] = numero ;
 			}
