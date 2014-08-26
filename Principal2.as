@@ -112,7 +112,7 @@
 		var Gastos_Personales = 500;
 		var Mi_Trabajo:Array = new Array();
 		var mult = 0;//multiplicador
-		var multiplicador = 7;
+		var multiplicador = 8;
 		var Gastos = 0;
 		var pago_cuota = false;
 		var pago_cuota_mes2 = false;
@@ -441,10 +441,10 @@
 
 
 			Lista_Trabajos.Trabajo1.text = String(Trabajos[6] + " en espera");
-			Lista_Trabajos.Trabajo2.text = String(Trabajos[13] + " en espera");
-			Lista_Trabajos.Trabajo3.text = String(Trabajos[20] + " en espera");
-			Lista_Trabajos.Trabajo4.text = String(Trabajos[27] + " en espera");
-			Lista_Trabajos.Trabajo5.text = String(Trabajos[34] + " en espera");
+			Lista_Trabajos.Trabajo2.text = String(Trabajos[6 + (1*multiplicador)] + " en espera");
+			Lista_Trabajos.Trabajo3.text = String(Trabajos[6 + (2*multiplicador)] + " en espera");
+			Lista_Trabajos.Trabajo4.text = String(Trabajos[6 + (3*multiplicador)] + " en espera");
+			Lista_Trabajos.Trabajo5.text = String(Trabajos[6 + (1*multiplicador)] + " en espera");
 			
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
@@ -731,7 +731,7 @@
 
 		function Visible():void
 		{
-			if (Trabajos[0] > 1)
+			if (Trabajos[0*multiplicador] > 1)
 			{
 				Lista_Trabajos.Trabajo1.visible = true;
 			}
@@ -740,7 +740,7 @@
 				Lista_Trabajos.Trabajo1.visible = false;
 			}
 
-			if (Trabajos[7] > 0)
+			if (Trabajos[1*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo2.visible = true;
 			}
@@ -749,7 +749,7 @@
 				Lista_Trabajos.Trabajo2.visible = false;
 			}
 
-			if (Trabajos[14] > 0)
+			if (Trabajos[2*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo3.visible = true;
 			}
@@ -757,7 +757,7 @@
 			{
 				Lista_Trabajos.Trabajo3.visible = false;
 			}
-			if (Trabajos[21] > 0)
+			if (Trabajos[3*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo4.visible = true;
 			}
@@ -765,7 +765,7 @@
 			{
 				Lista_Trabajos.Trabajo4.visible = false;
 			}
-			if (Trabajos[28] > 0)
+			if (Trabajos[4*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo5.visible = true;
 			}
@@ -808,7 +808,7 @@
 					Venir_Buscar.text =(String(Trabajos_Terminados_Entrega[2] + " venite a buscar el laburo"));
 					var client = Trabajos_Terminados_Entrega[2];
 					Dinero_var = Dinero_var + (Trabajos_Terminados_Entrega[1]);
-					Trabajos.splice([Trabajos_Terminados_Entrega[3]], 7);
+					Trabajos.splice([Trabajos_Terminados_Entrega[3]], multiplicador);
 					Trabajos_Terminados_Entrega.splice([0], 4);
 					Visible();
 					Lista_Trabajos.Datos_Materiales.text ="";
@@ -1273,6 +1273,7 @@
 			Trabajos.push(Lista_Trab.Trabajo[3]);
 			Trabajos.push(Lista_Trab.Trabajo[4]);
 			Trabajos.push(Lista_Trab.Trabajo[5]);
+			Trabajos.push(Nuevo_Cliente);
 			Trabajos.push(Nuevo_Cliente);
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
