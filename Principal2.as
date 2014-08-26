@@ -309,7 +309,7 @@
 		public function timerListener(e:TimerEvent):void
 		{
 			
-			
+			Trabajos_No_Entregados();
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
 			avance_porcentaje = avance_porcentaje - 1;
@@ -484,6 +484,22 @@
 				Cliente_var.gotoAndPlay("frente");
 				Cliente_var.globito.gotoAndPlay("normal");
 				Cliente_Stage = false;
+			}
+		}
+		
+		function Trabajos_No_Entregados():void{
+			var numero:Number;
+			for(var i:int=0; i<1; i++) {
+				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
+				
+				numero = Trabajos[(i*multiplicador)+7];
+				Venir_Buscar.text = String(numero);
+				//Trabajos[(i*multiplicador)+7] = numero ;
+			}
+			for(var ii:int=0; i<1; i++) {
+				
+				
+				Trabajos[(ii*multiplicador)+7] = Trabajos[(ii*multiplicador)+7] - 1;
 			}
 		}
 
@@ -1274,7 +1290,7 @@
 			Trabajos.push(Lista_Trab.Trabajo[4]);
 			Trabajos.push(Lista_Trab.Trabajo[5]);
 			Trabajos.push(Nuevo_Cliente);
-			Trabajos.push(Nuevo_Cliente);
+			Trabajos.push(5);
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
 			Cerrar_Placa_Clientes();
