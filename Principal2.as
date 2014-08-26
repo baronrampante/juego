@@ -30,7 +30,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		
+		var numero = 400;
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -177,6 +177,7 @@
 			_timer.start();
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
+			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
 			snd.play(0, 100);
 			
 			//asignamos a memoria la variable que cargara el archivo
@@ -240,6 +241,11 @@
 			Lata_Pintura_MC.visible = false;
 		}
 		
+		private function enterFrameHandler(event:Event):void
+		{
+			//numero = numero - 1;
+			Trabajos_No_Entregados();
+		}
 		
 
 		public function Botones(evt:Event):void
@@ -280,6 +286,9 @@
 			else{
 				Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 			}
+			
+			
+			
 		}
 		
 		
@@ -309,7 +318,8 @@
 		public function timerListener(e:TimerEvent):void
 		{
 			
-			Trabajos_No_Entregados();
+			
+			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
 			avance_porcentaje = avance_porcentaje - 1;
@@ -488,18 +498,25 @@
 		}
 		
 		function Trabajos_No_Entregados():void{
-			var numero:Number;
-			for(var i:int=0; i<1; i++) {
+			
+			for(var i:int=0; i<2; i++) {
 				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
 				
-				numero = Trabajos[(i*multiplicador)+7];
-				Venir_Buscar.text = String(numero);
+				//numero = Trabajos[(i*multiplicador)+7];
+				numero = numero - 1;
+				Trabajos[(i*multiplicador)+7];
+				Venir_Buscar.text = Trabajos[(i*multiplicador)+7];
 				//Trabajos[(i*multiplicador)+7] = numero ;
 			}
+			
+		}
+		
+		function Trabajos_No_Entregados2():void{
+			
 			for(var ii:int=0; i<1; i++) {
+				numero = numero - 1;
+				Trabajos[(ii*multiplicador)+7] = numero;
 				
-				
-				Trabajos[(ii*multiplicador)+7] = Trabajos[(ii*multiplicador)+7] - 1;
 			}
 		}
 
@@ -1290,7 +1307,8 @@
 			Trabajos.push(Lista_Trab.Trabajo[4]);
 			Trabajos.push(Lista_Trab.Trabajo[5]);
 			Trabajos.push(Nuevo_Cliente);
-			Trabajos.push(5);
+			Trabajos.push(numero);
+			
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
 			Cerrar_Placa_Clientes();
