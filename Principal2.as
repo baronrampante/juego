@@ -30,7 +30,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 400; //prueba
+		var numero = 40; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -243,8 +243,7 @@
 		
 		private function enterFrameHandler(event:Event):void
 		{
-			
-			//Trabajos_No_Entregados();
+			No_cumpliste();
 		}
 		
 
@@ -297,17 +296,15 @@
 		{
 			if (Placa_financiera.candado.visible == false && pago_cuota_mes2 == false){
 			
-			if (Gastos >= Dinero_var ){
+			if (Gastos >= Dinero_var )
+			{
 				Texto.text = "no tenes dinero";
 			}
-			else {
+			else{
 				Dinero_var = Dinero_var - Gastos;
 				Placa_financiera.candado.visible = true;
 				pago_cuota = true;
-				/*if (pago_cuota == true && pago_cuota_mes2 == false){
-					pago_cuota_mes2 =true;
-				}*/
-			}
+				}
 			}
 		}
 
@@ -459,7 +456,6 @@
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
 
-
 			//detecta botones en el escenario;
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			//Cliente_var.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
@@ -475,7 +471,6 @@
 				Trabajos_Terminados_Entrega.push(Trabajo_Que_se_Procesa[2]); // nombre
 				Trabajos_Terminados_Entrega.push(Trabajo_Que_se_Procesa[3]); // mult
 				Trabajo_Que_se_Procesa.splice([0], 4);
-				
 				en_proceso = false;
 				Lista_Trabajos.Arreglar_BT.gotoAndStop(1);
 				fnBuscar_Trabajo2();
@@ -499,13 +494,33 @@
 		function Trabajos_No_Entregados():void{
 			
 			if (Trabajos[0] > 1){
-			for(var i:int=0; i<1; i++) {
+			for(var i:int=0; i<3; i++) {
+				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
+				
+				//numero = Trabajos[(i*multiplicador)+7];
+				//numero = numero - 1;
+				//Trabajos[(i*multiplicador)+7] = numero;
 				if (Trabajos[(i*multiplicador)+7] > 1){
 				Trabajos[(i*multiplicador)+7] = (Trabajos[(i*multiplicador)+7] - 1);
+					
 				}
 				Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7] - 1);
+				
 				//Trabajos[(i*multiplicador)+7] = numero ;
 			}
+			}
+			
+		}
+		
+		function No_cumpliste():void{
+			if (Trabajos[0] > 1){
+			for(var i:int=0; i<3; i++) {
+				if (Trabajos[(i*multiplicador)+7] < 20)
+				{
+				Texto.text = "me cagaste";
+				}
+				
+				}
 			}
 			
 		}
@@ -1246,28 +1261,9 @@
 				//if (_timer_jugador.currentCount != 0)
 				//{// si se está yendo no se habilita la placa
 				if (Cliente_MC.Irse == false){
-					
-				
 					Placa_Clientes.visible = true;
 					Cliente_cara.visible = true;
-					
 					}
-					/*_timer_espera_cliente.stop();
-					_timer_espera_cliente.reset();
-					_timer_jugador.stop();
-					_timer_jugador.reset();*/
-				//}
-			//}
-			/*if (Buscar_flag == true && Cliente_Buscar == true)
-			{
-				Placa_Clientes.visible = true;
-				Placa_Clientes.gotoAndStop(2);
-				Cliente_cara.visible = true;
-				_timer_espera_cliente.stop();
-				_timer_espera_cliente.reset();
-				_timer_jugador.stop();
-				_timer_jugador.reset();
-			}*/
 		}
 
 
@@ -1311,13 +1307,6 @@
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
 			Cerrar_Placa_Clientes();
-			/*Placa_Clientes.visible = false;
-			Placa_Clientes.Mormon_MC.visible = false;
-			Placa_Clientes.Nena_MC.visible = false;
-			Placa_Clientes.Punk_MC.visible = false;
-			Placa_Clientes.Vieja_MC.visible = false;
-			Placa_Clientes.Viejo_MC.visible = false;
-			Placa_Clientes.Coqueta_MC.visible = false;*/
 			Cliente_var.visible= false;
 			Cliente_Stage = false;
 		}
