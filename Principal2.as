@@ -112,6 +112,7 @@
 		var Gastos_Personales = 500;
 		var Mi_Trabajo:Array = new Array();
 		var mult = 0;//multiplicador
+		var multiplicador = 7;
 		var Gastos = 0;
 		var pago_cuota = false;
 		var pago_cuota_mes2 = false;
@@ -181,7 +182,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("cortar_tronco_final2.swf");
+			peli = new URLRequest("recoleccion_final.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -309,7 +310,7 @@
 		{
 			
 			
-			
+			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
 			avance_porcentaje = avance_porcentaje - 1;
 			Texto.text = String(avance_porcentaje/porcentaje);
@@ -592,7 +593,7 @@
 		//agregamos cargador al escenario para poder visualizar el contenido de peli.swf
 		//removeChildAt(0);
 		//MovieClip(root).addChild(cargador);
-		addChildAt(cargador, 40);
+		addChildAt(cargador, 41);
 		 
 		 
          //agregamos el listener que llamara a la funcion de peli a load_btn;
@@ -817,7 +818,7 @@
 					Lista_Trabajos.Datos_Precio.text = "";
 					Buscar = Nombre[1];
 					// Placa Clente buscar
-					Dinero_caida.Caida.Texto.text = Dinero_var;
+					
 					Dinero_caida.gotoAndPlay(2);
 					Placa_Clientes.visible = true;
 					Placa_Clientes.gotoAndStop(5);
@@ -873,7 +874,7 @@
 					fnLista_Trabajos();
 					break;
 				case "Trabajo2" :
-					mult = 7;
+					mult = 1*multiplicador;
 					trace("Soy   " + Trabajos);
 					tiempo = Trabajos[1 + mult];
 					Trabajo_Proceso = Trabajos[0 + mult];
@@ -882,7 +883,7 @@
 					fnLista_Trabajos();
 					break;
 				case "Trabajo3" :
-					mult = 14;
+					mult = 2*multiplicador;
 					trace("Soy   " + Trabajos);
 					tiempo = Trabajos[1 + mult];
 					Trabajo_Proceso = Trabajos[0 + mult];
@@ -891,7 +892,7 @@
 					fnLista_Trabajos();
 					break;
 				case "Trabajo4" :
-					mult = 21;
+					mult = 3*multiplicador;
 					trace("Soy   " + Trabajos);
 					tiempo = Trabajos[1 + mult];
 					Trabajo_Proceso = Trabajos[0 + mult];
@@ -900,7 +901,7 @@
 					fnLista_Trabajos();
 					break;
 				case "Trabajo5" :
-					mult = 28;
+					mult = 4*multiplicador;
 					trace("Soy   " + Trabajos);
 					tiempo = Trabajos[1 + mult];
 					Trabajo_Proceso = Trabajos[0 + mult];
@@ -1149,11 +1150,11 @@
 					Cliente_var.visible = true;
 					break;
 				case "Julio" :
-					Placa_Clientes.Punk_MC.visible = true;
 					Cliente_cara = Placa_Clientes.Punk_MC;
 					Velocidad_var = 6;
 					Cliente_var = Punk;
 					Mover_cliente_Buscar();
+					Cliente_var.visible = true;
 					//fnTexto_Pedido();
 					break;
 				case "Gustavo" :
@@ -1161,6 +1162,7 @@
 					Velocidad_var = 10;
 					Cliente_var = Viejo;
 					Mover_cliente_Buscar();
+					Cliente_var.visible = true;
 					//fnTexto_Pedido();
 					break;
 			}
@@ -1257,14 +1259,7 @@
 					fnClientes_Pedido_No();
 					break;
 					case "Chau2" :
-					Placa_Clientes.visible = false;
-					Placa_Clientes.gotoAndStop(1);
-					Placa_Clientes.Mormon_MC.visible = false;
-					Placa_Clientes.Nena_MC.visible = false;
-					Placa_Clientes.Punk_MC.visible = false;
-					Placa_Clientes.Vieja_MC.visible = false;
-					Placa_Clientes.Viejo_MC.visible = false;
-					Placa_Clientes.Coqueta_MC.visible = false;
+					Cerrar_Placa_Clientes();
 					break;
 			}
 		}
@@ -1281,13 +1276,14 @@
 			Trabajos.push(Nuevo_Cliente);
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
-			Placa_Clientes.visible = false;
+			Cerrar_Placa_Clientes();
+			/*Placa_Clientes.visible = false;
 			Placa_Clientes.Mormon_MC.visible = false;
 			Placa_Clientes.Nena_MC.visible = false;
 			Placa_Clientes.Punk_MC.visible = false;
 			Placa_Clientes.Vieja_MC.visible = false;
 			Placa_Clientes.Viejo_MC.visible = false;
-			Placa_Clientes.Coqueta_MC.visible = false;
+			Placa_Clientes.Coqueta_MC.visible = false;*/
 			Cliente_var.visible= false;
 			Cliente_Stage = false;
 		}
@@ -1295,6 +1291,7 @@
 		function fnClientes_Pedido_No():void
 		{
 			Placa_Clientes.visible = false;
+			
 			Placa_Clientes.gotoAndStop(1);
 			Placa_Clientes.Mormon_MC.visible = false;
 			Placa_Clientes.Nena_MC.visible = false;
@@ -1319,6 +1316,18 @@
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
 			Cliente_var.gotoAndPlay("espalda");
+		}
+		
+		function Cerrar_Placa_Clientes():void
+		{
+			Placa_Clientes.visible = false;
+			Placa_Clientes.Mormon_MC.visible = false;
+			Placa_Clientes.Nena_MC.visible = false;
+			Placa_Clientes.Punk_MC.visible = false;
+			Placa_Clientes.Vieja_MC.visible = false;
+			Placa_Clientes.Viejo_MC.visible = false;
+			Placa_Clientes.Coqueta_MC.visible = false;
+			Placa_Clientes.gotoAndStop(1);
 		}
 
 
