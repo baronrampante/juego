@@ -30,7 +30,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 400;
+		var numero = 400; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -243,8 +243,8 @@
 		
 		private function enterFrameHandler(event:Event):void
 		{
-			//numero = numero - 1;
-			Trabajos_No_Entregados();
+			
+			//Trabajos_No_Entregados();
 		}
 		
 
@@ -318,7 +318,7 @@
 		public function timerListener(e:TimerEvent):void
 		{
 			
-			
+			Trabajos_No_Entregados();
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
@@ -475,8 +475,7 @@
 				Trabajos_Terminados_Entrega.push(Trabajo_Que_se_Procesa[2]); // nombre
 				Trabajos_Terminados_Entrega.push(Trabajo_Que_se_Procesa[3]); // mult
 				Trabajo_Que_se_Procesa.splice([0], 4);
-				Trabajos[2]  = 0;
-				Trabajos[3] = 0;
+				
 				en_proceso = false;
 				Lista_Trabajos.Arreglar_BT.gotoAndStop(1);
 				fnBuscar_Trabajo2();
@@ -499,14 +498,17 @@
 		
 		function Trabajos_No_Entregados():void{
 			
-			for(var i:int=0; i<2; i++) {
+			if (Trabajos[0] > 1){
+			for(var i:int=0; i<1; i++) {
 				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
 				
 				//numero = Trabajos[(i*multiplicador)+7];
-				numero = numero - 1;
-				Trabajos[(i*multiplicador)+7];
-				Venir_Buscar.text = Trabajos[(i*multiplicador)+7];
+				//numero = numero - 1;
+				//Trabajos[(i*multiplicador)+7] = numero;
+				Trabajos[(i*multiplicador)+7] = (Trabajos[(i*multiplicador)+7] - 1);
+				Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7] - 1);
 				//Trabajos[(i*multiplicador)+7] = numero ;
+			}
 			}
 			
 		}
