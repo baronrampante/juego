@@ -126,6 +126,7 @@
 		var Cliente = 0;
 		var Nuevo_Cliente = "";
 		var Viejo_Cliente = "";
+		var Cliente_borrar = 0;
 		
 
 		//Materiales
@@ -266,7 +267,7 @@
 			Placa_financiera.btn_cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_Cerrar);
 			Placa_financiera.btn_pagar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_pagar);
 			Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
-			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Trabajos_BT);
+			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
 			
 			if (pelicula.termino == true){
@@ -473,7 +474,7 @@
 		}
 
 
-		function Cliente_out():void
+		/*function Cliente_out():void
 		{
 			if (Cliente_var.x <= 110)
 			{
@@ -482,7 +483,7 @@
 				Cliente_var.globito.gotoAndPlay("normal");
 				Cliente_Stage = false;
 			}
-		}
+		}*/
 		
 		function Trabajos_No_Entregados():void{
 			
@@ -500,28 +501,58 @@
 				Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7] - 1);
 				
 				//Trabajos[(i*multiplicador)+7] = numero ;
-			}
+				}
 			}
 			
 		}
 		
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
-			for(var i:int=0; i<3; i++) {
-				if (Trabajos[(i*multiplicador)+7] < 20)
+			Texto.text = "hayyy";
+			for(var i:int=0; i<6; i++) {
+				if (Trabajos[(i*multiplicador)+7] < 30 && Trabajos[(i*multiplicador)+7] > 20)
 				{
 				Texto.text = "me cagaste";
-				Placa_no_cumpliste();
-				
+				//Placa_no_cumpliste();
+				Placa_Clientes.visible = true;
+				Placa_Clientes.gotoAndStop(6);
+				Cliente_borrar = (i*multiplicador);
+				//Borrar_Cliente();
+				switch(Trabajos[(i*multiplicador)+6]){
+						case "Julio":
+							Placa_Clientes.Punk_MC.visible = true;
+							break;
+						case "Olga":
+							Placa_Clientes.Vieja_MC.visible = true;
+							break;
+						case "Andrea":
+							Placa_Clientes.Coqueta_MC.visible = true;
+							break;
+						case "Gustavo":
+							Placa_Clientes.Viejo_MC.visible = true;
+							break;
+						case "Lucía":
+							Placa_Clientes.Nena_MC.visible = true;
+							break;
+						case "Martín":
+							Placa_Clientes.Mormon_MC.visible = true;
+							break;
+								}
+				//Trabajos.splice([i*multiplicador], 6);
+							}
+						}
+					}
 				}
-				}
-			}
-			
+		
+		function Borrar_Cliente():void
+		{
+			Trabajos.splice([Cliente_borrar], multiplicador);
 		}
 		
 		function Placa_no_cumpliste():void{
 			Placa_Clientes.visible = true;
-			Placa_Clientes.gotoAndPlay(6);
+			Placa_Clientes.gotoAndStop(6);
+			
 			switch(Trabajos[6]){
 					case "Julio":
 						Placa_Clientes.Punk_MC.visible = true;
@@ -878,7 +909,7 @@
 					Trabajos.splice([Trabajos_Terminados_Entrega[3]], multiplicador);
 					Trabajos_Terminados_Entrega.splice([0], 4);
 					Visible();
-					//Borrar todos los datos de lñalista de trabajos a ala derecha
+					//Borrar todos los datos de la lista de trabajos a la derecha
 					Lista_Trabajos.Datos_Materiales.text ="";
 					Lista_Trabajos.Datos_Alfajias.text = "";
 					Lista_Trabajos.Datos_Tablones.text = "";
@@ -1288,7 +1319,7 @@
 		}
 
 
-		public function fnPlaca_Trabajos_BT(event:MouseEvent):void
+		public function fnPlaca_Clientes_BT(event:MouseEvent):void
 		{
 			switch (event.target.name)
 			{
@@ -1307,8 +1338,12 @@
 					Cliente_MC.irse();
 					fnClientes_Pedido_No();
 					break;
-					case "Chau2" :
+				case "Chau2" :
 					Cerrar_Placa_Clientes();
+					break;
+				case "Chau3" :
+					Cerrar_Placa_Clientes();
+					Borrar_Cliente();
 					break;
 			}
 		}
@@ -1335,7 +1370,6 @@
 		function fnClientes_Pedido_No():void
 		{
 			Placa_Clientes.visible = false;
-			
 			Placa_Clientes.gotoAndStop(1);
 			Placa_Clientes.Mormon_MC.visible = false;
 			Placa_Clientes.Nena_MC.visible = false;
