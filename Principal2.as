@@ -488,7 +488,7 @@
 		function Trabajos_No_Entregados():void{
 			
 			if (Trabajos[0] > 1){
-			for(var i:int=0; i<3; i++) {
+			for(var i:int=0; i<5; i++) {
 				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
 				
 				//numero = Trabajos[(i*multiplicador)+7];
@@ -510,7 +510,7 @@
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
 			Texto.text = "hayyy";
 			for(var i:int=0; i<6; i++) {
-				if (Trabajos[(i*multiplicador)+7] < 30 && Trabajos[(i*multiplicador)+7] > 20)
+				if (Trabajos[(i*multiplicador)+7] < 30 )
 				{
 				Texto.text = "me cagaste";
 				//Placa_no_cumpliste();
