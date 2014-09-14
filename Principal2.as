@@ -127,6 +127,8 @@
 		var Nuevo_Cliente = "";
 		var Viejo_Cliente = "";
 		var Cliente_borrar = 0;
+		public var Character_var = 9;
+		var Character_yes = false;
 		
 
 		//Materiales
@@ -156,6 +158,8 @@
 		
 		// Comunidad
 		var Ya_pidio = false
+		
+		var toto = 9;
 
 
 		var variable = Time.Dia_var;
@@ -166,6 +170,8 @@
 			
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			init();
+			
+			
 		}
 		
 		/*public function remover(){
@@ -181,6 +187,7 @@
 			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
 			snd.play(0, 100);
 			
+			
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
@@ -189,6 +196,8 @@
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
 			Madera_MC.Tablones_Ingreso.restrict = "0-9";
+			
+			
 
 			//clientes
 			Lista_Trabajos.Taburete_Roto.visible = false;
@@ -246,6 +255,24 @@
 		{
 			No_cumpliste();
 		}
+		
+		function fnCharacter():void{
+		if (Character_var < 9 && Character_yes == false){// para retrasar carga de variable
+		switch (Character_var){
+			case 0:
+			var myCharacter = new avriltodo();
+			addChildAt(myCharacter, 41);
+			Character_yes = true;
+			break;
+			case 1:
+			myCharacter = new avriltodo();
+			addChild(myCharacter);
+			Character_yes = true;
+			break;
+			}
+		}
+		}
+		
 		
 
 		public function Botones(evt:Event):void
@@ -312,7 +339,7 @@
 
 		public function timerListener(e:TimerEvent):void
 		{
-			
+			fnCharacter();
 			Trabajos_No_Entregados();
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;

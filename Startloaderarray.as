@@ -102,7 +102,7 @@
 			//agregamos cargador al escenario para poder visualizar el contenido de peli.swf
 
 			addChildAt(cargador, 19);
-			pelicula.Comunidad_var = 5;
+			pelicula.Character_var = 0;
 			//pelicula.Comunidad();
 			//agregamos el listener que llamara a la funcion de peli a load_btn;
 			//load_btn.addEventListener(MouseEvent.CLICK, llamarfuncionpeli);
