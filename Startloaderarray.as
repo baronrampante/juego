@@ -24,6 +24,7 @@
 
 		var snd:Sound = new Sound(new URLRequest("mp_musica_menuinicial.mp3"));
 		var myChannel:SoundChannel = new SoundChannel();
+		var Character  = 0;
 
 		var Personaje = "";
 		var Personaje2 = "";
@@ -102,7 +103,7 @@
 			//agregamos cargador al escenario para poder visualizar el contenido de peli.swf
 
 			addChildAt(cargador, 19);
-			pelicula.Character_var = 0;
+			pelicula.Character_var = Character;
 			//pelicula.Comunidad();
 			//agregamos el listener que llamara a la funcion de peli a load_btn;
 			//load_btn.addEventListener(MouseEvent.CLICK, llamarfuncionpeli);
@@ -179,24 +180,28 @@
 						Cabeza = Ivan;
 						mover();
 						mover_cabeza();
+						Character = 1;
 						break;
 					case "Nacho_" :
 						Personaje = Fondo_Nacho;
 						Cabeza = Nacho;
 						mover();
 						mover_cabeza();
+						Character = 0;
 						break;
 					case "Lety_" :
 						Personaje = Fondo_Lety;
 						Cabeza = Lety;
 						mover();
 						mover_cabeza();
+						Character = 2;
 						break;
 					case "Avril_" :
 						Personaje = Fondo_Avril;
 						Cabeza = Avril;
 						mover();
 						mover_cabeza();
+						Character = 3;
 						break;
 					case "Adelante_BT" :
 						Tira();
