@@ -261,12 +261,12 @@
 		switch (Character_var){
 			case 0:
 			var myCharacter = new avriltodo();
-			addChildAt(myCharacter, 41);
+			addChildAt(myCharacter, 10);
 			Character_yes = true;
 			break;
 			case 1:
-			myCharacter = new avriltodo();
-			addChild(myCharacter);
+			myCharacter = new Ivantodo();
+			addChildAt(myCharacter, 10);
 			Character_yes = true;
 			break;
 			}
