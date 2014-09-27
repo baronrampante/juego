@@ -21,7 +21,7 @@
 		
 		
 		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar para la semana que viene","hhhhh");
-		public var TextosSilla:Array = new Array("Hola","hhhhh");
+		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","hhhhh");
 		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Podría arreglarlo?","hhhhh");
 		public var TextosCama:Array = new Array("Che","hhhhh");
 		public var TextosMesa_Luz:Array = new Array("Que", "hhhhh");

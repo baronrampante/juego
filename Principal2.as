@@ -30,7 +30,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 40; //prueba
+		var numero = 200; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -98,6 +98,7 @@
 		public var Dias_para_Semana = 5;// variable que determina duracion semana
 		public var Dia_Semana = 0;// variable que cuenta los dias para llegar a a la semana
 		public var Cuota_Banco = 3000;
+		var Construccion = false;
 		
 		// Cargar peli
 		
@@ -402,6 +403,7 @@
 				cargarSWF.load(peli2);
 				this.addChild(cargarSWF);
 				Ya_jugo_2 = true;
+				Construccion= true;
 				}
 			
 			//Primer Juego
