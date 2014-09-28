@@ -16,12 +16,14 @@
 	import fl.transitions.TweenEvent;
 	import flash.net.URLRequest;
 	import flash.display.Loader;
+	import flash.display.Sprite;
 
 	import prueba;
 	import Clientes;
 	import Lista_Trabaj;
 	import Barrio_MC;
 	import Temporizador;
+	import Aserradero;
 
 
 
@@ -192,7 +194,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("recoleccion_final.swf");
+			peli = new URLRequest("mini_ropa");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -398,7 +400,7 @@
 			//Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
-				peli2 = new URLRequest("carpinteria1.swf");
+				peli2 = new URLRequest("cortar_tronco_final2.swf");
 				var cargarSWF:Loader = new Loader();
 				cargarSWF.load(peli2);
 				this.addChild(cargarSWF);
@@ -440,6 +442,17 @@
 				(root.loaderInfo.loader.root as Object).cargar2();
 				Time.Pausar();
 			}
+			
+			// Final
+			if (Time.Dia_var == Time.Fin_de_Juego){
+				Time.Terminar();
+				
+				var perdedor:Lose= new Lose();
+				addChild(perdedor);
+				(root.loaderInfo.loader.root as Object).descargar();
+			}
+			
+			
 
 // para ver la cantidad de material existente
 			Tablones.text = String(Tablones_Stock);
@@ -720,7 +733,7 @@
 		//agregamos cargador al escenario para poder visualizar el contenido de peli.swf
 		//removeChildAt(0);
 		//MovieClip(root).addChild(cargador);
-		addChildAt(cargador, 41);
+		addChild(cargador);
 		 
 		 
          //agregamos el listener que llamara a la funcion de peli a load_btn;

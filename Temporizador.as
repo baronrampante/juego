@@ -27,8 +27,10 @@
 		public var Pedido_Comunidad_1 = 9;// pedido comunidad en días
 		public var Segundo_Pedido_Comunidad = 15;// segundo pedido de la comunidad
 
-		public var Segundo_Juego = 15;// días para segundo juego
-		public var Primer_Juego = 8;//días para primer juego
+		public var Segundo_Juego = 40;// días para segundo juego
+		public var Primer_Juego = 25;//días para primer juego
+		
+		public var Fin_de_Juego = 2;
 
 		public function Temporizador()
 		{
@@ -58,6 +60,20 @@
 				Pausado = true;
 			}
 		}
+		
+		public function Terminar()
+		{
+
+			_timer.stop();
+			_timer.reset();
+			Dia_var = 1;
+		Semana_var = 1;
+		Mes_var = 1;
+		Hora_var = 0;
+
+		}
+		
+		
 
 
 		public function timerListener(e:TimerEvent):void

@@ -78,7 +78,6 @@
 			Atras_BT.y = 737;
 			Atras_BT.mouseEnabled = true;
 
-
 		}
 
 		
@@ -132,9 +131,11 @@
 
 		public function descargar()
 		{
-			removeChild(cargador2);
-			cargador.visible =true;
-			pelicula.Time.Empezar(true);
+			cargador.unloadAndStop();
+			cargador.removeChildAt(19);
+			cargador = null;
+			//cargador.visible =true;
+			//pelicula.Time.Empezar(true);
 		}
 
 		public function Personajes(evt:Event):void
