@@ -81,7 +81,7 @@
 		}
 
 		
-		function cargar()
+		public function cargar():void
 		{
 			//cargamos el archivo
 			Fondo_Lety = null;
@@ -136,6 +136,14 @@
 			cargador = null;
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
+		}
+		
+		public function descargar_volver()
+		{
+			cargador.unloadAndStop();
+			//cargador.removeChildAt(19);
+			//cargador = null;
+			cargar();
 		}
 
 		public function Personajes(evt:Event):void

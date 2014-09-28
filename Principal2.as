@@ -170,11 +170,8 @@
 
 		public function Principal2()
 		{
-			
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			init();
-			
-			
 		}
 		
 		/*public function remover(){
@@ -235,6 +232,7 @@
 			Pedido_Comunidad_MC.visible = false;
 			Placa_financiera.candado.visible = true;
 			Loser.visible = false
+			Win.visible = false;
 			//Asesora_start.visible = false;
 
 			//pantallas
@@ -366,6 +364,8 @@
 				Texto.text = "dinero bajo";
 			}
 			
+			
+			
 			//Pagar cuota
 			
 			if (Time.Semana_var == Time.Pagar_Primera_Cuota && Time.Hora_Dia_var == 1 && pago_cuota == false){
@@ -450,10 +450,16 @@
 			if (Time.Dia_var == Time.Fin_de_Juego){
 				Time.Terminar();
 				Dinero_var = 0;
-				Loser.visible = true;
+				
+				Win.visible = true;
 				//var perdedor:Lose= new Lose();
 				//addChild(perdedor);
 				//(root.loaderInfo.loader.root as Object).descargar();
+			}
+			
+			// Fracaso!!
+			if (Dinero_var <= 0){
+				Loser.visible = true;
 			}
 			
 			
@@ -1464,8 +1470,10 @@
 		
 		 function DeNuevo(event:MouseEvent):void
 		 {
+			Asesora_start.gotoAndPlay(1);
 			Asesora_start.visible = true;
 			Loser.visible = false;
+			(root.loaderInfo.loader.root as Object).descargar_volver();
 		}
 
 
