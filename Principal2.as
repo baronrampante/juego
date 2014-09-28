@@ -234,6 +234,7 @@
 			Ayuda_MC.visible = false;
 			Pedido_Comunidad_MC.visible = false;
 			Placa_financiera.candado.visible = true;
+			Loser.visible = false
 			//Asesora_start.visible = false;
 
 			//pantallas
@@ -290,6 +291,9 @@
 			Placa_ir_Barraca.No.addEventListener(MouseEvent.MOUSE_DOWN, Placa_ir_Barraca_Cerrar);
 			Asesora_MC2.Close.addEventListener(MouseEvent.MOUSE_DOWN, Asesora_MC2_Cerrar);
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
+			
+			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
+			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
 			
 			//Botones Cerrar pantallas;
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
@@ -417,7 +421,6 @@
 				Ya_jugo = true;
 			}
 			
-			
 						
 			//Malo;
 			if (Cliente_Stage == false && Time.Semana_var == 4)
@@ -446,10 +449,11 @@
 			// Final
 			if (Time.Dia_var == Time.Fin_de_Juego){
 				Time.Terminar();
-				
-				var perdedor:Lose= new Lose();
-				addChild(perdedor);
-				(root.loaderInfo.loader.root as Object).descargar();
+				Dinero_var = 0;
+				Loser.visible = true;
+				//var perdedor:Lose= new Lose();
+				//addChild(perdedor);
+				//(root.loaderInfo.loader.root as Object).descargar();
 			}
 			
 			
@@ -1448,6 +1452,20 @@
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
 			Placa_Clientes.gotoAndStop(1);
+		}
+
+
+		 function MeVoy(event:MouseEvent):void
+		 {
+			(root.loaderInfo.loader.root as Object).descargar();
+			Loser.visible = false;
+		}
+		
+		
+		 function DeNuevo(event:MouseEvent):void
+		 {
+			Asesora_start.visible = true;
+			Loser.visible = false;
 		}
 
 
