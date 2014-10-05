@@ -170,7 +170,7 @@
 
 		public function Principal2()
 		{
-			this.addEventListener(Event.ENTER_FRAME, Botones);
+			//this.addEventListener(Event.ENTER_FRAME, Botones);
 			init();
 		}
 		
@@ -256,6 +256,8 @@
 		private function enterFrameHandler(event:Event):void
 		{
 			No_cumpliste();
+			this.addEventListener(Event.ENTER_FRAME, Botones);
+			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
 		}
 		
 		function fnCharacter():void{
@@ -275,7 +277,34 @@
 		}
 		}
 		
-		
+		public function Botones_Barra(event:MouseEvent):void{
+			
+			switch (event.target.name)
+			{
+				case ("Siguiente") :
+				Barra_Otra_Pag();
+				break;
+				case ("Cafetera_Chica") :
+				Comprar_Cafetera_Chica();
+				break;
+				case ("Sierra_Pie") :
+				Comprar_Sierra_Pie();
+				break;
+				case ("Caladora_Mano") :
+				Comprar_Caladora();
+				break;
+				case ("Mesa_Combinada") :
+				Comprar_Mesa_Combinada();
+				break;
+				case ("Lata_Pintura") :
+				Comprar_Pintura();
+				break;
+				case ("Taladro_Pie") :
+				Comprar_Taladro_Pie();
+				break;
+			}
+			
+		}
 
 		public function Botones(evt:Event):void
 		{
@@ -292,6 +321,10 @@
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
+			
+			
+			
+			
 			
 			//Botones Cerrar pantallas;
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
@@ -1545,77 +1578,77 @@
 		public function En_Barraca():void
 		{
 			Lista_Trabajos.visible = false;
-			Barra.visible = true;
-			
-			if (Tala_pie_var == 0){
-				Barra.Taladro_Pie.addEventListener(MouseEvent.MOUSE_DOWN, Comprar_Taladro_Pie);
-			}
-			if (Cala_little_var == 0){
-				Barra.Caladora_Mano.addEventListener(MouseEvent.MOUSE_DOWN, Comprar_Caladora);
-			}
-			if (Pintura_var == 0){
-				Barra.Lata_Pintura.addEventListener(MouseEvent.MOUSE_DOWN, Comprar_Pintura);
-			}
-			if (Cafe_var == 0){
-				Barra.Cafetera_Chica.addEventListener(MouseEvent.MOUSE_DOWN, Comprar_Cafetera_Chica);
-			}
-			if (Combi_var == 0){Barra.Mesa_Combinada.addEventListener(MouseEvent.MOUSE_DOWN, Comprar_Mesa_Combinada);
-			}
-			if (Sierra_pie_var == 0){
-				Barra.Sierra_Pie.addEventListener(MouseEvent.MOUSE_DOWN, Comprar_Sierra_Pie);
-			}
+			Barra.visible = true;	
 		}
 
-		public function Comprar_Caladora(event:MouseEvent):void
+		public function Barra_Otra_Pag():void
 		{
-			cala_little.visible = true;
+			Barra.gotoAndStop(2);
+		}
+		
+		
+		public function Comprar_Caladora():void
+		{
+			
 			Barra.Caladora_Mano.gotoAndStop(2);
+			if (Cala_little_var == 0){
 			Dinero_var = Dinero_var - Caladora_precio;
+			}
 			Barra.visible = false;
 			Cala_little_var = 1;
 		}
 
-		public function Comprar_Sierra_Pie(event:MouseEvent):void
+		public function Comprar_Sierra_Pie():void
 		{
-			Caladora_de_Pie.visible = true;
+			
 			Barra.Sierra_Pie.gotoAndStop(2);
+			if (Sierra_pie_var == 0){
 			Dinero_var = Dinero_var - Caladora_Pie_precio;
+			}
 			Barra.visible = false;
 			Sierra_pie_var = 1;
 		}
 
-		public function Comprar_Pintura(event:MouseEvent):void
+		public function Comprar_Pintura():void
 		{
-			Lata_Pintura_MC.visible = true;
+			
 			Barra.Lata_Pintura.gotoAndStop(2);
+			if (Pintura_var == 0){
 			Dinero_var = Dinero_var - Pinturas_precio;
+			}
 			Barra.visible = false;
 			Pintura_var = 1;
 		}
 
-		public function Comprar_Cafetera_Chica(event:MouseEvent):void
+		public function Comprar_Cafetera_Chica():void
 		{
-			Cafetera_Chica.visible = true;
+			
 			Barra.Cafetera_Chica.gotoAndStop(2);
+			if (Cafe_var == 0){
 			Dinero_var = Dinero_var - Cafetera_precio;
+			}
 			Barra.visible = false;
 			Cafe_var = 1;
 		}
 
-		public function Comprar_Mesa_Combinada(event:MouseEvent):void
+		public function Comprar_Mesa_Combinada():void
 		{
-			Combinada_MC.visible = true;
+			
 			Barra.Mesa_Combinada.gotoAndStop(2);
+			if (Combi_var == 0){
 			Dinero_var = Dinero_var - Mesa_Combinada_precio;
+			}
 			Barra.visible = false;
 			Combi_var = 1;
 		}
 
-		public function Comprar_Taladro_Pie(event:MouseEvent):void
+		public function Comprar_Taladro_Pie():void
 		{
-			cala_big.visible = true;
+			
 			Barra.Taladro_Pie.gotoAndStop(2);
+			if (Tala_pie_var == 0){
 			Dinero_var = Dinero_var - Taladro_Pie_precio;
+			}
 			Barra.visible = false;
 			Tala_pie_var = 1;
 		}

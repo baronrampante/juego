@@ -57,7 +57,7 @@
 			cargador = new Loader() as Loader;
 			cargador2 = new Loader() as Loader;
 			//asignamos la direccion del archivo que se va a cargar
-			req = new URLRequest("micro1.swf");
+			req = new URLRequest("verduleria_final.swf");
 			req2 = new URLRequest("mini_ropa.swf");
 			Personaje2 = Fondo_Nacho;
 			Cabeza_actual = Nacho;
