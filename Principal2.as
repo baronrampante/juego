@@ -281,8 +281,14 @@
 			
 			switch (event.target.name)
 			{
-				case ("Siguiente") :
+				case ("adelante") :
 				Barra_Otra_Pag();
+				break;
+				case ("atras") :
+				Barra_Otra_Pag_Atras();
+				break;
+				case ("cerrar") :
+				Barra_Cerrar();
 				break;
 				case ("Cafetera_Chica") :
 				Comprar_Cafetera_Chica();
@@ -1585,12 +1591,20 @@
 		{
 			Barra.gotoAndStop(2);
 		}
+		public function Barra_Otra_Pag_Atras():void
+		{
+			Barra.gotoAndStop(1);
+		}
 		
+		public function Barra_Cerrar():void
+		{
+			Barra.visible = false;
+		}
 		
 		public function Comprar_Caladora():void
 		{
-			
-			Barra.Caladora_Mano.gotoAndStop(2);
+			cala_little.visible = true;
+			Barra.Caladora_Manox.gotoAndStop(2);
 			if (Cala_little_var == 0){
 			Dinero_var = Dinero_var - Caladora_precio;
 			}
@@ -1600,8 +1614,8 @@
 
 		public function Comprar_Sierra_Pie():void
 		{
-			
-			Barra.Sierra_Pie.gotoAndStop(2);
+			Caladora_de_Pie.visible = true;
+			Barra.Sierra_Piex.gotoAndStop(2);
 			if (Sierra_pie_var == 0){
 			Dinero_var = Dinero_var - Caladora_Pie_precio;
 			}
@@ -1611,8 +1625,8 @@
 
 		public function Comprar_Pintura():void
 		{
-			
-			Barra.Lata_Pintura.gotoAndStop(2);
+			Lata_Pintura_MC.visible = true;
+			Barra.Lata_Pinturax.gotoAndStop(2);
 			if (Pintura_var == 0){
 			Dinero_var = Dinero_var - Pinturas_precio;
 			}
@@ -1622,8 +1636,9 @@
 
 		public function Comprar_Cafetera_Chica():void
 		{
+			Cafetera_Chica.visible = true;
+			Barra.Cafetera_Chicax.gotoAndStop(2);
 			
-			Barra.Cafetera_Chica.gotoAndStop(2);
 			if (Cafe_var == 0){
 			Dinero_var = Dinero_var - Cafetera_precio;
 			}
@@ -1633,8 +1648,8 @@
 
 		public function Comprar_Mesa_Combinada():void
 		{
-			
-			Barra.Mesa_Combinada.gotoAndStop(2);
+			Combinada_MC.visible = true;
+			Barra.Mesa_Combinadax.gotoAndStop(2);
 			if (Combi_var == 0){
 			Dinero_var = Dinero_var - Mesa_Combinada_precio;
 			}
@@ -1644,8 +1659,8 @@
 
 		public function Comprar_Taladro_Pie():void
 		{
-			
-			Barra.Taladro_Pie.gotoAndStop(2);
+			cala_big.visible = true;
+			Barra.Taladro_Piex.gotoAndStop(2);
 			if (Tala_pie_var == 0){
 			Dinero_var = Dinero_var - Taladro_Pie_precio;
 			}
