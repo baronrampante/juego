@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 200; //prueba
+		var numero = 40; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -599,7 +599,7 @@
 		
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
-			Texto.text = "hayyy";
+			//Texto.text = "hayyy";
 			for(var i:int=0; i<6; i++) {
 				if (Trabajos[(i*multiplicador)+7] < 30 )
 				{
@@ -1584,16 +1584,39 @@
 		public function En_Barraca():void
 		{
 			Lista_Trabajos.visible = false;
+			
 			Barra.visible = true;	
+			
+				
+			
 		}
 
 		public function Barra_Otra_Pag():void
 		{
 			Barra.gotoAndStop(2);
+			if (Pintura_var == 1){
+				Barra.Lata_Pinturax.gotoAndStop(2);
+			}
+			if (Combi_var == 1){
+				Barra.Mesa_Combinadax.gotoAndStop(2);
+			}
+			if (Tala_pie_var == 1){
+				Barra.Taladro_Piex.gotoAndStop(2);
+			}
+			
 		}
 		public function Barra_Otra_Pag_Atras():void
 		{
 			Barra.gotoAndStop(1);
+			if (Cala_little_var == 1){
+				Barra.Caladora_Manox.gotoAndStop(2);
+			}
+			if (Sierra_pie_var == 1){
+				Barra.Sierra_Piex.gotoAndStop(2);
+			}
+			if (Cafe_var == 1){
+				Barra.Cafetera_Chicax.gotoAndStop(2);
+			}
 		}
 		
 		public function Barra_Cerrar():void
@@ -1608,7 +1631,7 @@
 			if (Cala_little_var == 0){
 			Dinero_var = Dinero_var - Caladora_precio;
 			}
-			Barra.visible = false;
+			
 			Cala_little_var = 1;
 		}
 
@@ -1619,7 +1642,7 @@
 			if (Sierra_pie_var == 0){
 			Dinero_var = Dinero_var - Caladora_Pie_precio;
 			}
-			Barra.visible = false;
+			
 			Sierra_pie_var = 1;
 		}
 
@@ -1630,7 +1653,7 @@
 			if (Pintura_var == 0){
 			Dinero_var = Dinero_var - Pinturas_precio;
 			}
-			Barra.visible = false;
+			
 			Pintura_var = 1;
 		}
 
@@ -1642,7 +1665,7 @@
 			if (Cafe_var == 0){
 			Dinero_var = Dinero_var - Cafetera_precio;
 			}
-			Barra.visible = false;
+			
 			Cafe_var = 1;
 		}
 
@@ -1653,7 +1676,7 @@
 			if (Combi_var == 0){
 			Dinero_var = Dinero_var - Mesa_Combinada_precio;
 			}
-			Barra.visible = false;
+			
 			Combi_var = 1;
 		}
 
@@ -1664,7 +1687,7 @@
 			if (Tala_pie_var == 0){
 			Dinero_var = Dinero_var - Taladro_Pie_precio;
 			}
-			Barra.visible = false;
+			
 			Tala_pie_var = 1;
 		}
 	}
