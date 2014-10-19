@@ -193,7 +193,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("mini_ropa");
+			peli = new URLRequest("carpinteria1.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -342,6 +342,7 @@
 			Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
 			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
+			//pelicula.Close.addEventListener(MouseEvent.MOUSE_DOWN,CerrarJuego1);
 			
 			if (pelicula.termino == true){
 				removeChild(cargador);
@@ -445,7 +446,7 @@
 			//Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
-				peli2 = new URLRequest("cortar_tronco_final2.swf");
+				peli2 = new URLRequest("recoleccion_final.swf");
 				var cargarSWF:Loader = new Loader();
 				cargarSWF.load(peli2);
 				this.addChild(cargarSWF);
@@ -814,6 +815,10 @@
          //load_btn.addEventListener(MouseEvent.CLICK, llamarfuncionpeli);
          //load_btn.text_btn.text = "mover";
       }
+	  
+	  public function CerrarJuego1(){
+		  removeChild(cargador);
+	  }
 
 		function fnPlaca_Financiera_Cerrar(event:MouseEvent):void
 		{
