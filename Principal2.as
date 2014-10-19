@@ -553,11 +553,11 @@
 			}
 
 
-			Lista_Trabajos.Trabajo1.text = String(Trabajos[6] + " en espera");
-			Lista_Trabajos.Trabajo2.text = String(Trabajos[6 + (1*multiplicador)] + " en espera");
-			Lista_Trabajos.Trabajo3.text = String(Trabajos[6 + (2*multiplicador)] + " en espera");
-			Lista_Trabajos.Trabajo4.text = String(Trabajos[6 + (3*multiplicador)] + " en espera");
-			Lista_Trabajos.Trabajo5.text = String(Trabajos[6 + (1*multiplicador)] + " en espera");
+			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(Trabajos[7]) + " hs.";
+			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (1*multiplicador)]) + "hs.";
+			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (2*multiplicador)]) + "hs.";
+			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (3*multiplicador)]) + "hs.";
+			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (4*multiplicador)]) + "hs.";
 			
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
@@ -626,7 +626,7 @@
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
 			//Texto.text = "hayyy";
 			for(var i:int=0; i<6; i++) {
-				if (Trabajos[(i*multiplicador)+7] < 30 )
+				if (Trabajos[(i*multiplicador)+7] < 1 )
 				{
 				Texto.text = "me cagaste";
 				//Placa_no_cumpliste();
