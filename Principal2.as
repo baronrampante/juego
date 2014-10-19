@@ -194,6 +194,7 @@
 			cargador = new Loader() as Loader;
 			//carga peli externa
 			peli = new URLRequest("carpinteria1.swf");
+			peli2 = new URLRequest("mini_ropa.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -342,10 +343,13 @@
 			Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
 			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
-			//pelicula.Close.addEventListener(MouseEvent.MOUSE_DOWN,CerrarJuego1);
+			
+			
+			// ver si juego termino
 			
 			if (pelicula.termino == true){
 				removeChild(cargador);
+				cargador.unloadAndStop();
 				Time.Empezar(true);
 			}
 			
@@ -443,7 +447,7 @@
 				Texto.text = "comunidad baja";
 			}
 			
-			//Segundo Juego
+			/*Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				peli2 = new URLRequest("recoleccion_final.swf");
@@ -452,7 +456,7 @@
 				this.addChild(cargarSWF);
 				Ya_jugo_2 = true;
 				Construccion= true;
-				}
+				}*/
 			
 			//Primer Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Primer_Juego && Ya_jugo == false)
@@ -461,6 +465,16 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo = true;
+			}
+			
+			//Primer Juego
+			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
+			{
+				//Cliente_MC.Velocidad_var = Velocidad_var;
+				peli = peli2;
+				Cargar();
+				Time.Pausar();
+				Ya_jugo_2 = true;
 			}
 			
 						
