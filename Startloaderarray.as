@@ -84,10 +84,10 @@
 		public function cargar():void
 		{
 			//cargamos el archivo
-			Fondo_Lety = null;
-			Fondo_Nacho = null;
-			Fondo_Ivan = null;
-			Fondo_Avril = null;
+			//Fondo_Lety = null;
+			//Fondo_Nacho = null;
+			//Fondo_Ivan = null;
+			//Fondo_Avril = null;
 			cargador.load(req);
 			SoundMixer.stopAll();
 			//agregamos un listener que espere a que la carga este completa, si esta completa llamara la funcion "fincarga";
@@ -134,6 +134,9 @@
 			cargador.unloadAndStop();
 			cargador.removeChildAt(19);
 			cargador = null;
+			Jugar_BT.visible = visible;
+			Placa_Start.visible = visible;
+						
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
 		}
