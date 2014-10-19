@@ -30,6 +30,8 @@
 		public var Segundo_Juego = 40;// días para segundo juego
 		public var Primer_Juego = 25;//días para primer juego
 		
+		public var Malo_ = 2;
+		
 		public var Fin_de_Juego = 12;
 
 		public function Temporizador()

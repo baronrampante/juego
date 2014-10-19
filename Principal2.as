@@ -132,7 +132,9 @@
 		var Cliente_borrar = 0;
 		public var Character_var = 9;
 		var Character_yes = false;
-		
+		var Malo = false;
+		var myMalo = new Malefico_todo();
+		var Malo_var = false;
 
 		//Materiales
 		var Alfajias_var_Numb = 0;
@@ -462,9 +464,25 @@
 			
 						
 			//Malo;
-			if (Cliente_Stage == false && Time.Semana_var == 4)
+			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
 			{
 				Placa_Malo_MC.visible = true;
+				Malo_var = true;
+				fnMalo();
+				
+			}
+			
+			function fnMalo()
+			{
+				
+				
+				if (Malo == false){
+				addChildAt(myMalo, 10);
+				myMalo.x = 300;
+				myMalo.y = 300;
+				myMalo.gotoAndStop("Stand");
+				Malo = true;
+				}
 			}
 			
 			//Consejos Asesora
@@ -526,7 +544,7 @@
 
 			//Trabajos = Lista_Trab.Trabajo;//Recibe el listado de los clientes armado en la otra clase
 
-			if (Lista_Trab.Nuevo_Cliente == 1 && Cliente_Stage == false && Time.Dale == true && Placa_Clientes.visible == false)
+			if (Lista_Trab.Nuevo_Cliente == 1 && Cliente_Stage == false && Time.Dale == true && Placa_Clientes.visible == false && Placa_Malo_MC.visible == false)
 			{
 				// Recibe el nombre del cliente;
 				Hola_Cliente();
@@ -899,6 +917,7 @@
 					Dinero_var = Dinero_var - 500;
 					Alfajias_Stock = Alfajias_Stock + 2;
 					Tablones_Stock = Tablones_Stock + 2;
+					myMalo.gotoAndStop("Salida");
 					break;
 				case "Aceptar_Final" :
 					Placa_Malo_MC.visible = false;
@@ -906,6 +925,7 @@
 					Dinero_var = Dinero_var - 300;
 					Alfajias_Stock = Alfajias_Stock + 2;
 					Tablones_Stock = Tablones_Stock + 2;
+					myMalo.gotoAndStop("Salida");
 					break;
 			}
 		}
