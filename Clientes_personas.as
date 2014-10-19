@@ -12,6 +12,8 @@
 		public var cliente_stage = true;
 		public var Irse = false;
 		
+		
+		
 
 
 		public function Clientes_personas()
@@ -19,6 +21,7 @@
 			// constructor code
 			
 			addEventListener(Event.ENTER_FRAME, mover);
+			
 		}
 
 
@@ -27,10 +30,12 @@
 			if (_timer.currentCount == 15)
 			{
 				Irse = true;
+				MovieClip(this.parent).BajarComunidad();
 				this.globito.gotoAndPlay("mal");
 				this.gotoAndPlay("espalda");
 				_timer.stop();
 				_timer.reset();
+				
 				
 				irse();
 			}
@@ -54,6 +59,7 @@
 
 		public function irse():void
 		{
+			
 			Irse = true;
 			_timer.stop();
 			_timer.reset();

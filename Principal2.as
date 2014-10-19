@@ -472,6 +472,8 @@
 				
 			}
 			
+			
+			
 			function fnMalo()
 			{
 				
@@ -593,6 +595,11 @@
 				Cliente_Stage = false;
 			}
 		}*/
+		
+		public function BajarComunidad():void
+			{
+				Comunidad_var = Comunidad_var-20;
+			}
 		
 		function Trabajos_No_Entregados():void{
 			
@@ -1390,7 +1397,7 @@
 			Placa_Clientes.Cliente_TXT.text = Client[texto][0];//[]convierte un string en el nombre de una variable
 		}
 	
-			function Mover_cliente():void
+		function Mover_cliente():void
 			{
 			Cliente_MC.Velocidad_var = Velocidad_var;
 			addChildAt(Cliente_MC,12);
