@@ -14,7 +14,7 @@
 		public var Mes_var = 1;
 		public var Hora_var = 0;
 		public var Hora_Dia_var = 0;// se incrementa cada hora
-		public var Horas_para_Dia = 20;// variable que determina el día
+		public var Horas_para_Dia = 80;// variable que determina el día
 		public var Dias_para_Semana = 5;// variable que determina duracion semana
 		public var Dia_Semana = 0;// variable que cuenta los dias para llegar a a la semana
 		var Lista_Trab:Lista_Trabaj = new Lista_Trabaj();
@@ -27,8 +27,8 @@
 		public var Pedido_Comunidad_1 = 9;// pedido comunidad en días
 		public var Segundo_Pedido_Comunidad = 15;// segundo pedido de la comunidad
 
-		public var Segundo_Juego = 4;// días para segundo juego
-		public var Primer_Juego = 2;//días para primer juego
+		public var Segundo_Juego = 14;// días para segundo juego
+		public var Primer_Juego = 8;//días para primer juego
 		
 		public var Malo_ = 2;
 		

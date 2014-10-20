@@ -9,8 +9,8 @@
 		
 		public function Character() {
 			// constructor code
-			this.x =  900;
-		this.y = 150;
+			this.x =  917;
+			this.y = 275;
 			addEventListener(Event.ENTER_FRAME, Mover);
 			
 		
@@ -19,9 +19,10 @@
 		function Mover(e:Event):void
 		{
 			// constructor code
+			//gotoAndPlay("Adelante");
 			this.x -=  Velocidad_var;
 			this.y +=  Velocidad_var;
-			if (this.y == 250){
+			if (this.y == 515){
 				gotoAndStop("Quieto");
 				Velocidad_var = 0;
 			}

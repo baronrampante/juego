@@ -89,6 +89,7 @@
 		private var _tiempo_para_jugar:uint = 50;// definir el tiempo total aca
 		var Time:Temporizador = new Temporizador  ;
 		var Pausado=false;
+		var Div_horas = 10;
 
 		//Variables generales
 		public var Comunidad_var = 600;
@@ -193,7 +194,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("carpinteria1.swf");
+			peli = new URLRequest("recoleccion_final.swf");
 			peli2 = new URLRequest("mini_ropa.swf");
 			
 			//restringir valores campo numérico
@@ -345,7 +346,7 @@
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
 			
 			
-			// ver si juego termino
+			//******** ver si juego termino **********
 			
 			if (pelicula.termino == true){
 				removeChild(cargador);
@@ -367,7 +368,8 @@
 		}
 		
 		
-		//Pagar gastos mensuales
+		//*********** Pagar gastos mensuales ***********
+		
 		public function fnPlaca_Financiera_pagar(event:MouseEvent):void
 		{
 			if (Placa_financiera.candado.visible == false && pago_cuota_mes2 == false){
@@ -467,7 +469,7 @@
 				Ya_jugo = true;
 			}
 			
-			//Primer Juego
+			//Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
@@ -520,7 +522,8 @@
 				Time.Pausar();
 			}
 			
-			// Final
+			// ************** Final ******************
+			
 			if (Time.Dia_var == Time.Fin_de_Juego){
 				Time.Terminar();
 				Dinero_var = 0;
@@ -542,7 +545,7 @@
 			Tablones.text = String(Tablones_Stock);
 			Alfajias.text = String(Alfajias_Stock);
 			Hora_var = Time.Hora_var;
-			Horas.text = String(Time.Hora_var) + "  horas";
+			Horas.text = String(int(Time.Hora_var/10)) + "  horas";
 			Dia.text = String(Time.Dia_var);
 			Semana.text = String(Time.Semana_var);
 			Dinero.text = String(Dinero_var);
@@ -568,11 +571,11 @@
 			}
 
 
-			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(Trabajos[7]) + " hs.";
-			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (1*multiplicador)]) + "hs.";
-			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (2*multiplicador)]) + "hs.";
-			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (3*multiplicador)]) + "hs.";
-			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(Trabajos[7 + (4*multiplicador)]) + "hs.";
+			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int(Trabajos[7]/Div_horas)) + " hs.";
+			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (1*multiplicador)]/Div_horas)) + "hs.";
+			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (2*multiplicador)]/Div_horas)) + "hs.";
+			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (3*multiplicador)]/Div_horas)) + "hs.";
+			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (4*multiplicador)]/Div_horas)) + "hs.";
 			
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
@@ -600,16 +603,7 @@
 		}
 
 
-		/*function Cliente_out():void
-		{
-			if (Cliente_var.x <= 110)
-			{
-				Cliente_var.visible = false;
-				Cliente_var.gotoAndPlay("frente");
-				Cliente_var.globito.gotoAndPlay("normal");
-				Cliente_Stage = false;
-			}
-		}*/
+		
 		
 		public function BajarComunidad():void
 			{
