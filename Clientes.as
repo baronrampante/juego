@@ -20,11 +20,11 @@
 		
 		
 		
-		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar para la semana que viene","hhhhh");
+		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","hhhhh");
 		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","hhhhh");
-		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Podría arreglarlo?","hhhhh");
-		public var TextosCama:Array = new Array("Che","hhhhh");
-		public var TextosMesa_Luz:Array = new Array("Que", "hhhhh");
+		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","hhhhh");
+		public var TextosCama:Array = new Array("Hola, ayer se me rompió la parrilla de la cama","Hola, el respaldo de la cama se me rompió, ¿es posible arreglarlo?");
+		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se ,e partió una pata de la mesa de luz. ¿Podrá arreglarlo?");
 		
 		public var TextosAsesora:Array = new Array("El oficio del carpintero es el trabajo con la madera, ya sea en la construcción &#40;andamios, ventanas, puertas, etc&#41; o en la manufactura de mobiliario &#40;mesas, sillas, armarios" , 
 		"El trabajo de la madera es una de las actividades de la industria humana más antiguas que existen, por lo cual en cada cultura y regiones encontraremos diferentes maneras y herramientas para trabajar este material",
