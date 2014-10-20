@@ -68,7 +68,7 @@
 			Trabajo[6] =(Client.Cliente[rand_cliente]);
 			//trace("Trabajo   " + Trabajo);
 			Nuevo_Cliente = 1;
-			ciclo = ciclo + 8;
+			ciclo = ciclo + 16;
 		}
 
 		private function randRange(minNum:Number, maxNum:Number):Number

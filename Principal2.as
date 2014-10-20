@@ -646,7 +646,7 @@
 				if (Trabajos[(i*multiplicador)+7] < 3 )
 				{
 				Texto.text = "me cagaste";
-				
+				if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
 				Placa_Clientes.visible = true;
 				Placa_Clientes.gotoAndStop(6);
@@ -673,6 +673,7 @@
 							break;
 								}
 				//Trabajos.splice([i*multiplicador], 6);
+							}
 							}
 						}
 					}
@@ -1056,11 +1057,6 @@
 					Lista_Trabajos.Datos_Tiempo.text = "";
 					Lista_Trabajos.Datos_Precio.text = "";
 					Buscar = Nombre[1];
-					// Placa Clente buscar
-					
-					Dinero_caida.gotoAndPlay(2);
-					Placa_Clientes.visible = true;
-					Placa_Clientes.gotoAndStop(5);
 					Lista_Trabajos.Taburete_Roto.visible = false;
 					Lista_Trabajos.Silla_Roto.visible = false;
 					Lista_Trabajos.Mesa_Roto.visible = false;
@@ -1073,6 +1069,13 @@
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
+					// Placa Clente buscar
+					
+					Dinero_caida.gotoAndPlay(2);
+					
+					Placa_Clientes.visible = true;
+					Placa_Clientes.gotoAndStop(5);
+					
 					
 					switch(client){
 					case "Julio":
