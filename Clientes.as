@@ -5,11 +5,11 @@
 	{
 
 		public var Cliente:Array = new Array("Martín","Julio","Andrea","Olga","Lucía","Gustavo");
-		public var Banco:Array = new Array(300,4,0.25,0.5, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
-		public var Silla:Array = new Array(300,4,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
-		public var Mesa:Array = new Array(1900,10,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
-		public var Cama:Array = new Array(3000,10,1,1, 10, "Cama");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
-		public var Mesa_Luz:Array = new Array(1000,10,1,0.25, 10, "Mesa_Luz");// precio, tiempo de arreglo, alfajías, tablones
+		public var Banco:Array = new Array(300,40,0.25,0.5, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
+		public var Silla:Array = new Array(300,60,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
+		public var Mesa:Array = new Array(1900,30,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
+		public var Cama:Array = new Array(3000,35,1,1, 10, "Cama");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
+		public var Mesa_Luz:Array = new Array(1000,100,1,0.25, 10, "Mesa_Luz");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso1:Array = new Array(3000,4,0.25,0.5, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
 		public var Coso2:Array = new Array(300,4,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso3:Array = new Array(1900,10,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones

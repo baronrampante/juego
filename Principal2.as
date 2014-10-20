@@ -469,7 +469,7 @@
 				Ya_jugo = true;
 			}
 			
-			//Segundo Juego
+			//SEgundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
@@ -545,7 +545,7 @@
 			Tablones.text = String(Tablones_Stock);
 			Alfajias.text = String(Alfajias_Stock);
 			Hora_var = Time.Hora_var;
-			Horas.text = String(int(Time.Hora_var/10)) + "  horas";
+			Horas.text = String(int(Time.Hora_var/Div_horas)) + "  horas";
 			Dia.text = String(Time.Dia_var);
 			Semana.text = String(Time.Semana_var);
 			Dinero.text = String(Dinero_var);
@@ -571,12 +571,11 @@
 			}
 
 
-			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int(Trabajos[7]/Div_horas)) + " hs.";
-			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (1*multiplicador)]/Div_horas)) + "hs.";
-			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (2*multiplicador)]/Div_horas)) + "hs.";
-			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (3*multiplicador)]/Div_horas)) + "hs.";
-			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (4*multiplicador)]/Div_horas)) + "hs.";
-			
+			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int(Trabajos[7]/Div_horas)+1) + " hs.";
+			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (1*multiplicador)]/Div_horas)+1) + "hs.";
+			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (2*multiplicador)]/Div_horas)+1) + "hs.";
+			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (3*multiplicador)]/Div_horas)+1) + "hs.";
+			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (4*multiplicador)]/Div_horas)+1) + "hs.";
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
 
@@ -603,7 +602,16 @@
 		}
 
 
-		
+		/*function Cliente_out():void
+		{
+			if (Cliente_var.x <= 110)
+			{
+				Cliente_var.visible = false;
+				Cliente_var.gotoAndPlay("frente");
+				Cliente_var.globito.gotoAndPlay("normal");
+				Cliente_Stage = false;
+			}
+		}*/
 		
 		public function BajarComunidad():void
 			{
@@ -635,9 +643,10 @@
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
 			//Texto.text = "hayyy";
 			for(var i:int=0; i<6; i++) {
-				if (Trabajos[(i*multiplicador)+7] < 1 )
+				if (Trabajos[(i*multiplicador)+7] < 3 )
 				{
 				Texto.text = "me cagaste";
+				
 				//Placa_no_cumpliste();
 				Placa_Clientes.visible = true;
 				Placa_Clientes.gotoAndStop(6);
@@ -1401,10 +1410,10 @@
 
 		function fnTexto_Pedido():void
 		{
-			Placa_Clientes.Precio_TXT.text = "Precio  " + Lista_Trab.Trabajo[0];
-			Placa_Clientes.Alfajias_TXT.text = Lista_Trab.Trabajo[1];
-			Placa_Clientes.Tablones_TXT.text = Lista_Trab.Trabajo[2];
-			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[3];
+			Placa_Clientes.Precio_TXT.text = Lista_Trab.Trabajo[0];
+			Placa_Clientes.Alfajias_TXT.text = "Alfajías " + Lista_Trab.Trabajo[2];
+			Placa_Clientes.Tablones_TXT.text = "Tablones " + Lista_Trab.Trabajo[3];
+			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[1];
 			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
 			trace(texto);
 			Placa_Clientes.Cliente_TXT.text = Client[texto][0];//[]convierte un string en el nombre de una variable
@@ -1473,6 +1482,7 @@
 					Cerrar_Placa_Clientes();
 					break;
 				case "Chau3" :
+				Comunidad_var = Comunidad_var - 30;
 					Cerrar_Placa_Clientes();
 					Borrar_Cliente();
 					break;
