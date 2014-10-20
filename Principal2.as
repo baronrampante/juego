@@ -247,6 +247,7 @@
 			Placa_financiera.visible = false;
 			Barrio.visible = false;
 			Placa_Malo_MC.visible = false;
+			Gracias.visible=false;
 
 			// herramientas
 			cala_big.visible = false;
@@ -331,6 +332,7 @@
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
+			Gracias.addEventListener(MouseEvent.MOUSE_DOWN, fnGracias);
 			
 			
 			
@@ -1073,35 +1075,43 @@
 					
 					Dinero_caida.gotoAndPlay(2);
 					
-					Placa_Clientes.visible = true;
-					Placa_Clientes.gotoAndStop(5);
-					
+					//Placa_Clientes.visible = true;
+					//Placa_Clientes.gotoAndStop(5);
+					Gracias.visible = true;
+					Gracias.Punk_MC.visible = false;
+					Gracias.Vieja_MC.visible = false;
+					Gracias.Viejo_MC.visible = false;
+					Gracias.Nena_MC.visible = false;
+					Gracias.Mormon_MC.visible = false;
 					
 					switch(client){
 					case "Julio":
-						Placa_Clientes.Punk_MC.visible = true;
+						Gracias.Punk_MC.visible = true;
 						break;
 					case "Olga":
-						Placa_Clientes.Vieja_MC.visible = true;
+						Gracias.Vieja_MC.visible = true;
 						break;
-					case "Andrea":
-						Placa_Clientes.Coqueta_MC.visible = true;
-						break;
+					//case "Andrea":
+						//Gracias.Coqueta_MC.visible = true;
+						//break;
 					case "Gustavo":
-						Placa_Clientes.Viejo_MC.visible = true;
+						Gracias.Viejo_MC.visible = true;
 						break;
 					case "Lucía":
-						Placa_Clientes.Nena_MC.visible = true;
+						Gracias.Nena_MC.visible = true;
 						break;
 					case "Martín":
-						Placa_Clientes.Mormon_MC.visible = true;
+						Gracias.Mormon_MC.visible = true;
 						break;
 					}
 					
 					//Buscar_flag= false;
 				}
 
-
+		function fnGracias(event:MouseEvent):void
+		{
+			Gracias.visible = false;
+		}
 
 		public function fnBotonesTrabajos(event:MouseEvent):void
 		{
