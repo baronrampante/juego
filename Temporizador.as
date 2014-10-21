@@ -21,6 +21,8 @@
 		public var Dale = true;
 		public var Temp = 0;
 		public var Pausado = false;
+		
+		public var Horas = 0; // horas para el reloj interfaz
 
 		public var Pagar_Primera_Cuota = 5;// en semanas
 		public var Pagar_Segunda_Cuota = 9;// en semanas
@@ -85,6 +87,7 @@
 
 			// dia;
 			Hora_Dia_var = Hora_Dia_var + 1;
+			Horas = int(Hora_Dia_var/10);
 			if (Hora_Dia_var == Horas_para_Dia)
 			{
 				Dia_var = Dia_var + 1;

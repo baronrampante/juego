@@ -556,7 +556,7 @@
 			Lista_Trabajos.Datos_Tablones.text = String(Tablones_Stock);
 			Lista_Trabajos.Datos_Alfajias.text = String(Alfajias_Stock);
 			Hora_var = Time.Hora_var;
-			Horas.text = String(int(Time.Hora_var/Div_horas)) + "  horas";
+			Horas.text = String(int(Time.Horas)) + "  horas";
 			Dia.text = String(Time.Dia_var);
 			Semana.text = String(Time.Semana_var);
 			Dinero.text = String(Dinero_var);
