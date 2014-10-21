@@ -327,6 +327,7 @@
 			Placa_ir_Aserradero.No.addEventListener(MouseEvent.MOUSE_DOWN, Placa_ir_Aserradero_Cerrar);
 			Placa_ir_Barraca.Yes.addEventListener(MouseEvent.MOUSE_DOWN, En_Barraca_Placa);
 			Placa_ir_Barraca.No.addEventListener(MouseEvent.MOUSE_DOWN, Placa_ir_Barraca_Cerrar);
+			Lista_Trabajos.Comprar_Madera.addEventListener(MouseEvent.MOUSE_DOWN, En_Madera);
 			Asesora_MC2.Close.addEventListener(MouseEvent.MOUSE_DOWN, Asesora_MC2_Cerrar);
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
 			
@@ -546,11 +547,14 @@
 			
 			
 
-// para ver la cantidad de material existente
+        //************** para ver la cantidad de material existente **************
+		
 			Tablones.text = String(Tablones_Stock);
 			Alfajias.text = String(Alfajias_Stock);
 			Madera_MC.Alf.text = String(Alfajias_Stock)
 			Madera_MC.Tab.text = String(Tablones_Stock);
+			Lista_Trabajos.Datos_Tablones.text = String(Tablones_Stock);
+			Lista_Trabajos.Datos_Alfajias.text = String(Alfajias_Stock);
 			Hora_var = Time.Hora_var;
 			Horas.text = String(int(Time.Hora_var/Div_horas)) + "  horas";
 			Dia.text = String(Time.Dia_var);
@@ -1063,6 +1067,9 @@
 					Lista_Trabajos.Datos_Tablones.text = "";
 					Lista_Trabajos.Datos_Tiempo.text = "";
 					Lista_Trabajos.Datos_Precio.text = "";
+					Lista_Trabajos.Datos_Cliente.text = "";
+					Lista_Trabajos.Datos_Trabajo.text = "";
+					
 					Buscar = Nombre[1];
 					Lista_Trabajos.Taburete_Roto.visible = false;
 					Lista_Trabajos.Silla_Roto.visible = false;
@@ -1259,7 +1266,7 @@
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
-						var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-650,-454,porcentaje,true);
+						var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
 						
 					}
 						else
