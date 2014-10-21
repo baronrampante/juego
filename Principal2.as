@@ -984,44 +984,54 @@
 			if (Trabajos[0*multiplicador] > 1)
 			{
 				Lista_Trabajos.Trabajo1.visible = true;
+				Lista_Trabajos.Linea1.visible = true;
 			}
 			else
 			{
 				Lista_Trabajos.Trabajo1.visible = false;
+				Lista_Trabajos.Linea1.visible = false;
 			}
 
 			if (Trabajos[1*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo2.visible = true;
+				Lista_Trabajos.Linea2.visible = true;
 			}
 			else
 			{
 				Lista_Trabajos.Trabajo2.visible = false;
+				Lista_Trabajos.Linea2.visible = false;
 			}
 
 			if (Trabajos[2*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo3.visible = true;
+				Lista_Trabajos.Linea3.visible = true;
 			}
 			else
 			{
 				Lista_Trabajos.Trabajo3.visible = false;
+				Lista_Trabajos.Linea3.visible = false;
 			}
 			if (Trabajos[3*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo4.visible = true;
+				Lista_Trabajos.Linea4.visible = true;
 			}
 			else
 			{
 				Lista_Trabajos.Trabajo4.visible = false;
+				Lista_Trabajos.Linea4.visible = false;
 			}
 			if (Trabajos[4*multiplicador] > 0)
 			{
 				Lista_Trabajos.Trabajo5.visible = true;
+				Lista_Trabajos.Linea5.visible = true;
 			}
 			else
 			{
 				Lista_Trabajos.Trabajo5.visible = false;
+				Lista_Trabajos.Linea5.visible = false;
 			}
 			
 		}
