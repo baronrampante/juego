@@ -20,9 +20,9 @@
 		
 		
 		
-		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","hhhhh");
-		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","hhhhh");
-		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","hhhhh");
+		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","¡Que tal?, se me rompi{o una pata del banco. ¡Te agradezco si lo pod{es arreglar?");
+		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","¡Que tal?, el respaldo de la silla se me rompió, lo podr{as reparar?" );
+		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","¡Cómo estás, La mesa se me rompío, la estará necesitando medio urgente? ");
 		public var TextosCama:Array = new Array("Hola, ayer se me rompió la parrilla de la cama","Hola, el respaldo de la cama se me rompió, ¿es posible arreglarlo?");
 		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se ,e partió una pata de la mesa de luz. ¿Podrá arreglarlo?");
 		
