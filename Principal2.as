@@ -280,6 +280,16 @@
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
 			break;
+			case 2:
+			myCharacter = new lety_todo();
+			addChildAt(myCharacter, 10);
+			Character_yes = true;
+			break;
+			case 3:
+			myCharacter = new nacho_todo();
+			addChildAt(myCharacter, 10);
+			Character_yes = true;
+			break;
 			}
 		}
 		}
@@ -568,10 +578,15 @@
 			//num = Number( String( num ).split( "." )[ 1 ] );
 			
 			//Puntaje.text = String(num.toFixed(5));
+			
 			var format2:TextFormat = new TextFormat();
+			
 			format2.letterSpacing = 10;
+			format2..align='left';
+			
 			Puntaje.text = String((Puntaje_var/100000).toFixed(5));
 			Puntaje.setTextFormat(format2);
+			
 			
 			Hora_var = Time.Hora_var;
 			Horas.text = String(int(Time.Horas)) + "  horas";

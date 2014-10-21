@@ -199,7 +199,7 @@
 						Cabeza = Nacho;
 						mover();
 						mover_cabeza();
-						Character = 0;
+						Character = 3;
 						break;
 					case "Lety_" :
 						Personaje = Fondo_Lety;
@@ -213,7 +213,7 @@
 						Cabeza = Avril;
 						mover();
 						mover_cabeza();
-						Character = 3;
+						Character = 0;
 						break;
 					case "Adelante_BT" :
 						Tira();
