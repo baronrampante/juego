@@ -2,6 +2,7 @@
 	
 	import flash.display.MovieClip;
 	import flash.events.Event;
+	import Temporizador;
 	
 	
 	public class Character extends MovieClip {

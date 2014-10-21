@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 40; //prueba
+		var numero = 400; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -92,8 +92,9 @@
 		var Div_horas = 10;
 
 		//Variables generales
-		var Puntaje_var = 100000;
-		public var Comunidad_var = 600;
+		var Puntaje_var = 00000;
+		var Puntajej = "00000";
+		public var Comunidad_var = 60;
 		public var Dia_var = 1;
 		public var Semana_var = 1;
 		public var Hora_var = 1;
@@ -103,6 +104,7 @@
 		public var Dia_Semana = 0;// variable que cuenta los dias para llegar a a la semana
 		public var Cuota_Banco = 3000;
 		var Construccion = false;
+		var Comunidad_Aviso = false;
 		
 		// Cargar peli
 		
@@ -373,6 +375,7 @@
 			if (Ya_jugo_2 == true){
 				Lista_Trab.fnHacer(true);
 				Placa_Construir.visible = true;
+				Placa_Construir.Mensaje_TXT.text = "Ahora puedes fabricar muebles";
 			}
 			
 			
@@ -402,6 +405,17 @@
 				}
 			}
 		}
+		
+		public function fnPuntaje():void
+		{
+			Puntaje.text = "00000";
+			Puntajej = Puntajej.substring(0, (5 - int(String(Puntaje_var).length)));
+			Puntaje.text = Puntajej + String(Puntaje_var);
+			var format2:TextFormat = new TextFormat();
+			format2.letterSpacing = 10;
+			Puntaje.setTextFormat(format2);
+		}
+		
 
 
 
@@ -465,8 +479,11 @@
 				Ya_pidio = true;
 			}
 			
-			if (Comunidad_var < 50){
-				Texto.text = "comunidad baja";
+			if (Comunidad_var < 50 && Comunidad_Aviso == false){
+				Placa_Construir.visible = true;
+				Placa_Construir.Mensaje_TXT.text = "Puntos de Comunidad bajos";
+				Comunidad_Aviso = true;
+				
 			}
 			
 			/*Segundo Juego
@@ -579,13 +596,14 @@
 			
 			//Puntaje.text = String(num.toFixed(5));
 			
-			var format2:TextFormat = new TextFormat();
+			/*var format2:TextFormat = new TextFormat();
 			
 			format2.letterSpacing = 10;
 			format2..align='left';
 			
 			Puntaje.text = String((Puntaje_var/100000).toFixed(5));
-			Puntaje.setTextFormat(format2);
+			Puntaje.setTextFormat(format2);*/
+			fnPuntaje();
 			
 			
 			Hora_var = Time.Hora_var;
