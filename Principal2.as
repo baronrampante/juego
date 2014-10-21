@@ -92,6 +92,7 @@
 		var Div_horas = 10;
 
 		//Variables generales
+		var Puntaje_var = 100000;
 		public var Comunidad_var = 600;
 		public var Dia_var = 1;
 		public var Semana_var = 1;
@@ -547,7 +548,7 @@
 			
 			
 
-        //************** para ver la cantidad de material existente **************
+        //************** Actualizaci{on permanente de datos existente **************
 		
 			Tablones.text = String(Tablones_Stock);
 			Alfajias.text = String(Alfajias_Stock);
@@ -555,6 +556,19 @@
 			Madera_MC.Tab.text = String(Tablones_Stock);
 			Lista_Trabajos.Datos_Tablones.text = String(Tablones_Stock);
 			Lista_Trabajos.Datos_Alfajias.text = String(Alfajias_Stock);
+			
+			//var tempArray:Array = Puntaje_var.toString().split(".");
+			//var numDec:Number = Number(tempArray[1]);
+			//var num = Puntaje_var;
+			
+			//num = Number( String( num ).split( "." )[ 1 ] );
+			
+			//Puntaje.text = String(num.toFixed(5));
+			var format2:TextFormat = new TextFormat();
+			format2.letterSpacing = 10;
+			Puntaje.text = String((Puntaje_var/100000).toFixed(5));
+			Puntaje.setTextFormat(format2);
+			
 			Hora_var = Time.Hora_var;
 			Horas.text = String(int(Time.Horas)) + "  horas";
 			Dia.text = String(Time.Dia_var);
@@ -1501,6 +1515,7 @@
 				case "Yes_BT" :
 					fnClientes_Pedido();
 					Cliente_MC.irse();
+					Puntaje_var = Puntaje_var + 40;
 					break;
 				case "Yes_BT_Buscar" :
 					fnClientes_Pedido_Buscar();
