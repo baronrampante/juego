@@ -394,6 +394,9 @@
 
 		public function timerListener(e:TimerEvent):void
 		{
+			
+			
+			
 			fnCharacter();
 			Trabajos_No_Entregados();
 			
@@ -546,6 +549,8 @@
 // para ver la cantidad de material existente
 			Tablones.text = String(Tablones_Stock);
 			Alfajias.text = String(Alfajias_Stock);
+			Madera_MC.Alf.text = String(Alfajias_Stock)
+			Madera_MC.Tab.text = String(Tablones_Stock);
 			Hora_var = Time.Hora_var;
 			Horas.text = String(int(Time.Hora_var/Div_horas)) + "  horas";
 			Dia.text = String(Time.Dia_var);
@@ -1635,6 +1640,7 @@
 			var Tablones_var_compra = Tablones_var_Numb * Tablones_precio;
 			Dinero_var = Dinero_var - Alfajias_var_compra - Tablones_var_compra;
 			Dinero.text = String(Dinero_var);
+			Madera_MC.Total_TX.text = "";
 			Alfajias_Stock = Alfajias_Stock + Alfajias_var_Numb;
 			Tablones_Stock = Tablones_Stock + Tablones_var_Numb;
 			Madera_MC.visible = false;
