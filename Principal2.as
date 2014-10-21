@@ -195,8 +195,8 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("recoleccion_final.swf");
-			peli2 = new URLRequest("mini_ropa.swf");
+			peli = new URLRequest("carpinteria1.swf");
+			peli2 = new URLRequest("carpinteria1.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -249,6 +249,7 @@
 			Barrio.visible = false;
 			Placa_Malo_MC.visible = false;
 			Gracias.visible=false;
+			Placa_Construir.visible = false;
 
 			// herramientas
 			cala_big.visible = false;
@@ -348,6 +349,7 @@
 			Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
 			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
+			Placa_Construir.Yes.addEventListener(MouseEvent.MOUSE_DOWN, fnConstruir);
 			
 			
 			//******** ver si juego termino **********
@@ -360,6 +362,7 @@
 			
 			if (Ya_jugo_2 == true){
 				Lista_Trab.fnHacer(true);
+				Placa_Construir.visible = true;
 			}
 			
 			
@@ -476,7 +479,7 @@
 				Ya_jugo = true;
 			}
 			
-			//SEgundo Juego
+			//Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
@@ -484,6 +487,7 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
+				Construccion= true;
 			}
 			
 						
@@ -627,16 +631,10 @@
 		}
 
 
-		/*function Cliente_out():void
+		public function fnConstruir(event:MouseEvent):void
 		{
-			if (Cliente_var.x <= 110)
-			{
-				Cliente_var.visible = false;
-				Cliente_var.gotoAndPlay("frente");
-				Cliente_var.globito.gotoAndPlay("normal");
-				Cliente_Stage = false;
-			}
-		}*/
+			Placa_Construir.visible = false;
+		}
 		
 		public function BajarComunidad():void
 			{
