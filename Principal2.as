@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 400; //prueba
+		var numero = 40; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -704,7 +704,13 @@
 			for(var i:int=0; i<6; i++) {
 				if (Trabajos[(i*multiplicador)+7] < 3 )
 				{
-				Texto.text = "me cagaste";
+				Gracias.visible = true;
+				Gracias.Texto.text = "me cagaste";
+				Gracias.Punk_MC.visible = false;
+					Gracias.Vieja_MC.visible = false;
+					Gracias.Viejo_MC.visible = false;
+					Gracias.Nena_MC.visible = false;
+					Gracias.Mormon_MC.visible = false;
 				if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
 				Placa_Clientes.visible = true;
@@ -714,9 +720,11 @@
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
 							Placa_Clientes.Punk_MC.visible = true;
+							Gracias.Punk_MC.visible = true;
 							break;
 						case "Olga":
 							Placa_Clientes.Vieja_MC.visible = true;
+							Gracias.Vieja_MC.visible = true;
 							break;
 						case "Andrea":
 							Placa_Clientes.Coqueta_MC.visible = true;
