@@ -21,20 +21,20 @@
 		public var Dale = true;
 		public var Temp = 0;
 		public var Pausado = false;
-		
-		public var Horas = 0; // horas para el reloj interfaz
+
+		public var Horas = 0;// horas para el reloj interfaz
 
 		public var Pagar_Primera_Cuota = 5;// en semanas
 		public var Pagar_Segunda_Cuota = 9;// en semanas
-		public var Pedido_Comunidad_1 = 9;// pedido comunidad en días
+		public var Pedido_Comunidad_1 = 1;// pedido comunidad en días
 		public var Segundo_Pedido_Comunidad = 15;// segundo pedido de la comunidad
 
 		public var Primer_Juego = 5;//días para primer juego
 		public var Segundo_Juego = 14;// días para segundo juego
-		
-		
-		public var Malo_ = 2;
-		
+
+
+		public var Malo_ = 8;
+
 		public var Fin_de_Juego = 12;
 
 		public function Temporizador()
@@ -65,20 +65,20 @@
 				Pausado = true;
 			}
 		}
-		
+
 		public function Terminar()
 		{
 
 			_timer.stop();
 			_timer.reset();
 			Dia_var = 1;
-		Semana_var = 1;
-		Mes_var = 1;
-		Hora_var = 0;
+			Semana_var = 1;
+			Mes_var = 1;
+			Hora_var = 0;
 
 		}
-		
-		
+
+
 
 
 		public function timerListener(e:TimerEvent):void

@@ -464,6 +464,7 @@
 			if (Cliente_Stage == false && Time.Dia_var == Time.Pedido_Comunidad_1 && Ya_pidio == false)
 			{
 				Pedido_Comunidad_MC.visible = true;
+				Pedido_Comunidad_MC.Texto.text = Client.Comunidad[0];
 				Ya_pidio = true;
 			}
 			
@@ -522,9 +523,12 @@
 			
 						
 			//Malo;
-			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
+			if (Cliente_Stage == false && Time.Dia_var == Time.Malo_ && Malo_var == false)
 			{
 				Placa_Malo_MC.visible = true;
+				//Placa_Malo_MC.Texto.text = "Hoy tengo un ofertón para nuevos emprendimientos! Te doy tablones por el espectacular precio de 300 pesos. Que dice Tío?";
+				Placa_Malo_MC.Texto.text = Client.Malo[0];
+				Placa_Malo_MC.TextoB.text = Client.Malo[1];
 				Malo_var = true;
 				fnMalo();
 				
@@ -1004,10 +1008,13 @@
 			{
 				case "Cancelar1" :
 					Placa_Malo_MC.gotoAndStop(2);
-					Comunidad_var = Comunidad_var + 300;
+					Placa_Malo_MC.Texto2.text = Client.Malo[2];
+					//"Ah, no estas convencidos, que tal si te los vendo a 200 pesos, si escuchaste bien tablones por solo 200 pesos, mi ultima oferta!";
 					break;
 				case "Cancelar2" :
 					Placa_Malo_MC.visible = false;
+					Comunidad_var = Comunidad_var + 100;
+					myMalo.gotoAndStop("Salida");
 					break;
 				case "Aceptar1" :
 					Placa_Malo_MC.visible = false;
