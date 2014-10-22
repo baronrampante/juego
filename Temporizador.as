@@ -29,8 +29,9 @@
 		public var Pedido_Comunidad_1 = 9;// pedido comunidad en días
 		public var Segundo_Pedido_Comunidad = 15;// segundo pedido de la comunidad
 
+		public var Primer_Juego = 5;//días para primer juego
 		public var Segundo_Juego = 14;// días para segundo juego
-		public var Primer_Juego = 8;//días para primer juego
+		
 		
 		public var Malo_ = 2;
 		

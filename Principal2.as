@@ -198,7 +198,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("carpinteria1.swf");
+			peli = new URLRequest("carpinteria2.swf");
 			peli2 = new URLRequest("carpinteria1.swf");
 			
 			//restringir valores campo numérico
@@ -249,7 +249,7 @@
 			Barra.visible = false;
 			Madera_MC.visible = false;
 			Placa_financiera.visible = false;
-			Barrio.visible = false;
+			//Barrio.visible = false;
 			Placa_Malo_MC.visible = false;
 			Gracias.visible=false;
 			Placa_Construir.visible = false;
@@ -357,7 +357,7 @@
 			Lista_Trabajos.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCerrarLista);
 			Placa_financiera.btn_cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_Cerrar);
 			Placa_financiera.btn_pagar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_pagar);
-			Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
+			//Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
 			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
 			Placa_Construir.Yes.addEventListener(MouseEvent.MOUSE_DOWN, fnConstruir);
@@ -838,7 +838,8 @@
 					break;
 				case "Comunidad_BT" :
 					if (Asesora_start.visible == false){
-						Barrio.visible = true;
+						Pedido_Comunidad_MC.visible = true;
+						Pedido_Comunidad_MC.Texto.text = "Hola, te gustaría contribuir con la comunidad?"
 					}
 					break;
 				case "Ir_Pantalla_Trabajos_BT" :
@@ -912,14 +913,14 @@
 		}
 		
 
-		function fnComunidad(event:MouseEvent):void
+		/*function fnComunidad(event:MouseEvent):void
 		{
 			Barrio.visible = false;
-		}
+		}*/
 
 		function fnBarrio_Comunidad(event:MouseEvent):void
 		{
-			Barrio.visible = true;
+			//Barrio.visible = true;
 		}
 		public function fnCerrarLista(event:MouseEvent):void
 		{

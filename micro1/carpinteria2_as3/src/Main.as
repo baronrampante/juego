@@ -1,4 +1,4 @@
-package 
+﻿package 
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -16,6 +16,8 @@ package
 
 		public var n1:String;
 		public var n2:String;
+		
+		public var termino=false;
 
 		
 //trace(re);
@@ -67,6 +69,7 @@ package
 		public function funcionBotonDos(e:MouseEvent): void {
 			
 			gotoAndStop(1);
+			termino=true;
 			botonUno_mc.addEventListener(MouseEvent.MOUSE_DOWN, funcionBotonUno);
 		}
 
