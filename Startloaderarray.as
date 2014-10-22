@@ -24,7 +24,7 @@
 
 		var snd:Sound = new Sound(new URLRequest("mp_musica_menuinicial.mp3"));
 		var myChannel:SoundChannel = new SoundChannel();
-		var Character  = 3;
+		var Character  = 0;
 
 		var Personaje = "Fondo_Nacho";
 		var Personaje2 = "";
@@ -199,7 +199,7 @@
 						Cabeza = Nacho;
 						mover();
 						mover_cabeza();
-						Character = 3;
+						Character = 0;
 						break;
 					case "Lety_" :
 						Personaje = Fondo_Lety;
@@ -213,7 +213,7 @@
 						Cabeza = Avril;
 						mover();
 						mover_cabeza();
-						Character = 0;
+						Character = 3;
 						break;
 					case "Adelante_BT" :
 						Tira();

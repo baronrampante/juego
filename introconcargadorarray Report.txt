@@ -5,15 +5,15 @@ Metadatos
 ---------
 Bytes         Valor
 ----------    -----
-      1179    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-10-21T23:22:17-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-10-21T23:22:17-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:4E484E978759E411A3B694BB07C581CB</stRef:instanceID> <stRef:documentID>xmp.did:8240AEE8411BE411AE3C9C82661BAAD8</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:54484E978759E411A3B694BB07C581CB</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:54484E978759E411A3B694BB07C581CB</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1179    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-10-22T14:20:09-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-10-22T14:20:09-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:919816ED045AE411A072B7E923335C1C</stRef:instanceID> <stRef:documentID>xmp.did:8240AEE8411BE411AE3C9C82661BAAD8</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:959816ED045AE411A072B7E923335C1C</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:959816ED045AE411A072B7E923335C1C</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Fotograma #    Bytes de fotograma    Bytes totales    Escena
 -----------    ------------------    -------------    ------
-          1                477262           477262    Escena 1 (Fotograma de exportación para clases de AS 3.0)
+          1                477264           477264    Escena 1 (Fotograma de exportación para clases de AS 3.0)
 
 Escena      Bytes de forma    Bytes de texto    Bytes de ActionScript
 --------    --------------    --------------    ---------------------
-Escena 1                 0                 0                    13640
+Escena 1                 0                 0                    13638
 
 Símbolo            Bytes de forma    Bytes de texto    Bytes de ActionScript
 ---------------    --------------    --------------    ---------------------
@@ -45,7 +45,7 @@ Tira                            0                 0                        0
 
 Bytes de ActionScript    Ubicación
 ---------------------    ---------
-                13640    Escena 1:Fotograma 1
+                13638    Escena 1:Fotograma 1
 
 Mapa de bits                    Comprimido    Original      Compresión
 ----------------------------    ----------    ----------    ----------
@@ -53,7 +53,7 @@ boton_anterior_1.png                  2903         53192    Calidad JPEG=60
 cartel_anterior.png                   3001         53192    Calidad JPEG=60
 boton_anterior_2.png                  2921         53192    Calidad JPEG=60
 fondo_chico_2.png                    48941       3840000    Calidad JPEG=60
-fondo_chica_1.png                    44467       3840000    Calidad JPEG=60
+fondo_chica_1.png                    44468       3840000    Calidad JPEG=60
 fondo_chica_2.png                    41002       3840000    Calidad JPEG=60
 fondo_chico_1.png                    44625       3840000    Calidad JPEG=60
 icono_avril.png                       4928         70180    Calidad JPEG=60

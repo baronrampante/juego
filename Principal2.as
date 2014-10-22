@@ -273,7 +273,7 @@
 		function fnCharacter():void{
 		if (Character_var < 9 && Character_yes == false){// para retrasar carga de variable
 		switch (Character_var){
-			case 0:
+			case 3:
 			var myCharacter = new avriltodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
@@ -288,7 +288,7 @@
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
 			break;
-			case 3:
+			case 0:
 			myCharacter = new nacho_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
