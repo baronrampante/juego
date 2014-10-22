@@ -51,11 +51,11 @@
 			//Arreglos = Arreglo.Objetos[1];
 			if (Hacer == 0)
 			{
-				aleatorio = randRange(0,4);
+				aleatorio = randRange(5,9);
 			}
 			else
 			{
-				 aleatorio = randRange(5,9);
+				 aleatorio = randRange(0,4);
 				
 			}
 			var rand_cliente = randRange(0,5);

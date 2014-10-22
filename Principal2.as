@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 40; //prueba
+		var numero = 400; //Tiempo de entrega
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -721,14 +721,14 @@
 				Gracias.visible = true;
 				Gracias.Texto.text = "me cagaste";
 				Gracias.Punk_MC.visible = false;
-					Gracias.Vieja_MC.visible = false;
-					Gracias.Viejo_MC.visible = false;
-					Gracias.Nena_MC.visible = false;
-					Gracias.Mormon_MC.visible = false;
-				if (Cliente_Stage == false){
+				Gracias.Vieja_MC.visible = false;
+				Gracias.Viejo_MC.visible = false;
+				Gracias.Nena_MC.visible = false;
+				Gracias.Mormon_MC.visible = false;
+				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
-				Placa_Clientes.visible = true;
-				Placa_Clientes.gotoAndStop(6);
+				//Placa_Clientes.visible = true;
+				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
 				//Borrar_Cliente();
 				switch(Trabajos[(i*multiplicador)+6]){
@@ -755,7 +755,7 @@
 								}
 				//Trabajos.splice([i*multiplicador], 6);
 							}
-							}
+							//}
 						}
 					}
 				}
@@ -853,7 +853,7 @@
 				case "Comunidad_BT" :
 					if (Asesora_start.visible == false){
 						Pedido_Comunidad_MC.visible = true;
-						Pedido_Comunidad_MC.Texto.text = "Hola, te gustaría contribuir con la comunidad?"
+						Pedido_Comunidad_MC.Texto.text = Client.Comunidad[0];
 					}
 					break;
 				case "Ir_Pantalla_Trabajos_BT" :
@@ -1176,6 +1176,7 @@
 					//Placa_Clientes.gotoAndStop(5);
 					Gracias.visible = true;
 					Gracias.Texto.text = "Gracias";
+					Puntaje_var = Puntaje_var + 40;
 					Gracias.Punk_MC.visible = false;
 					Gracias.Vieja_MC.visible = false;
 					Gracias.Viejo_MC.visible = false;
@@ -1520,7 +1521,7 @@
 				case "Yes_BT" :
 					fnClientes_Pedido();
 					Cliente_MC.irse();
-					Puntaje_var = Puntaje_var + 40;
+					//Puntaje_var = Puntaje_var + 40;
 					break;
 				case "Yes_BT_Buscar" :
 					fnClientes_Pedido_Buscar();
