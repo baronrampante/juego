@@ -70,6 +70,7 @@
 		var Velocidad_var = 0;
 		var Cliente_cara = "";
 		//var Cliente_cara = "Placa_Clientes.Punk_MC";
+		var Empleado = false;
 	
 		
 		var snd:Sound = new Sound(new URLRequest("mp_ambiente_carpinteria.mp3"));
@@ -139,6 +140,7 @@
 		var Character_yes = false;
 		var Malo = false;
 		var myMalo = new Malefico_todo();
+		//var myEmpleado = new boy_2_body();
 		var Malo_var = false;
 
 		//Materiales
@@ -244,6 +246,7 @@
 			//Asesora_start.visible = false;
 
 			//pantallas
+			Empleado_Pantalla.visible = false;
 			Placa_Clientes.visible = false;
 			Lista_Trabajos.visible = false;
 			Barra.visible = false;
@@ -345,6 +348,7 @@
 			Lista_Trabajos.Comprar_Madera.addEventListener(MouseEvent.MOUSE_DOWN, En_Madera);
 			Asesora_MC2.Close.addEventListener(MouseEvent.MOUSE_DOWN, Asesora_MC2_Cerrar);
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
+			Empleado_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleado);
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
@@ -508,6 +512,8 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo = true;
+				//Empleado = true;
+				//fnEmpleado();
 			}
 			
 			//Segundo Juego
@@ -523,7 +529,7 @@
 			
 						
 			//Malo;
-			if (Cliente_Stage == false && Time.Dia_var == Time.Malo_ && Malo_var == false)
+			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
 			{
 				Placa_Malo_MC.visible = true;
 				//Placa_Malo_MC.Texto.text = "Hoy tengo un ofertón para nuevos emprendimientos! Te doy tablones por el espectacular precio de 300 pesos. Que dice Tío?";
@@ -668,6 +674,10 @@
 				fnBuscar_Trabajo2();
 				
 			}
+		}
+		
+		function fnEmpleado(event:MouseEvent):void{
+			Empleado_Pantalla.visible = true;
 		}
 
 
