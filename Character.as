@@ -27,6 +27,19 @@
 				gotoAndStop("Quieto");
 				Velocidad_var = 0;
 			}
+			
+			/*function Mover2():void
+		{
+			// constructor code
+			//gotoAndPlay("Adelante");
+			Velocidad_var = 2;
+			gotoAndPlay("Atras");
+			this.x +=  Velocidad_var;
+			this.y -=  Velocidad_var;
+			if (this.y  < 300){
+				Mover();
+				
+			}*/
 		}
 	}
 	

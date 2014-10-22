@@ -22,6 +22,7 @@
 			
 			addEventListener(Event.ENTER_FRAME, mover);
 			
+			
 		}
 
 

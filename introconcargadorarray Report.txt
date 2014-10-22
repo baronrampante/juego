@@ -5,15 +5,15 @@ Metadatos
 ---------
 Bytes         Valor
 ----------    -----
-      1179    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-10-20T01:42:42-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-10-20T01:42:42-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:2F4CE3760A58E41187C98E00FC84E183</stRef:instanceID> <stRef:documentID>xmp.did:8240AEE8411BE411AE3C9C82661BAAD8</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:304CE3760A58E41187C98E00FC84E183</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:304CE3760A58E41187C98E00FC84E183</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1179    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-10-21T23:22:17-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-10-21T23:22:17-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:4E484E978759E411A3B694BB07C581CB</stRef:instanceID> <stRef:documentID>xmp.did:8240AEE8411BE411AE3C9C82661BAAD8</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:54484E978759E411A3B694BB07C581CB</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:54484E978759E411A3B694BB07C581CB</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Fotograma #    Bytes de fotograma    Bytes totales    Escena
 -----------    ------------------    -------------    ------
-          1                477025           477025    Escena 1 (Fotograma de exportación para clases de AS 3.0)
+          1                477262           477262    Escena 1 (Fotograma de exportación para clases de AS 3.0)
 
 Escena      Bytes de forma    Bytes de texto    Bytes de ActionScript
 --------    --------------    --------------    ---------------------
-Escena 1                 0                 0                    13189
+Escena 1                 0                 0                    13640
 
 Símbolo            Bytes de forma    Bytes de texto    Bytes de ActionScript
 ---------------    --------------    --------------    ---------------------
@@ -45,40 +45,40 @@ Tira                            0                 0                        0
 
 Bytes de ActionScript    Ubicación
 ---------------------    ---------
-                13189    Escena 1:Fotograma 1
+                13640    Escena 1:Fotograma 1
 
 Mapa de bits                    Comprimido    Original      Compresión
 ----------------------------    ----------    ----------    ----------
-boton_anterior_1.png                  2904         53192    Calidad JPEG=60
-cartel_anterior.png                   3003         53192    Calidad JPEG=60
-boton_anterior_2.png                  2922         53192    Calidad JPEG=60
-fondo_chico_2.png                    48963       3840000    Calidad JPEG=60
-fondo_chica_1.png                    44488       3840000    Calidad JPEG=60
-fondo_chica_2.png                    41021       3840000    Calidad JPEG=60
-fondo_chico_1.png                    44645       3840000    Calidad JPEG=60
-icono_avril.png                       4930         70180    Calidad JPEG=60
-icono_ivan.png                        4731         70180    Calidad JPEG=60
-icono_lety.png                        3989         70180    Calidad JPEG=60
-icono_nacho.png                       4493         70180    Calidad JPEG=60
-cartel_elegir_personajes.png          7970        194880    Calidad JPEG=60
-logo_bg.png                          28290       3840000    Calidad JPEG=60
-boton_siguiente_1.png                 2913         53192    Calidad JPEG=60
-cartel_siguiente.png                  2987         53192    Calidad JPEG=60
-boton_siguiente_2.png                 2947         53192    Calidad JPEG=60
-boton_jugar.png                       4459         56940    Calidad JPEG=60
-chica_2_mano.png                     37047       1553040    Calidad JPEG=60
-chica_1_mano.png                     27674       1694040    Calidad JPEG=60
-chico_1_mano.png                     30949       1845180    Calidad JPEG=60
-chico_2_mano.png                     30287       1551420    Calidad JPEG=60
-img_carpinteria_bn.png                9525        339864    Calidad JPEG=60
-img_carpinteria_c.png                11652        339864    Calidad JPEG=60
-img_textil_bn.png                    11592        339864    Calidad JPEG=60
-img_textil_c.png                     13847        339864    Calidad JPEG=60
-img_puesto_bn.png                    10176        339864    Calidad JPEG=60
-img_puesto_c.png                     12168        339864    Calidad JPEG=60
-boton_textil.png                      2536         19980    Sin pérdida
-boton_puesto.png                      2819         19980    Sin pérdida
-boton_carpinteria.png                 3632         19980    Sin pérdida
+boton_anterior_1.png                  2903         53192    Calidad JPEG=60
+cartel_anterior.png                   3001         53192    Calidad JPEG=60
+boton_anterior_2.png                  2921         53192    Calidad JPEG=60
+fondo_chico_2.png                    48941       3840000    Calidad JPEG=60
+fondo_chica_1.png                    44467       3840000    Calidad JPEG=60
+fondo_chica_2.png                    41002       3840000    Calidad JPEG=60
+fondo_chico_1.png                    44625       3840000    Calidad JPEG=60
+icono_avril.png                       4928         70180    Calidad JPEG=60
+icono_ivan.png                        4728         70180    Calidad JPEG=60
+icono_lety.png                        3988         70180    Calidad JPEG=60
+icono_nacho.png                       4491         70180    Calidad JPEG=60
+cartel_elegir_personajes.png          7967        194880    Calidad JPEG=60
+logo_bg.png                          28277       3840000    Calidad JPEG=60
+boton_siguiente_1.png                 2912         53192    Calidad JPEG=60
+cartel_siguiente.png                  2985         53192    Calidad JPEG=60
+boton_siguiente_2.png                 2945         53192    Calidad JPEG=60
+boton_jugar.png                       4457         56940    Calidad JPEG=60
+chica_2_mano.png                     37030       1553040    Calidad JPEG=60
+chica_1_mano.png                     27661       1694040    Calidad JPEG=60
+chico_1_mano.png                     30935       1845180    Calidad JPEG=60
+chico_2_mano.png                     30273       1551420    Calidad JPEG=60
+img_carpinteria_bn.png                9521        339864    Calidad JPEG=60
+img_carpinteria_c.png                11647        339864    Calidad JPEG=60
+img_textil_bn.png                    11586        339864    Calidad JPEG=60
+img_textil_c.png                     13841        339864    Calidad JPEG=60
+img_puesto_bn.png                    10172        339864    Calidad JPEG=60
+img_puesto_c.png                     12162        339864    Calidad JPEG=60
+boton_textil.png                      2535         19980    Sin pérdida
+boton_puesto.png                      2818         19980    Sin pérdida
+boton_carpinteria.png                 3630         19980    Sin pérdida
 
 
 

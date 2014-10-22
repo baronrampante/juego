@@ -68,7 +68,8 @@
 		var Nuevo_Nuevo = 0;// flag para ver si hay un nuevo cliente
 		var Cliente_var = "Mario";
 		var Velocidad_var = 0;
-		var Cliente_cara = "Placa_Clientes.Punk_MC";
+		var Cliente_cara = "";
+		//var Cliente_cara = "Placa_Clientes.Punk_MC";
 	
 		
 		var snd:Sound = new Sound(new URLRequest("mp_ambiente_carpinteria.mp3"));
@@ -94,7 +95,7 @@
 		//Variables generales
 		var Puntaje_var = 00000;
 		var Puntajej = "00000";
-		public var Comunidad_var = 60;
+		public var Comunidad_var = 600;
 		public var Dia_var = 1;
 		public var Semana_var = 1;
 		public var Hora_var = 1;
@@ -351,8 +352,6 @@
 			
 			
 			
-			
-			
 			//Botones Cerrar pantallas;
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
 			Lista_Trabajos.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCerrarLista);
@@ -412,7 +411,7 @@
 			Puntajej = Puntajej.substring(0, (5 - int(String(Puntaje_var).length)));
 			Puntaje.text = Puntajej + String(Puntaje_var);
 			var format2:TextFormat = new TextFormat();
-			format2.letterSpacing = 10;
+			format2.letterSpacing = 12;
 			Puntaje.setTextFormat(format2);
 		}
 		
@@ -484,6 +483,10 @@
 				Placa_Construir.Mensaje_TXT.text = "Puntos de Comunidad bajos";
 				Comunidad_Aviso = true;
 				
+			}
+			
+			if (Comunidad_var > 50 ){
+				Comunidad_Aviso == false;
 			}
 			
 			/*Segundo Juego
@@ -573,7 +576,7 @@
 			}
 			
 			// Fracaso!!
-			if (Dinero_var <= 0){
+			if (Dinero_var <= 0 || Comunidad_var <= 0 ){
 				Loser.visible = true;
 			}
 			
@@ -1141,10 +1144,12 @@
 					// Placa Clente buscar
 					
 					Dinero_caida.gotoAndPlay(2);
+					Comunidad_var += 20;
 					
 					//Placa_Clientes.visible = true;
 					//Placa_Clientes.gotoAndStop(5);
 					Gracias.visible = true;
+					Gracias.Texto.text = "Gracias";
 					Gracias.Punk_MC.visible = false;
 					Gracias.Vieja_MC.visible = false;
 					Gracias.Viejo_MC.visible = false;
@@ -1309,8 +1314,8 @@
 				{avance
 					if (en_proceso == false)
 					{
-						avance = Trabajos[1 + mult] + _timer.currentCount;
-						avance_porcentaje = Trabajos[1 + mult];
+						avance = ((Trabajos[1 + mult])*10) + _timer.currentCount;
+						avance_porcentaje = ((Trabajos[1 + mult])*10);
 						porcentaje = avance_porcentaje;
 						Trabajo_Que_se_Procesa.push(Trabajos[4 + mult]); //Tiempo
 						Trabajo_Que_se_Procesa.push(Trabajos[0 + mult]); //Dinero
@@ -1411,7 +1416,7 @@
 					Cliente_var.visible = true;
 					break;
 				case "Julio" :
-					Placa_Clientes.Punk_MC.visible = true;
+					//Placa_Clientes.Punk_MC.visible = true;
 					Cliente_cara = Placa_Clientes.Punk_MC;
 					Velocidad_var = 6;
 					Cliente_var = Punk;
@@ -1430,64 +1435,7 @@
 			}
 		}
 
-		//  Función que hace que el cliente venga a buscar el trabajo
-
-		public function Venite_Buscar():void
-		{
-			switch (Buscar)
-			{
-				case "Martín" :
-					Cliente_cara = Placa_Clientes.Mormon_MC;
-					Velocidad_var = 6;
-					Cliente_var = Mormon;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Olga" :
-					Cliente_cara = Placa_Clientes.Vieja_MC;
-					Velocidad_var = 10;
-					Cliente_var = Vieja;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Lucía" :
-					Cliente_cara = Placa_Clientes.Nena_MC;
-					Velocidad_var = 4;
-					Cliente_var = Nena;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Andrea" :
-					Cliente_cara = Placa_Clientes.Coqueta_MC;
-					Velocidad_var = 7;
-					Cliente_var = Coqueta;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Julio" :
-					Cliente_cara = Placa_Clientes.Punk_MC;
-					Velocidad_var = 6;
-					Cliente_var = Punk;
-					Mover_cliente_Buscar();
-					Cliente_var.visible = true;
-					//fnTexto_Pedido();
-					break;
-				case "Gustavo" :
-					Cliente_cara = Placa_Clientes.Viejo_MC;
-					Velocidad_var = 10;
-					Cliente_var = Viejo;
-					Mover_cliente_Buscar();
-					Cliente_var.visible = true;
-					//fnTexto_Pedido();
-					break;
-			}
-		}
-
-
+		
 		function fnTexto_Pedido():void
 		{
 			Placa_Clientes.Precio_TXT.text = Lista_Trab.Trabajo[0];
@@ -1512,7 +1460,7 @@
 			Cliente_Stage = true;
 		}
 
-		function Mover_cliente_Buscar():void
+		/*function Mover_cliente_Buscar():void
 		{
 			_timer_jugador.start();
 			Cliente_var.visible = true;
@@ -1523,7 +1471,7 @@
 			var Posicion_en_vertical =((randomRange(600,800)));
 			var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,200,600,Velocidad_var,true);
 			var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,474,Posicion_en_vertical,Velocidad_var,true);
-		}
+		}*/
 
 
 		function fnPlaca_Cliente(event:MouseEvent):void
@@ -1599,7 +1547,7 @@
 			Placa_Clientes.Vieja_MC.visible = false;
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
-			Cliente_var.gotoAndPlay("espalda");
+			//Cliente_var.gotoAndPlay("espalda");
 			Cliente_var.visible= false;
 			Cliente_Stage = false;
 		}

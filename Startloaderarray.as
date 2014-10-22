@@ -24,9 +24,9 @@
 
 		var snd:Sound = new Sound(new URLRequest("mp_musica_menuinicial.mp3"));
 		var myChannel:SoundChannel = new SoundChannel();
-		var Character  = 0;
+		var Character  = 3;
 
-		var Personaje = "";
+		var Personaje = "Fondo_Nacho";
 		var Personaje2 = "";
 		var Velocidad_var = 1;
 		var Cabeza_actual = "";
