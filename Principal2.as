@@ -354,6 +354,9 @@
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
 			Gracias.addEventListener(MouseEvent.MOUSE_DOWN, fnGracias);
 			
+			Empleado_Pantalla.Aceptar.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoSi);
+			Empleado_Pantalla.Cancelar.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoNo);
+			
 			
 			
 			//Botones Cerrar pantallas;
@@ -418,6 +421,8 @@
 			format2.letterSpacing = 12;
 			Puntaje.setTextFormat(format2);
 		}
+		
+		
 		
 
 
@@ -679,6 +684,15 @@
 		function fnEmpleado(event:MouseEvent):void{
 			Empleado_Pantalla.visible = true;
 		}
+		
+		function fnEmpleadoSi(event:MouseEvent):void{
+			Empleado_Pantalla.visible = false;
+			Sueldos = 3000;
+		}
+		
+		function fnEmpleadoNo(event:MouseEvent):void{
+			Empleado_Pantalla.visible = false;
+		}
 
 
 		public function fnConstruir(event:MouseEvent):void
@@ -725,6 +739,7 @@
 				Gracias.Viejo_MC.visible = false;
 				Gracias.Nena_MC.visible = false;
 				Gracias.Mormon_MC.visible = false;
+				Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
 				//Placa_Clientes.visible = true;
@@ -1167,6 +1182,7 @@
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
+					Lista_Trabajos.En_Proceso.text = "";
 					// Placa Clente buscar
 					
 					Dinero_caida.gotoAndPlay(2);
@@ -1349,6 +1365,7 @@
 						Trabajo_Que_se_Procesa.push(Trabajos[6 + mult]); //Nombre
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
+						Lista_Trabajos.En_Proceso.text = "Cliente en proceso:  " + Trabajo_Que_se_Procesa[2];
 						Alfajias_Stock = Alfajias_Stock - Trabajos[3];
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
