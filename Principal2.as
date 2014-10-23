@@ -488,9 +488,9 @@
 				Ya_pidio = true;
 			}
 			
-			if (Comunidad_var < 50 && Comunidad_Aviso == false){
+			if (Comunidad_var < 300 && Comunidad_Aviso == false){
 				Placa_Construir.visible = true;
-				Placa_Construir.Mensaje_TXT.text = "Puntos de Comunidad bajos";
+				Placa_Construir.Mensaje_TXT.text = "Puntos de Comunidad bajos. Atiende mejor a los clientes y realiza trabajos para la comunidad";
 				Comunidad_Aviso = true;
 				
 			}
