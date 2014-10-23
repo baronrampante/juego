@@ -27,22 +27,23 @@
 			Tiempo +=  1;
 			if ( Tiempo < 100)
 			{
+				gotoAndStop("Adelante");
 				this.x -=  Velocidad_var;
 				this.y +=  Velocidad_var;
 			}
-			if (Tiempo > 200 )
+			if (Tiempo > 100 && Tiempo <400 )
 			{
 				gotoAndStop("Quieto");
 			}
-			if (Tiempo > 300 )
+			if (Tiempo > 400 )
 			{
-				gotoAndPlay("Atras");
+				gotoAndStop("Atras");
 				Velocidad_var = 2;
 				this.x +=  Velocidad_var;
 				this.y -=  Velocidad_var;
 			}
 			
-			if (this.y < 100){
+			if (this.y < 275){
 				Tiempo = 0;
 			}
 			
