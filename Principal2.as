@@ -651,7 +651,7 @@
 			}
 
 
-			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int((Trabajos[7]/Div_horas)/8)) + "Días  " + String((int(Trabajos[7]/Div_horas)+1) - (int((Trabajos[7]/Div_horas)/8)+1)) + " Hs.";
+			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int((Trabajos[7]/Div_horas)/8)) + "Días  " + String((int(Trabajos[7]/Div_horas)) - ((int((Trabajos[7]/Div_horas)/8))*8)) + " Hs.";
 			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)+1) + "Días  " + String((int(Trabajos[7 + (1*multiplicador)]/Div_horas)+1) - ((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)+1) + " Hs.";
 			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)+1) + "Días  ";
 			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)+1) + "Días  ";
