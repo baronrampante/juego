@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 40; //Tiempo de entrega
+		var numero = 120; //Tiempo de entrega
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
