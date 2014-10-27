@@ -52,9 +52,7 @@
 
 		public function Start()
 		{
-
 			_timer.start();
-
 		}
 
 		public function Pausar()
