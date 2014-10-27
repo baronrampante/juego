@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 400; //Tiempo de entrega
+		var numero = 40; //Tiempo de entrega
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -651,11 +651,11 @@
 			}
 
 
-			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int((Trabajos[7]/Div_horas)/8)) + "Días  " + String((int(Trabajos[7]/Div_horas)) - ((int((Trabajos[7]/Div_horas)/8))*8)) + " Hs.";
-			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)+1) + "Días  " + String((int(Trabajos[7 + (1*multiplicador)]/Div_horas)+1) - ((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)+1) + " Hs.";
-			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)+1) + "Días  ";
-			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)+1) + "Días  ";
-			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)+1) + "Días  ";
+			Lista_Trabajos.Trabajo1.text = "Cliente: " + String(Trabajos[6]) + "  Restan " + String(int((Trabajos[7]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7]/Div_horas)) - ((int((Trabajos[7]/Div_horas)/8))*8)+1) + " Hs.";
+			Lista_Trabajos.Trabajo2.text = "Cliente: " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (1*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo3.text = "Cliente: " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)) + " Días  ";
+			Lista_Trabajos.Trabajo4.text = "Cliente: " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)) + " Días  ";
+			Lista_Trabajos.Trabajo5.text = "Cliente: " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)) + " Días  ";
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
 
@@ -745,7 +745,7 @@
 				//Placa_Clientes.visible = true;
 				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
-				//Borrar_Cliente();
+				Borrar_Cliente();
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
 							Placa_Clientes.Punk_MC.visible = true;
