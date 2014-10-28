@@ -656,7 +656,8 @@
 			Lista_Trabajos.Trabajo2.text = "Cliente: " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (1*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
 			Lista_Trabajos.Trabajo3.text = "Cliente: " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)) + " Días  ";
 			Lista_Trabajos.Trabajo4.text = "Cliente: " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)) + " Días  ";
-			Lista_Trabajos.Trabajo5.text = "Cliente: " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)) + " Días  ";
+			Lista_Trabajos.Trabajo5.text = "Cliente: " + String(Trabajos[6 + (4*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)) + " Días  ";
+			Lista_Trabajos.Trabajo6.text = "Cliente: " + String(Trabajos[6 + (5*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (5*multiplicador)]/Div_horas)/8)) + " Días  ";
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
 
@@ -1069,6 +1070,26 @@
 		//Fin de botones
 
 		// vuelve o no visible los diferentes pedidos en la lista de pedidos
+		
+		
+		
+		/*function Visible():void
+		{
+			for (var i:uint=1; i<6; i++){
+		
+			if (Trabajos[i*multiplicador] > 2)
+			{
+				Lista_Trabajos.Trabajo[i].visible = true;
+				Lista_Trabajos.Linea(i).visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo[i].visible = false;
+				Lista_Trabajos.Linea(i).visible = false;
+			}
+		}
+		}*/
+			
 
 		function Visible():void
 		{
@@ -1125,7 +1146,19 @@
 				Lista_Trabajos.Linea5.visible = false;
 			}
 			
+			if (Trabajos[5*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo6.visible = true;
+				Lista_Trabajos.Linea6.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo6.visible = false;
+				Lista_Trabajos.Linea6.visible = false;
+			}
+			
 		}
+		
 		function Placa_ir_Aserradero_Cerrar(event:MouseEvent):void{
 			Placa_ir_Aserradero.visible = false;
 		}
@@ -1278,6 +1311,15 @@
 					Nombre_Elegido = Trabajos[6 + mult];
 					fnLista_Trabajos();
 					break;
+				case "Trabajo6" :
+					mult = 4*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
 				case "Arreglar_BT" :
 					//trace (Trabajos [1] [4]);
 					fnIniciar_Trabajo();
@@ -1373,7 +1415,6 @@
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
 						var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
-						
 					}
 						else
 						{
@@ -1505,20 +1546,6 @@
 			Cliente_MC.y=500;
 			Cliente_Stage = true;
 		}
-
-		/*function Mover_cliente_Buscar():void
-		{
-			_timer_jugador.start();
-			Cliente_var.visible = true;
-			Cliente_var.globito.gotoAndStop("bien");
-			Cliente_Stage = true;
-			Cliente_Buscar = true;
-			//_timer_espera_cliente.start();
-			var Posicion_en_vertical =((randomRange(600,800)));
-			var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,200,600,Velocidad_var,true);
-			var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,474,Posicion_en_vertical,Velocidad_var,true);
-		}*/
-
 
 		function fnPlaca_Cliente(event:MouseEvent):void
 		{
