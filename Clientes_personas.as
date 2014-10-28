@@ -11,23 +11,24 @@
 		public var _timer:Timer = new Timer(1000);// se ejecuta cada un segundo
 		public var cliente_stage = true;
 		public var Irse = false;
-		
-		
-		
+
+
+
 
 
 		public function Clientes_personas()
 		{
 			// constructor code
-			
+
 			addEventListener(Event.ENTER_FRAME, mover);
-			
-			
+
+
 		}
 
 
 		function mover(e:Event):void
 		{
+
 			if (_timer.currentCount == 15)
 			{
 				Irse = true;
@@ -36,8 +37,8 @@
 				this.gotoAndPlay("espalda");
 				_timer.stop();
 				_timer.reset();
-				
-				
+
+
 				irse();
 			}
 			this.x +=  Velocidad_var;
@@ -50,17 +51,20 @@
 				this.gotoAndPlay("parado");
 				Irse = false;
 			}
+
 			if (this.x < 180)
 			{
 				cliente_stage = false;
 				this.globito.gotoAndPlay("normal");
-				this.parent.removeChild(this);
+				if (stage != null)
+				{
+					this.parent.removeChild(this);
+				}
 			}
 		}
-
 		public function irse():void
 		{
-			
+
 			Irse = true;
 			_timer.stop();
 			_timer.reset();

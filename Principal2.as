@@ -201,8 +201,8 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("carpinteria2.swf");
-			peli2 = new URLRequest("carpinteria1.swf");
+			peli = new URLRequest("carpinteria1.swf");
+			peli2 = new URLRequest("carpinteria2.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -1227,6 +1227,7 @@
 					//Placa_Clientes.gotoAndStop(5);
 					Gracias.visible = true;
 					Gracias.Texto.text = "Gracias";
+					
 					Puntaje_var = Puntaje_var + 40;
 					Gracias.Punk_MC.visible = false;
 					Gracias.Vieja_MC.visible = false;
@@ -1236,22 +1237,28 @@
 					
 					switch(client){
 					case "Julio":
-						Gracias.Punk_MC.visible = true;
+						//Gracias.Punk_MC.visible = true;
+						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
 					case "Olga":
-						Gracias.Vieja_MC.visible = true;
+						//Gracias.Vieja_MC.visible = true;
+						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
-					//case "Andrea":
+					case "Andrea":
 						//Gracias.Coqueta_MC.visible = true;
-						//break;
+						Gracias.Coqueta_MC.gotoAndPlay(1);
+						break;
 					case "Gustavo":
-						Gracias.Viejo_MC.visible = true;
+						//Gracias.Viejo_MC.visible = true;
+						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
 					case "Lucía":
-						Gracias.Nena_MC.visible = true;
+						//Gracias.Nena_MC.visible = true;
+						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
 					case "Martín":
-						Gracias.Mormon_MC.visible = true;
+						//Gracias.Mormon_MC.visible = true;
+						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
 					}
 					
@@ -1332,8 +1339,6 @@
 			Lista_Trabajos.Datos_Precio.text = String(Trabajos[0 + mult]);
 			Lista_Trabajos.Datos_Trabajo.text = String(Trabajos[5 + mult]);
 			Lista_Trabajos.Datos_Cliente.text = String(Trabajos[6 + mult]);
-			Lista_Trabajos.Datos_Alfajias.text = String(Trabajos[3 + mult]);
-			Lista_Trabajos.Datos_Tablones.text = String(Trabajos[2 + mult]);
 			Lista_Trabajos.Datos_Materiales.text = "Tablones " + String(Trabajos[2 + mult]) + "  Alfajías " + String(Trabajos[3 + mult]);
 			Lista_Trabajos.Mormon_MC.visible = false;
 			Lista_Trabajos.Vieja_MC.visible = false;
