@@ -516,7 +516,9 @@
 			if (Cliente_Stage == false && Time.Dia_var == Time.Primer_Juego && Ya_jugo == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
-				Cargar();
+				//Cargar();
+				(root.loaderInfo.loader.root as Object).cargar2();
+				
 				Time.Pausar();
 				Ya_jugo = true;
 				//Empleado = true;
@@ -544,15 +546,10 @@
 				Placa_Malo_MC.TextoB.text = Client.Malo[1];
 				Malo_var = true;
 				fnMalo();
-				
 			}
-			
-			
 			
 			function fnMalo()
 			{
-				
-				
 				if (Malo == false){
 				addChildAt(myMalo, 10);
 				myMalo.x = 300;

@@ -58,7 +58,7 @@
 			cargador2 = new Loader() as Loader;
 			//asignamos la direccion del archivo que se va a cargar
 			req = new URLRequest("micro.swf");
-			req2 = new URLRequest("mini_ropa.swf");
+			req2 = new URLRequest("cortar_tronco_final2.swf");
 			Personaje2 = Fondo_Nacho;
 			Cabeza_actual = Nacho;
 			Cabeza = Lety;
@@ -124,18 +124,19 @@
 			//removeChild(cargador);
 			if (Time.Pausado== false){
 			addChildAt(cargador2, 20);
-			cargador.visible =false;
+			//cargador.visible =false;
 			//agregamos el listener que llamara a la funcion de peli a load_btn;
 			}
 		}
 
 		public function descargar()
 		{
-			cargador.unloadAndStop();
-			cargador.removeChildAt(19);
-			cargador = null;
+			cargador2.unloadAndStop();
+			cargador2.removeChildAt(20);
+			cargador2 = null;
 			Jugar_BT.visible = visible;
 			Placa_Start.visible = visible;
+			
 						
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
