@@ -441,7 +441,8 @@
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
 			avance_porcentaje = avance_porcentaje - 1;
-			Texto.text = String(avance_porcentaje/porcentaje);
+			Texto.text = String(int((avance_porcentaje/porcentaje)*10));
+			Lista_Trabajos.Progreso.gotoAndStop(int((avance_porcentaje/porcentaje)*10));
 
 			//llama a un nuevo cliente
 			Lista_Trab.Tiempo(Time.Hora_var);
@@ -600,8 +601,7 @@
 
         //************** Actualizaci{on permanente de datos existente **************
 		
-			Tablones.text = String(Tablones_Stock);
-			Alfajias.text = String(Alfajias_Stock);
+			
 			Madera_MC.Alf.text = String(Alfajias_Stock)
 			Madera_MC.Tab.text = String(Tablones_Stock);
 			Lista_Trabajos.Datos_Tablones.text = String(Tablones_Stock);
@@ -1019,7 +1019,7 @@
 			{
 				case "Aceptar_Comunidad" :
 					Pedido_Comunidad_MC.visible = false;
-					Comunidad_var = Comunidad_var + 300;
+					Comunidad_var = Comunidad_var + 100;
 					
 					break;
 				case "Cancelar_Comunidad" :
@@ -1226,7 +1226,8 @@
 					//Placa_Clientes.visible = true;
 					//Placa_Clientes.gotoAndStop(5);
 					Gracias.visible = true;
-					Gracias.Texto.text = "Gracias";
+					Gracias.Fondo.visible = false;
+					//Gracias.Texto.text = "Gracias";
 					
 					Puntaje_var = Puntaje_var + 40;
 					Gracias.Punk_MC.visible = false;
@@ -1245,7 +1246,7 @@
 						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
 					case "Andrea":
-						//Gracias.Coqueta_MC.visible = true;
+						Gracias.Coqueta_MC.visible = true;
 						Gracias.Coqueta_MC.gotoAndPlay(1);
 						break;
 					case "Gustavo":
@@ -1419,7 +1420,7 @@
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
-						var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
+						//var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
 					}
 						else
 						{
