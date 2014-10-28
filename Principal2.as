@@ -71,6 +71,7 @@
 		var Cliente_cara = "";
 		//var Cliente_cara = "Placa_Clientes.Punk_MC";
 		var Empleado = false;
+		var Empleado_si = 1;
 	
 		
 		var snd:Sound = new Sound(new URLRequest("mp_ambiente_carpinteria.mp3"));
@@ -688,6 +689,7 @@
 		function fnEmpleadoSi(event:MouseEvent):void{
 			Empleado_Pantalla.visible = false;
 			Sueldos = 3000;
+			Empleado_si = .5;
 		}
 		
 		function fnEmpleadoNo(event:MouseEvent):void{
@@ -1566,7 +1568,7 @@
 		function fnClientes_Pedido():void
 		{
 			Trabajos.push(Lista_Trab.Trabajo[0]);
-			Trabajos.push(Lista_Trab.Trabajo[1]);
+			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
 			Trabajos.push(Lista_Trab.Trabajo[2]);
 			Trabajos.push(Lista_Trab.Trabajo[3]);
 			Trabajos.push(Lista_Trab.Trabajo[4]);
