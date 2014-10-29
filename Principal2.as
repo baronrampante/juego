@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 120; //Tiempo de entrega
+		var numero = 12; //Tiempo de entrega
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -210,7 +210,11 @@
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
 			Madera_MC.Tablones_Ingreso.restrict = "0-9";
 			
-			
+			Gracias.Punk_MC.visible = false;
+			Gracias.Vieja_MC.visible = false;
+			Gracias.Viejo_MC.visible = false;
+			Gracias.Nena_MC.visible = false;
+			Gracias.Mormon_MC.visible = false;
 
 			//clientes
 			Lista_Trabajos.Taburete_Roto.visible = false;
@@ -739,44 +743,43 @@
 		
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
-			//Texto.text = "hayyy";
 			for(var i:int=0; i<6; i++) {
 				if (Trabajos[(i*multiplicador)+7] < 3 )
 				{
 				Gracias.visible = true;
 				Gracias.Texto.text = "me cagaste";
-				Gracias.Punk_MC.visible = false;
-				Gracias.Vieja_MC.visible = false;
-				Gracias.Viejo_MC.visible = false;
-				Gracias.Nena_MC.visible = false;
-				Gracias.Mormon_MC.visible = false;
+				
 				Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
 				//Placa_Clientes.visible = true;
 				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
-				Borrar_Cliente();
+				
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
-							//Placa_Clientes.Punk_MC.visible = true;
 							Gracias.Punk_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Olga":
-							//Placa_Clientes.Vieja_MC.visible = true;
 							Gracias.Vieja_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Andrea":
 							Gracias.Coqueta_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Gustavo":
 							Gracias.Viejo_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Lucía":
 							Gracias.Nena_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Martín":
 							Gracias.Mormon_MC.visible = true;
+							Borrar_Cliente();
 							break;
 								}
 				//Trabajos.splice([i*multiplicador], 6);
