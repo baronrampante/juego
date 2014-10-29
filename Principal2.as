@@ -747,7 +747,7 @@
 				if (Trabajos[(i*multiplicador)+7] < 3 )
 				{
 				Gracias.visible = true;
-				Gracias.Texto.text = "me cagaste";
+				Gracias.Texto.text = "Estaba necesitando ese arreglo, ¡¡te comprometiste!!";
 				
 				Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
