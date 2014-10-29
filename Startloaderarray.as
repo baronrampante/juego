@@ -43,6 +43,7 @@
 		public var req2:URLRequest;
 		public var coso:Object;
 		var Time:Temporizador = new Temporizador  ;
+		var Jogo = 0;
 		
 		
 
@@ -259,7 +260,9 @@
 						var myTween5:Tween = new Tween(Tira_MC,"y",Regular.easeOut,400,-400,2,true);
 						break;
 					case "Adelante_Juego" :
+						if (Jogo == 1){
 						cargar();
+						}
 						break;
 					case "cargar22" :
 						cargar2();
@@ -278,18 +281,21 @@
 					Tira_MC.Textil_MC.visible = false;
 					Tira_MC.Carpinteria_MC.visible = false;
 					Juego = "Verduleria_final.swf";
+					Jogo = 1;
 					break;
 				case "Carpinteria_BT" :
 					Tira_MC.Feria_MC.visible = false;
 					Tira_MC.Textil_MC.visible = false;
 					Tira_MC.Carpinteria_MC.visible = true;
 					Juego = "micro.swf";
+					Jogo = 1;
 					break;
 				case "Textil_BT" :
 					Tira_MC.Feria_MC.visible = false;
 					Tira_MC.Textil_MC.visible = true;
 					Tira_MC.Carpinteria_MC.visible = false;
 					Juego = "Textil";
+					Jogo = 1;
 					break;
 			}
 		}
