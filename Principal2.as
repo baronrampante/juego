@@ -485,6 +485,8 @@
 			{
 				Pedido_Comunidad_MC.visible = true;
 				Pedido_Comunidad_MC.Texto.text = Client.Comunidad[0];
+				Pedido_Comunidad_MC.Tablones.text = String(Tablones_Stock);
+				Pedido_Comunidad_MC.Alfajias.text = String(Alfajias_Stock);
 				Ya_pidio = true;
 			}
 			
@@ -922,6 +924,8 @@
 				case "Comunidad_BT" :
 					if (Asesora_start.visible == false){
 						Pedido_Comunidad_MC.visible = true;
+						Pedido_Comunidad_MC.Tablones.text = String(Tablones_Stock);
+						Pedido_Comunidad_MC.Alfajias.text = String(Alfajias_Stock);
 						Pedido_Comunidad_MC.Texto.text = Client.Comunidad[0];
 					}
 					break;
@@ -1069,17 +1073,33 @@
 			switch (event.target.name)
 			{
 				case "Aceptar_Comunidad" :
-					Pedido_Comunidad_MC.visible = false;
-					Comunidad_var = Comunidad_var + 100;
+				Comunidad_Yes();
+					
 					
 					break;
 				case "Cancelar_Comunidad" :
 					Pedido_Comunidad_MC.visible = false;
-					//Comunidad_var = Comunidad_var + 300;
+					Comunidad_var = Comunidad_var - 30;
 					
 					break;
 			}
 		}
+		
+		function Comunidad_Yes(): void
+		{
+			if (Tablones_Stock >= 2 && Alfajias_Stock >= 5){
+				Pedido_Comunidad_MC.visible = false;
+				Tablones_Stock = Tablones_Stock - 2;
+				Alfajias_Stock = Alfajias_Stock - 5;
+				Comunidad_var = Comunidad_var + 100;
+				}
+				else{
+					fnEn_Madera_pedido_Placa();
+					Pedido_Comunidad_MC.visible = false;
+				}
+		}
+		
+		
 
 		public function fnMalo(event:MouseEvent):void
 		{
