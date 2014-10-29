@@ -10,7 +10,7 @@
 	 */
 	public class Main extends MovieClip 
 	{
-		public var diam = 0;
+		public var diam = 1.30;
 		public var temp = 0;
 		public var re = 0;
 
