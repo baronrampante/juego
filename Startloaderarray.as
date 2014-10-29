@@ -145,7 +145,7 @@
 		
 		public function descargar2()
 		{
-			Time.Empezar(true);
+			//Time.Empezar(true);
 			cargador2.unloadAndStop();
 			cargador2.removeChildAt(20);
 			cargador2 = null;
