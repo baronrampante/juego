@@ -57,7 +57,7 @@
 			cargador = new Loader() as Loader;
 			cargador2 = new Loader() as Loader;
 			//asignamos la direccion del archivo que se va a cargar
-			req = new URLRequest("micro.swf");
+			req = new URLRequest(Juego);
 			req2 = new URLRequest("cortar_tronco_final2.swf");
 			Personaje2 = Fondo_Nacho;
 			Cabeza_actual = Nacho;
@@ -88,6 +88,7 @@
 			//Fondo_Nacho = null;
 			//Fondo_Ivan = null;
 			//Fondo_Avril = null;
+			req = new URLRequest(Juego);
 			cargador.load(req);
 			SoundMixer.stopAll();
 			//agregamos un listener que espere a que la carga este completa, si esta completa llamara la funcion "fincarga";
@@ -131,11 +132,24 @@
 
 		public function descargar()
 		{
+			cargador.unloadAndStop();
+			cargador.removeChildAt(19);
+			cargador = null;
+			Jugar_BT.visible = visible;
+			Placa_Start.visible = visible;
+			
+						
+			//cargador.visible =true;
+			//pelicula.Time.Empezar(true);
+		}
+		
+		public function descargar2()
+		{
+			Time.Empezar(true);
 			cargador2.unloadAndStop();
 			cargador2.removeChildAt(20);
 			cargador2 = null;
-			Jugar_BT.visible = visible;
-			Placa_Start.visible = visible;
+			
 			
 						
 			//cargador.visible =true;
@@ -248,13 +262,13 @@
 					Tira_MC.Feria_MC.visible = true;
 					Tira_MC.Textil_MC.visible = false;
 					Tira_MC.Carpinteria_MC.visible = false;
-					Juego = "Feria";
+					Juego = "Verduleria_final.swf";
 					break;
 				case "Carpinteria_BT" :
 					Tira_MC.Feria_MC.visible = false;
 					Tira_MC.Textil_MC.visible = false;
 					Tira_MC.Carpinteria_MC.visible = true;
-					Juego = "Carpinteria";
+					Juego = "micro.swf";
 					break;
 				case "Textil_BT" :
 					Tira_MC.Feria_MC.visible = false;

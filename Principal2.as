@@ -82,6 +82,8 @@
 		var Flag_Juego = false;
 		var Ya_jugo = false;
 		var Ya_jugo_2 = false;
+		var Ya_jugo_3 = false;
+		var Ya_jugo_4 = false;
 
 
 		//Timers
@@ -519,20 +521,29 @@
 				//Cargar();
 				(root.loaderInfo.loader.root as Object).cargar2();
 				
-				Time.Pausar();
+				//Time.Pausar();
 				Ya_jugo = true;
-				//Empleado = true;
-				//fnEmpleado();
+				
 			}
 			
 			//Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
-				peli = peli2;
+				peli 
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
+				Construccion= true;
+			}
+			
+			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_2 == false)
+			{
+				//Cliente_MC.Velocidad_var = Velocidad_var;
+				peli = peli2;
+				Cargar();
+				Time.Pausar();
+				Ya_jugo_3 = true;
 				Construccion= true;
 			}
 			
@@ -748,24 +759,24 @@
 				Borrar_Cliente();
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
-							Placa_Clientes.Punk_MC.visible = true;
+							//Placa_Clientes.Punk_MC.visible = true;
 							Gracias.Punk_MC.visible = true;
 							break;
 						case "Olga":
-							Placa_Clientes.Vieja_MC.visible = true;
+							//Placa_Clientes.Vieja_MC.visible = true;
 							Gracias.Vieja_MC.visible = true;
 							break;
 						case "Andrea":
-							Placa_Clientes.Coqueta_MC.visible = true;
+							Gracias.Coqueta_MC.visible = true;
 							break;
 						case "Gustavo":
-							Placa_Clientes.Viejo_MC.visible = true;
+							Gracias.Viejo_MC.visible = true;
 							break;
 						case "Lucía":
-							Placa_Clientes.Nena_MC.visible = true;
+							Gracias.Nena_MC.visible = true;
 							break;
 						case "Martín":
-							Placa_Clientes.Mormon_MC.visible = true;
+							Gracias.Mormon_MC.visible = true;
 							break;
 								}
 				//Trabajos.splice([i*multiplicador], 6);
@@ -826,6 +837,10 @@
 
 
 		//Botones en general
+		
+		public function Continuar():void{
+			Time.Empezar(true);
+		}
 		
 		 function fnCarga_MC(event:MouseEvent):void
 		 {
