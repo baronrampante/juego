@@ -32,7 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		var numero = 12; //Tiempo de entrega
+		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -110,6 +110,7 @@
 		public var Cuota_Banco = 3000;
 		var Construccion = false;
 		var Comunidad_Aviso = false;
+		var numero = 0; // variable de horas de entrga
 		
 		// Cargar peli
 		
@@ -130,6 +131,7 @@
 		var pago_cuota_mes2 = false;
 
 		//Clientes
+		var Cliente_Arreglando = "";
 		var Cliente_Stage = false;
 		var Buscar = "";//nombre del cliente que termino
 		var Buscar_flag = false;// flag para saber si se termino un trabajo
@@ -278,6 +280,7 @@
 			No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
+			numero = ((randomRange(40, 160))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
@@ -744,7 +747,7 @@
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
 			for(var i:int=0; i<6; i++) {
-				if (Trabajos[(i*multiplicador)+7] < 3 )
+				if (Trabajos[(i*multiplicador)+7] < 3)
 				{
 				Gracias.visible = true;
 				Gracias.Texto.text = "Estaba necesitando ese arreglo, ¡¡te comprometiste!!";
@@ -755,7 +758,14 @@
 				//Placa_Clientes.visible = true;
 				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
-				
+				Gracias.Punk_MC.visible = false;
+			Gracias.Vieja_MC.visible = false;
+			Gracias.Viejo_MC.visible = false;
+			Gracias.Nena_MC.visible = false;
+			Gracias.Mormon_MC.visible = false;
+			Gracias.Coqueta_MC.visible = false;
+			Limpiar();
+
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
 							Gracias.Punk_MC.visible = true;
@@ -793,6 +803,32 @@
 		{
 			Trabajos.splice([Cliente_borrar], multiplicador);
 		}
+		
+		function Limpiar():void{
+					Lista_Trabajos.Datos_Materiales.text ="";
+					Lista_Trabajos.Datos_Alfajias.text = "";
+					Lista_Trabajos.Datos_Tablones.text = "";
+					Lista_Trabajos.Datos_Tiempo.text = "";
+					Lista_Trabajos.Datos_Precio.text = "";
+					Lista_Trabajos.Datos_Cliente.text = "";
+					Lista_Trabajos.Datos_Trabajo.text = "";
+					
+					//Buscar = Nombre[1];
+					Lista_Trabajos.Taburete_Roto.visible = false;
+					Lista_Trabajos.Silla_Roto.visible = false;
+					Lista_Trabajos.Mesa_Roto.visible = false;
+					Lista_Trabajos.Banquito_Roto.visible = false;
+					Lista_Trabajos.Mesita_Roto.visible = false;
+					Lista_Trabajos.Luz_Roto.visible = false;
+					Lista_Trabajos.Mormon_MC.visible = false;
+					Lista_Trabajos.Vieja_MC.visible = false;
+					Lista_Trabajos.Nena_MC.visible = false;
+					Lista_Trabajos.Coqueta_MC.visible = false;
+					Lista_Trabajos.Punk_MC.visible = false;
+					Lista_Trabajos.Raya.visible = false;
+					Lista_Trabajos.En_Proceso.text = "";
+		}
+		
 		
 		function Placa_no_cumpliste():void{
 			Placa_Clientes.visible = true;
@@ -1205,7 +1241,7 @@
 		public function fnBuscar_Trabajo2()
 		{
 					Venir_Buscar.text =(String(Trabajos_Terminados_Entrega[2] + " venite a buscar el laburo"));
-					var client = Trabajos_Terminados_Entrega[2];
+					var client = Cliente_Arreglando;
 					Dinero_var = Dinero_var + (Trabajos_Terminados_Entrega[1]);
 					Trabajos.splice([Trabajos_Terminados_Entrega[3]], multiplicador);
 					Trabajos_Terminados_Entrega.splice([0], 4);
@@ -1236,45 +1272,36 @@
 					// Placa Clente buscar
 					
 					Dinero_caida.gotoAndPlay(2);
+					//Coqueta_MC2.gotoAndPlay(1);
 					Comunidad_var += 20;
 					
-					//Placa_Clientes.visible = true;
-					//Placa_Clientes.gotoAndStop(5);
-					Gracias.visible = true;
-					Gracias.Fondo.visible = false;
-					//Gracias.Texto.text = "Gracias";
-					
 					Puntaje_var = Puntaje_var + 40;
-					Gracias.Punk_MC.visible = false;
-					Gracias.Vieja_MC.visible = false;
-					Gracias.Viejo_MC.visible = false;
-					Gracias.Nena_MC.visible = false;
-					Gracias.Mormon_MC.visible = false;
+					
 					
 					switch(client){
 					case "Julio":
 						//Gracias.Punk_MC.visible = true;
-						Gracias.Coqueta_MC.gotoAndPlay(1);
+						Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Olga":
 						//Gracias.Vieja_MC.visible = true;
-						Gracias.Coqueta_MC.gotoAndPlay(1);
+						Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Andrea":
-						Gracias.Coqueta_MC.visible = true;
-						Gracias.Coqueta_MC.gotoAndPlay(1);
+						//Gracias.Coqueta_MC.visible = true;
+						Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Gustavo":
 						//Gracias.Viejo_MC.visible = true;
-						Gracias.Coqueta_MC.gotoAndPlay(1);
+						Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Lucía":
 						//Gracias.Nena_MC.visible = true;
-						Gracias.Coqueta_MC.gotoAndPlay(1);
+						Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Martín":
 						//Gracias.Mormon_MC.visible = true;
-						Gracias.Coqueta_MC.gotoAndPlay(1);
+						Coqueta_MC2.gotoAndPlay(1);
 						break;
 					}
 					
@@ -1435,6 +1462,7 @@
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
+						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
 						//var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
 					}
 						else
