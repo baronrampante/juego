@@ -5,18 +5,19 @@ Metadatos
 ---------
 Bytes         Valor
 ----------    -----
-      1178    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-10-29T19:06:23-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-10-29T19:06:23-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:485EECDB7B5FE411B93AD815A65F1908</stRef:instanceID> <stRef:documentID>xmp.did:8240AEE8411BE411AE3C9C82661BAAD8</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:7B596070AF5FE411B93AD815A65F1908</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:7B596070AF5FE411B93AD815A65F1908</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1178    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-10-29T21:26:53-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-10-29T21:26:53-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:485EECDB7B5FE411B93AD815A65F1908</stRef:instanceID> <stRef:documentID>xmp.did:8240AEE8411BE411AE3C9C82661BAAD8</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:1CB117A0C25FE411B93AD815A65F1908</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:1CB117A0C25FE411B93AD815A65F1908</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Fotograma #    Bytes de fotograma    Bytes totales    Escena
 -----------    ------------------    -------------    ------
-          1                477642           477642    Escena 1 (Fotograma de exportación para clases de AS 3.0)
+          1                477977           477977    Escena 1 (Fotograma de exportación para clases de AS 3.0)
 
 Escena      Bytes de forma    Bytes de texto    Bytes de ActionScript
 --------    --------------    --------------    ---------------------
-Escena 1                 0                 0                    14265
+Escena 1                 0                 0                    14481
 
 Símbolo            Bytes de forma    Bytes de texto    Bytes de ActionScript
 ---------------    --------------    --------------    ---------------------
+pantalla                       57                53                        0
 Avril_Cabeza                    0                 0                        0
 Atras                           0                 0                        0
 Avril_BT                        0                 0                        0
@@ -43,42 +44,46 @@ Start                           0                 0                        0
 Textil_Yes                      0                 0                        0
 Tira                            0                 0                        0
 
+Nombre de fuente                     Bytes         Caracteres
+---------------------------------    ----------    ----------
+Helvetica93-ExtendedBlack Negrita            43    
+
 Bytes de ActionScript    Ubicación
 ---------------------    ---------
-                14265    Escena 1:Fotograma 1
+                14481    Escena 1:Fotograma 1
 
 Mapa de bits                    Comprimido    Original      Compresión
 ----------------------------    ----------    ----------    ----------
 boton_anterior_1.png                  2901         53192    Calidad JPEG=60
-cartel_anterior.png                   3000         53192    Calidad JPEG=60
+cartel_anterior.png                   2999         53192    Calidad JPEG=60
 boton_anterior_2.png                  2919         53192    Calidad JPEG=60
-fondo_chico_2.png                    48915       3840000    Calidad JPEG=60
-fondo_chica_1.png                    44444       3840000    Calidad JPEG=60
-fondo_chica_2.png                    40980       3840000    Calidad JPEG=60
-fondo_chico_1.png                    44601       3840000    Calidad JPEG=60
-icono_avril.png                       4925         70180    Calidad JPEG=60
-icono_ivan.png                        4726         70180    Calidad JPEG=60
+fondo_chico_2.png                    48905       3840000    Calidad JPEG=60
+fondo_chica_1.png                    44435       3840000    Calidad JPEG=60
+fondo_chica_2.png                    40971       3840000    Calidad JPEG=60
+fondo_chico_1.png                    44592       3840000    Calidad JPEG=60
+icono_avril.png                       4924         70180    Calidad JPEG=60
+icono_ivan.png                        4725         70180    Calidad JPEG=60
 icono_lety.png                        3985         70180    Calidad JPEG=60
-icono_nacho.png                       4489         70180    Calidad JPEG=60
-cartel_elegir_personajes.png          7962        194880    Calidad JPEG=60
-logo_bg.png                          28262       3840000    Calidad JPEG=60
+icono_nacho.png                       4488         70180    Calidad JPEG=60
+cartel_elegir_personajes.png          7961        194880    Calidad JPEG=60
+logo_bg.png                          28256       3840000    Calidad JPEG=60
 boton_siguiente_1.png                 2910         53192    Calidad JPEG=60
-cartel_siguiente.png                  2984         53192    Calidad JPEG=60
-boton_siguiente_2.png                 2944         53192    Calidad JPEG=60
-boton_jugar.png                       4454         56940    Calidad JPEG=60
-chica_2_mano.png                     37010       1553040    Calidad JPEG=60
-chica_1_mano.png                     27646       1694040    Calidad JPEG=60
-chico_1_mano.png                     30918       1845180    Calidad JPEG=60
-chico_2_mano.png                     30257       1551420    Calidad JPEG=60
-img_carpinteria_bn.png                9516        339864    Calidad JPEG=60
-img_carpinteria_c.png                11641        339864    Calidad JPEG=60
-img_textil_bn.png                    11580        339864    Calidad JPEG=60
-img_textil_c.png                     13834        339864    Calidad JPEG=60
-img_puesto_bn.png                    10166        339864    Calidad JPEG=60
-img_puesto_c.png                     12156        339864    Calidad JPEG=60
-boton_textil.png                      2534         19980    Sin pérdida
+cartel_siguiente.png                  2983         53192    Calidad JPEG=60
+boton_siguiente_2.png                 2943         53192    Calidad JPEG=60
+boton_jugar.png                       4453         56940    Calidad JPEG=60
+chica_2_mano.png                     37003       1553040    Calidad JPEG=60
+chica_1_mano.png                     27641       1694040    Calidad JPEG=60
+chico_1_mano.png                     30912       1845180    Calidad JPEG=60
+chico_2_mano.png                     30250       1551420    Calidad JPEG=60
+img_carpinteria_bn.png                9514        339864    Calidad JPEG=60
+img_carpinteria_c.png                11638        339864    Calidad JPEG=60
+img_textil_bn.png                    11578        339864    Calidad JPEG=60
+img_textil_c.png                     13831        339864    Calidad JPEG=60
+img_puesto_bn.png                    10164        339864    Calidad JPEG=60
+img_puesto_c.png                     12153        339864    Calidad JPEG=60
+boton_textil.png                      2533         19980    Sin pérdida
 boton_puesto.png                      2816         19980    Sin pérdida
-boton_carpinteria.png                 3628         19980    Sin pérdida
+boton_carpinteria.png                 3627         19980    Sin pérdida
 
 
 

@@ -16,6 +16,8 @@
 	import flash.media.SoundMixer;
 	import flash.media.SoundLoaderContext;
 	import flash.system.System;
+	import flash.display.LoaderInfo;
+	import flash.events.ProgressEvent;
 	import Temporizador;
 
 
@@ -24,7 +26,7 @@
 
 		var snd:Sound = new Sound(new URLRequest("mp_musica_menuinicial.mp3"));
 		var myChannel:SoundChannel = new SoundChannel();
-		var Character  = 0;
+		var Character = 0;
 
 		var Personaje = "Fondo_Nacho";
 		var Personaje2 = "";
@@ -41,6 +43,8 @@
 		public var req2:URLRequest;
 		public var coso:Object;
 		var Time:Temporizador = new Temporizador  ;
+		
+		
 
 		//objetos
 		var Atras_BT:Atras = new Atras  ;
@@ -51,7 +55,7 @@
 		{
 			/*if (stage)
 			{
-				init();
+			init();
 			}*/
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
@@ -68,6 +72,7 @@
 			Adelante_Juego.visible = false;
 			snd.play(0, 100);
 			this.addEventListener(Event.ENTER_FRAME, Personajes);
+			Loady.visible = false;
 
 			//pelicula.Cargar_Peli.addEventListener(MouseEvent.MOUSE_DOWN, Cargar_2);
 
@@ -80,7 +85,7 @@
 
 		}
 
-		
+
 		public function cargar():void
 		{
 			//cargamos el archivo
@@ -92,7 +97,15 @@
 			cargador.load(req);
 			SoundMixer.stopAll();
 			//agregamos un listener que espere a que la carga este completa, si esta completa llamara la funcion "fincarga";
+			Loady.visible = true;
+			cargador.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, loop);
 			cargador.contentLoaderInfo.addEventListener(Event.COMPLETE, fincarga);
+		}
+
+		public function loop(e:ProgressEvent):void
+		{
+			var perc:Number = e.bytesLoaded / e.bytesTotal;
+			Loady.percent.text = Math.ceil(perc*100).toString();
 		}
 
 
@@ -101,6 +114,7 @@
 		{
 			pelicula = e.currentTarget.content;
 			//agregamos cargador al escenario para poder visualizar el contenido de peli.swf
+			Loady.visible = false;
 
 			addChildAt(cargador, 19);
 			pelicula.Character_var = Character;
@@ -123,10 +137,11 @@
 			coso = e.currentTarget.content;
 			//agregamos cargador al escenario para poder visualizar el contenido de peli.swf
 			//removeChild(cargador);
-			if (Time.Pausado== false){
-			addChildAt(cargador2, 20);
-			//cargador.visible =false;
-			//agregamos el listener que llamara a la funcion de peli a load_btn;
+			if (Time.Pausado == false)
+			{
+				addChildAt(cargador2, 20);
+				//cargador.visible =false;
+				//agregamos el listener que llamara a la funcion de peli a load_btn;
 			}
 		}
 
@@ -137,25 +152,25 @@
 			cargador = null;
 			Jugar_BT.visible = visible;
 			Placa_Start.visible = visible;
-			
-						
+
+
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
 		}
-		
+
 		public function descargar2()
 		{
 			//Time.Empezar(true);
 			cargador2.unloadAndStop();
 			cargador2.removeChildAt(20);
 			cargador2 = null;
-			
-			
-						
+
+
+
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
 		}
-		
+
 		public function descargar_volver()
 		{
 			cargador.unloadAndStop();
