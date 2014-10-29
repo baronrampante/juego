@@ -77,7 +77,7 @@
 		var snd:Sound = new Sound(new URLRequest("mp_ambiente_carpinteria.mp3"));
 		
 		var Consejo_Asesora = false;
-		var Consejo_Asesora_Array:Array = new Array(4,6,8);
+		var Consejo_Asesora_Array:Array = new Array(2,5,7, 9, 11, 13, 15);
 		var i = 0;
 		var Flag_Juego = false;
 		var Ya_jugo = false;
@@ -378,6 +378,7 @@
 			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
 			Placa_Construir.Yes.addEventListener(MouseEvent.MOUSE_DOWN, fnConstruir);
+			Placa_Construir.Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnConstruirCerrar);
 			
 			
 			//******** ver si juego termino **********
@@ -420,6 +421,10 @@
 				pago_cuota = true;
 				}
 			}
+		}
+		
+		function fnConstruirCerrar(event:MouseEvent):void{
+			Placa_Construir.visible = false;
 		}
 		
 		public function fnPuntaje():void

@@ -82,6 +82,7 @@
 			_arboles_caidos = 0;
 			_score_puntos = 0;
 			planta.gotoAndStop(1);
+			(root.loaderInfo.loader.root as Object).descargar2();
 			
 			
 			//reseteo barra de tiempo;
@@ -128,8 +129,8 @@
 				_timer.stop();
 				placa_fin.visible = true;
 				termino_juego = true;
-				(root.loaderInfo.loader.root as Object).descargar();
-				//placa_fin.btn_reiniciar.addEventListener(MouseEvent.MOUSE_DOWN, ReIniciarJuego);
+				
+				placa_fin.btn_reiniciar.addEventListener(MouseEvent.MOUSE_DOWN, ReIniciarJuego);
 				removeEventListener(Event.ENTER_FRAME, onEnterFrame);//// para la dinamica de juego
 				placa_fin.total_puntos.text = _score_puntos;
 				trace( "tu puntaje fue " + _score_puntos);
