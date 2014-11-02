@@ -1379,8 +1379,27 @@
 		{
 			Gracias.visible = false;
 		}
-
+		
 		public function fnBotonesTrabajos(event:MouseEvent):void
+		{
+			for(var i:int=0; i<9; i++) {
+			switch (event.target.name)
+			{
+				case "Trabajo" + String(i + 1) :
+					mult = i*multiplicador;
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Arreglar_BT" :
+					fnIniciar_Trabajo();
+			}
+			}
+			}
+
+		/*public function fnBotonesTrabajos(event:MouseEvent):void
 		{
 			switch (event.target.name)
 			{
@@ -1476,8 +1495,7 @@
 				case "Arreglar_BT" :
 					fnIniciar_Trabajo();
 			}
-		}
-
+		}*/
 		function fnLista_Trabajos():void
 		{
 			Lista_Trabajos.Datos_Tiempo.text = String(Trabajos[1 + mult]);
