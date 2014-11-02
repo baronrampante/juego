@@ -56,8 +56,13 @@
 		public function funcionBotonUno(e:MouseEvent): void {
 			n2 = String(re);
 			//n1 = resp.text.slice(0, -1);
+			
+			
 			n1 = resp.text.substring(0,4);
-			if (n1 == n2) {
+			var A = n1;
+			var decimal:Array = A.split(",");
+			var decimalComa:String = decimal[0] + "." + decimal[1]; 
+			if (decimalComa == n2) {
 				gotoAndStop(2);
 				botonDos_mc.addEventListener(MouseEvent.MOUSE_DOWN, funcionBotonDos);
 			} else {

@@ -10,8 +10,8 @@
 	 */
 	public class Main extends MovieClip 
 	{
-		public	var ancho = 0;
-		public	var largo = 0;
+		public	var ancho = 1.30;
+		public	var largo = 2.10;
 		public	var temp = 0;
 		public var re = 0;
 		public var n1:String;
@@ -60,7 +60,12 @@
 		
 		public function funcionBotonUno(e:MouseEvent): void {
 			n1 = resp.text;
-			if (n1 == String(re)) {
+			var A = n1;
+			var decimal:Array = A.split(",");
+			var decimalComa:String = decimal[0] + "." + decimal[1]; 
+			
+			
+			if (decimalComa == re) {
 				gotoAndStop(2);
 				trace("LA RESPUESTA ES CORRECTA");
 				Close.addEventListener(MouseEvent.MOUSE_DOWN, fnClose);
