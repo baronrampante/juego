@@ -215,6 +215,7 @@
 			Gracias.Viejo_MC.visible = false;
 			Gracias.Nena_MC.visible = false;
 			Gracias.Mormon_MC.visible = false;
+			Gracias.Coqueta_MC.visible = false;
 
 			//clientes
 			Lista_Trabajos.Taburete_Roto.visible = false;
@@ -1384,7 +1385,7 @@
 		
 		public function fnBotonesTrabajos(event:MouseEvent):void
 		{
-			for(var i:int=0; i<9; i++) {
+			for(var i:int=0; i<10; i++) {
 			switch (event.target.name)
 			{
 				case "Trabajo" + String(i + 1) :
@@ -1399,7 +1400,7 @@
 					fnIniciar_Trabajo();
 			}
 			}
-			}
+		}
 
 		/*public function fnBotonesTrabajos(event:MouseEvent):void
 		{
@@ -1736,7 +1737,14 @@
 			switch (event.target.name)
 			{
 				case "Yes_BT" :
+					if (Lista_Trabajos.Trabajo10.visible == false){
 					fnClientes_Pedido();
+					}
+					else
+					{
+						Gracias.visible = true;
+						Gracias.Texto.text = "Tienes demasiados trabajos pendientes, realiza algunos antes de seguir aceptando más.";
+					}
 					Cliente_MC.irse();
 					//Puntaje_var = Puntaje_var + 40;
 					break;
