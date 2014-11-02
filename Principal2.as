@@ -188,9 +188,7 @@
 			init();
 		}
 		
-		/*public function remover(){
-			
-		}*/
+		
 		
 		
 		public function init():void
@@ -280,7 +278,7 @@
 			No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
-			numero = ((randomRange(40, 160))); //Tiempo de entrega
+			numero = ((randomRange(400, 1600))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
@@ -676,10 +674,14 @@
 
 			Lista_Trabajos.Trabajo1.text = "Cliente: " + String(Trabajos[6]) + "  Restan " + String(int((Trabajos[7]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7]/Div_horas)) - ((int((Trabajos[7]/Div_horas)/8))*8)+1) + " Hs.";
 			Lista_Trabajos.Trabajo2.text = "Cliente: " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (1*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
-			Lista_Trabajos.Trabajo3.text = "Cliente: " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)) + " Días  ";
-			Lista_Trabajos.Trabajo4.text = "Cliente: " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)) + " Días  ";
-			Lista_Trabajos.Trabajo5.text = "Cliente: " + String(Trabajos[6 + (4*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)) + " Días  ";
-			Lista_Trabajos.Trabajo6.text = "Cliente: " + String(Trabajos[6 + (5*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (5*multiplicador)]/Div_horas)/8)) + " Días  ";
+			Lista_Trabajos.Trabajo3.text = "Cliente: " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (2*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
+			Lista_Trabajos.Trabajo4.text = "Cliente: " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (3*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo5.text = "Cliente: " + String(Trabajos[6 + (4*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (4*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo6.text = "Cliente: " + String(Trabajos[6 + (5*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (5*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (5*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (5*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
+			Lista_Trabajos.Trabajo7.text = "Cliente: " + String(Trabajos[6 + (6*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (6*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (6*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (6*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
+			Lista_Trabajos.Trabajo8.text = "Cliente: " + String(Trabajos[6 + (7*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (7*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (7*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (7*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo9.text = "Cliente: " + String(Trabajos[6 + (8*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (8*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (8*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (8*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo10.text = "Cliente: " + String(Trabajos[6 + (9*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (9*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (9*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (9*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
 
@@ -1232,6 +1234,46 @@
 				Lista_Trabajos.Trabajo6.visible = false;
 				Lista_Trabajos.Linea6.visible = false;
 			}
+			if (Trabajos[6*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo7.visible = true;
+				Lista_Trabajos.Linea7.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo7.visible = false;
+				Lista_Trabajos.Linea7.visible = false;
+			}
+			if (Trabajos[7*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo8.visible = true;
+				Lista_Trabajos.Linea8.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo8.visible = false;
+				Lista_Trabajos.Linea8.visible = false;
+			}
+			if (Trabajos[8*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo9.visible = true;
+				Lista_Trabajos.Linea9.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo9.visible = false;
+				Lista_Trabajos.Linea9.visible = false;
+			}
+			if (Trabajos[9*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo10.visible = true;
+				Lista_Trabajos.Linea10.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo10.visible = false;
+				Lista_Trabajos.Linea10.visible = false;
+			}
 			
 		}
 		
@@ -1387,7 +1429,43 @@
 					fnLista_Trabajos();
 					break;
 				case "Trabajo6" :
-					mult = 4*multiplicador;
+					mult = 5*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo7" :
+					mult = 6*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo8" :
+					mult = 7*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo9" :
+					mult = 8*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo10" :
+					mult = 9*multiplicador;
 					trace("Soy   " + Trabajos);
 					tiempo = Trabajos[1 + mult];
 					Trabajo_Proceso = Trabajos[0 + mult];
@@ -1396,7 +1474,6 @@
 					fnLista_Trabajos();
 					break;
 				case "Arreglar_BT" :
-					//trace (Trabajos [1] [4]);
 					fnIniciar_Trabajo();
 			}
 		}
@@ -1471,7 +1548,7 @@
 			if (Cala_little_var == 1 && Combi_var == 1) {
 				if (Tablones_Stock > Trabajos[2] && Alfajias_Stock > Trabajos[3])
 				
-				{avance
+				{
 					if (en_proceso == false)
 					{
 						avance = ((Trabajos[1 + mult])*10) + _timer.currentCount;
