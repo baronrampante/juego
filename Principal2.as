@@ -217,6 +217,9 @@
 			Gracias.Mormon_MC.visible = false;
 			Gracias.Coqueta_MC.visible = false;
 			
+			Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
+			Madera_MC.Tablon.text = "ALFAJÍA = $ " + String(Tablones_precio);
+			
 			//Graci.visible = false;
 
 			//clientes
