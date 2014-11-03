@@ -37,7 +37,7 @@
 
 		public var Malo_ = 2;
 
-		public var Fin_de_Juego = 12;
+		public var Fin_de_Juego = 20;
 
 		public function Temporizador()
 		{
