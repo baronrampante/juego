@@ -537,6 +537,7 @@
 				//Time.Pausar();
 				Ya_jugo = true;
 				
+				
 			}
 			
 			//Segundo Juego
@@ -547,7 +548,8 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
-				Construccion= true;
+				Empleado = true;
+				Empleado_Pantalla.Candado.visible = false;
 			}
 			
 			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_2 == false)
@@ -713,9 +715,11 @@
 		}
 		
 		function fnEmpleadoSi(event:MouseEvent):void{
+			if (Empleado == true){
 			Empleado_Pantalla.visible = false;
 			Sueldos = 3000;
 			Empleado_si = .5;
+			}
 		}
 		
 		function fnEmpleadoNo(event:MouseEvent):void{
