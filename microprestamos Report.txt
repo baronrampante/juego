@@ -1,0 +1,95 @@
+﻿microprestamos.swf Informe de película
+---------------------------------------
+
+Metadatos
+---------
+Bytes         Valor
+----------    -----
+      1148    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash Professional CS6 - build 481</xmp:CreatorTool> <xmp:CreateDate>2014-05-31T13:02:45-03:00</xmp:CreateDate> <xmp:MetadataDate>2014-11-03T18:48:48-02:00</xmp:MetadataDate> <xmp:ModifyDate>2014-11-03T18:48:48-02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:E35016EC9663E411AB7CD44009836931</stRef:instanceID> <stRef:documentID>xmp.did:E35016EC9663E411AB7CD44009836931</stRef:documentID> <stRef:originalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:622AFF9D9A63E411AB7CD44009836931</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:622AFF9D9A63E411AB7CD44009836931</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:C8860309DDE8E311BB96C6A2A835ACEA</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+
+Fotograma #    Bytes de fotograma    Bytes totales    Escena
+-----------    ------------------    -------------    ------
+          1                551429           551429    Escena 1 (Fotograma de exportación para clases de AS 3.0)
+
+Escena      Bytes de forma    Bytes de texto    Bytes de ActionScript
+--------    --------------    --------------    ---------------------
+Escena 1                 0                 0                    14447
+
+Símbolo            Bytes de forma    Bytes de texto    Bytes de ActionScript
+---------------    --------------    --------------    ---------------------
+Avril_Cabeza                    0                 0                        0
+Atras                           0                 0                        0
+Avril_BT                        0                 0                        0
+Ivan_BT                         0                 0                        0
+Liliy_BT                        0                 0                        0
+Nacho_BT                        0                 0                        0
+Suiguiente                      0                 0                        0
+Textil                          0                 0                        0
+Carpinteria                     0                 0                        0
+Carpinteria_Yes                 0                 0                        0
+elige                           0                 0                        0
+Feria                           0                 0                        0
+Feria_Yes                       0                 0                        0
+fondo_chica_1                   0                 0                        0
+fondo_chica_2                   0                 0                        0
+fondo_chico                     0                 0                        0
+fondo_chico_1                   0                 0                        0
+Ivan_cabeza                     0                 0                        0
+Jugar                           0                 0                        0
+Llily_cabeza                    0                 0                        0
+Nacho_Cabeza                    0                 0                        0
+pantalla                       55              2604                        0
+Play                            0                 0                        0
+Start                           0                 0                        0
+Textil_Yes                      0                 0                        0
+Tira                            0                 0                        0
+
+Nombre de fuente    Bytes         Caracteres
+----------------    ----------    ----------
+Helvetica-Narrow         37268     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćČčĎďĐđĒēĖėĘęĚěĞğĢģĪīĮįİıĶķĹĺĻļĽľŁłŃńŅņŇňŌōŐőŒœŔŕŖŗŘřŚśŞşŠšŢţŤťŪūŮůŰűŲųŸŹźŻżŽžƒˆˇˉ˘˙˚˛˜˝ΔΩμπ–—‘’‚“”„†‡•…‰‹›⁄⁴€™Ω∂∏∑∕√∞∫≠≤≥
+
+Bytes de ActionScript    Ubicación
+---------------------    ---------
+                14447    Escena 1:Fotograma 1
+
+Mapa de bits                    Comprimido    Original      Compresión
+----------------------------    ----------    ----------    ----------
+boton_anterior_1.png                  2828         53192    Calidad JPEG=60
+cartel_anterior.png                   2924         53192    Calidad JPEG=60
+boton_anterior_2.png                  2846         53192    Calidad JPEG=60
+fondo_chico_2.png                    47684       3840000    Calidad JPEG=60
+fondo_chica_1.png                    43325       3840000    Calidad JPEG=60
+fondo_chica_2.png                    39949       3840000    Calidad JPEG=60
+fondo_chico_1.png                    43479       3840000    Calidad JPEG=60
+icono_avril.png                       4801         70180    Calidad JPEG=60
+icono_ivan.png                        4607         70180    Calidad JPEG=60
+icono_lety.png                        3885         70180    Calidad JPEG=60
+icono_nacho.png                       4376         70180    Calidad JPEG=60
+cartel_elegir_personajes.png          7762        194880    Calidad JPEG=60
+logo_bg.png                          27550       3840000    Calidad JPEG=60
+boton_siguiente_1.png                 2837         53192    Calidad JPEG=60
+cartel_siguiente.png                  2908         53192    Calidad JPEG=60
+boton_siguiente_2.png                 2870         53192    Calidad JPEG=60
+boton_jugar.png                       4342         56940    Calidad JPEG=60
+chica_2_mano.png                     36079       1553040    Calidad JPEG=60
+chica_1_mano.png                     26950       1694040    Calidad JPEG=60
+chico_1_mano.png                     30140       1845180    Calidad JPEG=60
+chico_2_mano.png                     29495       1551420    Calidad JPEG=60
+img_carpinteria_bn.png                9276        339864    Calidad JPEG=60
+img_carpinteria_c.png                11348        339864    Calidad JPEG=60
+img_textil_bn.png                    11289        339864    Calidad JPEG=60
+img_textil_c.png                     13486        339864    Calidad JPEG=60
+img_puesto_bn.png                     9910        339864    Calidad JPEG=60
+img_puesto_c.png                     11850        339864    Calidad JPEG=60
+boton_textil.png                      2470         19980    Sin pérdida
+boton_puesto.png                      2745         19980    Sin pérdida
+boton_carpinteria.png                 3537         19980    Sin pérdida
+Shape 2 copy.png                      1060         75400    Sin pérdida
+asesora                              39542        150920    Sin pérdida
+Rectángulo redondeado 1              2063        141440    Calidad JPEG=60
+Shape 3                                506         72000    Sin pérdida
+Capa 3                                1150         11200    Calidad JPEG=60
+
+
+
+

@@ -107,6 +107,7 @@
 		{
 			var perc:Number = e.bytesLoaded / e.bytesTotal;
 			Loady.percent.text = Math.ceil(perc*100).toString();
+			Loady.gotoAndStop(int(perc *10)+ 1);
 		}
 
 
