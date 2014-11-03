@@ -216,6 +216,8 @@
 			Gracias.Nena_MC.visible = false;
 			Gracias.Mormon_MC.visible = false;
 			Gracias.Coqueta_MC.visible = false;
+			
+			//Graci.visible = false;
 
 			//clientes
 			Lista_Trabajos.Taburete_Roto.visible = false;
@@ -1362,27 +1364,27 @@
 					switch(client){
 					case "Julio":
 						//Gracias.Punk_MC.visible = true;
-						Coqueta_MC2.gotoAndPlay(1);
+						Graci.Mormon_MC2.gotoAndPlay(1);
 						break;
 					case "Olga":
 						//Gracias.Vieja_MC.visible = true;
-						Coqueta_MC2.gotoAndPlay(1);
+						Graci.Vieja_MC2.gotoAndPlay(1);
 						break;
 					case "Andrea":
 						//Gracias.Coqueta_MC.visible = true;
-						Coqueta_MC2.gotoAndPlay(1);
+						Graci.Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Gustavo":
 						//Gracias.Viejo_MC.visible = true;
-						Coqueta_MC2.gotoAndPlay(1);
+						Graci.Viejo_MC2.gotoAndPlay(1);
 						break;
 					case "Lucía":
 						//Gracias.Nena_MC.visible = true;
-						Coqueta_MC2.gotoAndPlay(1);
+						Graci.Nena_MC2.gotoAndPlay(1);
 						break;
 					case "Martín":
 						//Gracias.Mormon_MC.visible = true;
-						Coqueta_MC2.gotoAndPlay(1);
+						Graci.Punk_MC2.gotoAndPlay(1);
 						break;
 					}
 					
