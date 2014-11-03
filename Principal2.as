@@ -389,6 +389,13 @@
 			}
 			
 			if (Ya_jugo_2 == true){
+				Empleado = true;
+				Empleado_Pantalla.Candado.visible = false;
+				Gracias.visible = true;
+				Gracias.Texto.text = "Ahora puedes contratar un asistente, los tiempos de producción se reducirán.";
+			}
+			
+			if (Ya_jugo_3 == true){
 				Lista_Trab.fnHacer(true);
 				Placa_Construir.visible = true;
 				Placa_Construir.Mensaje_TXT.text = "Ahora puedes fabricar muebles";
@@ -548,11 +555,11 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
-				Empleado = true;
-				Empleado_Pantalla.Candado.visible = false;
+				
+				
 			}
 			
-			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_2 == false)
+			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_3 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
 				peli = peli2;

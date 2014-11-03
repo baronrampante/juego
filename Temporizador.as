@@ -31,7 +31,7 @@
 
 		public var Primer_Juego = 4;//días para primer juego
 		public var Segundo_Juego = 7;// días para segundo juego
-		public var Tercer_Juego = 15;// días para segundo juego
+		public var Tercer_Juego = 14;// días para segundo juego
 
 
 
