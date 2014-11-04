@@ -893,7 +893,7 @@
 		}
 
 
-		//Funcion Random general
+		//*******************************Funcion Random general****************************
 
 		private function randomRange(minNum:Number, maxNum:Number):Number
 		{
@@ -901,7 +901,7 @@
 		}
 
 
-		//Botones en general
+		//**************************Botones en general***************************************
 		
 		public function Continuar():void{
 			Time.Empezar(true);
@@ -1638,7 +1638,7 @@
 		// Función de nuevo cliente
 		
 		public function Hola_Cliente():void{
-			Nuevo_Cliente = Client.Cliente[(randomRange(0, 4))];
+			Nuevo_Cliente = Client.Cliente[(randomRange(0, 5))];
 			//Texto.text = Nuevo_Cliente + "   " + Viejo_Cliente;
 			if (Viejo_Cliente == Nuevo_Cliente){
 				Hola_Cliente();
@@ -1709,6 +1709,8 @@
 					break;
 			}
 		}
+		
+		//****************************[]convierte un string en el nombre de una variable************************************
 
 		
 		function fnTexto_Pedido():void
