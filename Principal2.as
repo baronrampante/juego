@@ -1585,7 +1585,7 @@
 		{
 			Venir_Buscar.text = String(Trabajos[2]);
 			if (Cala_little_var == 1 && Combi_var == 1) {
-				if (Tablones_Stock >= Trabajos[3] && Alfajias_Stock >= Trabajos[2] && en_proceso == false)
+				if (Tablones_Stock >= Trabajos[3 + mult] && Alfajias_Stock >= Trabajos[2 + mult] && en_proceso == false)
 				{
 					if (en_proceso == false)
 					{
@@ -1598,8 +1598,8 @@
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 						Lista_Trabajos.En_Proceso.text = "Cliente en proceso:  " + Trabajo_Que_se_Procesa[2];
-						Alfajias_Stock = Alfajias_Stock - Trabajos[2];
-						Tablones_Stock = Tablones_Stock - Trabajos[3];
+						Alfajias_Stock = Alfajias_Stock - Trabajos[2 + multi];
+						Tablones_Stock = Tablones_Stock - Trabajos[3 + multi];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
 						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
