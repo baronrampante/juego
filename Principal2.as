@@ -363,6 +363,7 @@
 			Asesora_MC2.Close.addEventListener(MouseEvent.MOUSE_DOWN, Asesora_MC2_Cerrar);
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
 			Empleado_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleado);
+			Irse.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
