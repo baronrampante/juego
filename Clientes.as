@@ -9,12 +9,12 @@
 		public var Banco:Array = new Array(300,4,0.25,0.5, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
 		public var Silla:Array = new Array(300,6,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Mesa:Array = new Array(1900,3,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
-		public var Cama:Array = new Array(1200,3,1,1, 10, "Cama");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
+		public var Cama:Array = new Array(1200,3,1,1, 10, "Taburete");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
 		public var Mesa_Luz:Array = new Array(500,1,1,0.25, 10, "Mesa_Luz");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso1:Array = new Array(3000,4,0.25,0.5, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
 		public var Coso2:Array = new Array(300,4,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso3:Array = new Array(1900,10,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
-		public var Coso4:Array = new Array(300,10,1,1, 10, "Cama");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
+		public var Coso4:Array = new Array(300,10,1,1, 10, "Taburete");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
 		public var Coso5:Array = new Array(1000,10,1,0.25, 10, "Mesa_Luz");// precio, tiempo de arreglo, alfajías, tablones
 		
 		public var Objetos:Array = new Array(Coso1, Coso2, Coso3, Coso4, Coso5, Banco, Silla, Mesa, Cama, Mesa_Luz);
@@ -24,7 +24,7 @@
 		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","¡Que tal?, se me rompió una pata del banco. ¡Te agradezco si lo pod{es arreglar?");
 		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","¡Que tal?, el respaldo de la silla se me rompió, lo podr{as reparar?" );
 		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","¡Cómo estás, La mesa se me rompío, la estará necesitando medio urgente? ");
-		public var TextosCama:Array = new Array("Hola, ayer se me rompió la parrilla de la cama","Hola, el respaldo de la cama se me rompió, ¿es posible arreglarlo?");
+		public var TextosCama:Array = new Array("Hola, ayer se me rompió el taburete que acostumbro usar","Hola, la pata del taburete se me partió, ¿es posible arreglarlo?");
 		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se ,e partió una pata de la mesa de luz. ¿Podrá arreglarlo?");
 		
 		public var TextosAsesora:Array = new Array("El oficio del carpintero es el trabajo con la madera, ya sea en la construcción &#40;andamios, ventanas, puertas, etc&#41; o en la manufactura de mobiliario &#40;mesas, sillas, armarios" , 

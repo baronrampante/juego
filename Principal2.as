@@ -1563,14 +1563,14 @@
 				case "Mesa" :
 					Lista_Trabajos.Mesa_Roto.visible = true;
 					break;
-				case "Cama" :
+				case "Taburete" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
 				case "Mesa de Luz" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
-					Lista_Trabajos.Mesita_Roto.visible = true;
+					Lista_Trabajos.Banquito_Roto.visible = true;
 					break;
 			}
 		}
