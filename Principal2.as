@@ -284,7 +284,7 @@
 			No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
-			numero = ((randomRange(400, 1600))); //Tiempo de entrega
+			numero = ((randomRange(80, 260))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
@@ -776,7 +776,8 @@
 				if (Trabajos[(i*multiplicador)+7] < 3)
 				{
 				Gracias.visible = true;
-				Gracias.Texto.text = "Estaba necesitando ese arreglo, ¡¡te comprometiste!!";
+				var indice = ((randomRange(0, 5)));
+				Gracias.Texto.text = Client.TextosBronca[indice];
 				
 				Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
