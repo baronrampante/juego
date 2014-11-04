@@ -21,14 +21,14 @@
 		
 		
 		
-		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","¡Que tal?, se me rompió una pata del banco. ¡Te agradezco si lo pod{es arreglar?");
-		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","¡Que tal?, el respaldo de la silla se me rompió, lo podr{as reparar?" );
-		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","¡Cómo estás, La mesa se me rompío, la estará necesitando medio urgente? ");
-		public var TextosCama:Array = new Array("Hola, ayer se me rompió el taburete que acostumbro usar","Hola, la pata del taburete se me partió, ¿es posible arreglarlo?");
-		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se partió una pata de la mesa de luz. ¿Podrá arreglarlo?");
+		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","¡Que tal?, se me rompió una pata del banco. ¡Te agradezco si lo podés arreglar?","¡Buenas tardes! ¿Necesito un banco bajo donde pueda apoyar mis pies mientras tejo? ¿Podría hacerlo?");
+		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","¡Que tal?, el respaldo de la silla se me rompió, lo podr{as reparar?","¡Buenasssss! Estoy necesitando una silla, ya que un amigo se quedará en casa durante un tiempo ¿Es posible?" );
+		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","¡Cómo estás, La mesa se me rompío, la estará necesitando medio urgente?","¿Que tal? Estoy necesitando una mesa rústica para el jardín de mi casa ¿Hacen ese tipo de piezas aquí?");
+		public var TextosCama:Array = new Array("Hola, ayer se me rompió el taburete que acostumbro usar","Hola, la pata del taburete se me partió, ¿es posible arreglarlo?","¡Hola! ¡Buenas! Mirá necesito hacer un taburete alto.  ¿Podés hacerlo?");
+		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se partió una pata de la mesa de luz. ¿Podrá arreglarlo?","¡Hola, buenas tardes! Necesito una mesa de luz nueva, ya que la que tengo esta muy viejita. ¿Tú podrías hacerla?");
 		
 		
-		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Cojones","Diablos","Che!","Buuuhh","¿Que te pasa?");
+		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Cojones","Diablos","¡DIJISTE QUE PODÍAS ARREGLARLO Y NO CUMPLISTE TU PALABRA!!!!","¡ME DIJISTE QUE PODÍAS HACERLO ¿Y AHORA DECÍS QUE NO?!!!!! ¡QUIERO UN REMBOLSO","¿Que te pasa?");
 		
 		public var TextosAsesora:Array = new Array("El oficio del carpintero es el trabajo con la madera, ya sea en la construcción &#40;andamios, ventanas, puertas, etc&#41; o en la manufactura de mobiliario &#40;mesas, sillas, armarios" , 
 		"El trabajo de la madera es una de las actividades de la industria humana más antiguas que existen, por lo cual en cada cultura y regiones encontraremos diferentes maneras y herramientas para trabajar este material",

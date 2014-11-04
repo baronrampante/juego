@@ -634,7 +634,7 @@
 			
 			
 
-        //************** Actualizaci{on permanente de datos existente **************
+        //************** Actualizacion permanente de datos existente **************
 		
 			
 			Madera_MC.Alf.text = String(Alfajias_Stock)
@@ -1133,7 +1133,6 @@
 				case "Cancelar1" :
 					Placa_Malo_MC.gotoAndStop(2);
 					Placa_Malo_MC.Texto2.text = Client.Malo[2];
-					//"Ah, no estas convencidos, que tal si te los vendo a 200 pesos, si escuchaste bien tablones por solo 200 pesos, mi ultima oferta!";
 					break;
 				case "Cancelar2" :
 					Placa_Malo_MC.visible = false;
@@ -1723,7 +1722,12 @@
 			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
 			trace(texto);
 			var indice = ((randomRange(0, 1)));
+			if (Construccion == false){
 			Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
+			}
+			else{
+				Placa_Clientes.Cliente_TXT.text = Client[texto][2];//[]convierte un string en el nombre de una variable
+			}
 		}
 	
 		function Mover_cliente():void
