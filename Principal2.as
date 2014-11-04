@@ -31,8 +31,6 @@
 
 	public class Principal2 extends MovieClip
 	{
-		
-		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -190,7 +188,6 @@
 		
 		
 		
-		
 		public function init():void
 		{
 			_timer.start();
@@ -314,6 +311,9 @@
 		}
 		}
 		
+		
+		//************************************Botones Barraca***************************************
+		
 		public function Botones_Barra(event:MouseEvent):void{
 			
 			switch (event.target.name)
@@ -346,8 +346,9 @@
 				Comprar_Taladro_Pie();
 				break;
 			}
-			
 		}
+		
+		//******************************************Botones Stage y Otros*************************************************
 
 		public function Botones(evt:Event):void
 		{
@@ -375,6 +376,7 @@
 			
 			
 			//Botones Cerrar pantallas;
+			
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
 			Lista_Trabajos.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCerrarLista);
 			Placa_financiera.btn_cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_Cerrar);
@@ -454,7 +456,7 @@
 
 
 
-		//LINEA DE TIEMPO: acá se controla por tiempo todo;
+		//******************************LINEA DE TIEMPO: acá se controla por tiempo todo******************************
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -934,6 +936,8 @@
 			}
 			
 		}
+		
+		//***************************************Botones Iconos Stage***********************************
 
 		function fnBotonesStage(event:MouseEvent):void
 		{
@@ -1724,7 +1728,7 @@
 			trace(texto);
 			var indice = ((randomRange(0, 1)));
 			if (Construccion == false){
-			Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
+				Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
 			}
 			else{
 				Placa_Clientes.Cliente_TXT.text = Client[texto][2];//[]convierte un string en el nombre de una variable
