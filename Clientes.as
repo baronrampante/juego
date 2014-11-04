@@ -10,7 +10,7 @@
 		public var Silla:Array = new Array(300,8,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Mesa:Array = new Array(1900,8,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
 		public var Cama:Array = new Array(1200,4,1,1, 10, "Taburete");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
-		public var Mesa_Luz:Array = new Array(500,1,1,0.25, 10, "Mesa_Luz");// precio, tiempo de arreglo, alfajías, tablones
+		public var Mesa_Luz:Array = new Array(500,4,1,0.25, 10, "Mesa_Luz");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso1:Array = new Array(3000,8,1,4, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
 		public var Coso2:Array = new Array(300,14,2,4, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso3:Array = new Array(1900,18,4,4, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones

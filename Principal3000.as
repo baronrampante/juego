@@ -31,8 +31,6 @@
 
 	public class Principal2 extends MovieClip
 	{
-		
-		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -190,7 +188,6 @@
 		
 		
 		
-		
 		public function init():void
 		{
 			_timer.start();
@@ -314,6 +311,9 @@
 		}
 		}
 		
+		
+		//************************************Botones Barraca***************************************
+		
 		public function Botones_Barra(event:MouseEvent):void{
 			
 			switch (event.target.name)
@@ -346,8 +346,9 @@
 				Comprar_Taladro_Pie();
 				break;
 			}
-			
 		}
+		
+		//******************************************Botones Stage y Otros*************************************************
 
 		public function Botones(evt:Event):void
 		{
@@ -375,6 +376,7 @@
 			
 			
 			//Botones Cerrar pantallas;
+			
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
 			Lista_Trabajos.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCerrarLista);
 			Placa_financiera.btn_cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_Cerrar);
@@ -454,7 +456,7 @@
 
 
 
-		//LINEA DE TIEMPO: acá se controla por tiempo todo;
+		//******************************LINEA DE TIEMPO: acá se controla por tiempo todo******************************
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -779,7 +781,10 @@
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
 				Gracias.Texto.text = Client.TextosBronca[indice];
-				
+				Comunidad_var -= 30;
+				avance_porcentaje = 0;
+				en_proceso = false;
+				Lista_Trabajos.Arreglar_BT.gotoAndStop(1);
 				Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
@@ -787,12 +792,12 @@
 				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
 				Gracias.Punk_MC.visible = false;
-			Gracias.Vieja_MC.visible = false;
-			Gracias.Viejo_MC.visible = false;
-			Gracias.Nena_MC.visible = false;
-			Gracias.Mormon_MC.visible = false;
-			Gracias.Coqueta_MC.visible = false;
-			Limpiar();
+				Gracias.Vieja_MC.visible = false;
+				Gracias.Viejo_MC.visible = false;
+				Gracias.Nena_MC.visible = false;
+				Gracias.Mormon_MC.visible = false;
+				Gracias.Coqueta_MC.visible = false;
+				Limpiar();
 
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
@@ -934,6 +939,8 @@
 			}
 			
 		}
+		
+		//***************************************Botones Iconos Stage***********************************
 
 		function fnBotonesStage(event:MouseEvent):void
 		{
@@ -1336,7 +1343,6 @@
 					//Borrar todos los datos de la lista de trabajos a la derecha
 					Lista_Trabajos.Datos_Materiales.text ="";
 					Lista_Trabajos.Datos_Alfajias.text = "";
-
 					Lista_Trabajos.Datos_Tablones.text = "";
 					Lista_Trabajos.Datos_Tiempo.text = "";
 					Lista_Trabajos.Datos_Precio.text = "";
@@ -1585,7 +1591,8 @@
 		{
 			Venir_Buscar.text = String(Trabajos[2]);
 			if (Cala_little_var == 1 && Combi_var == 1) {
-				if (Tablones_Stock >= Trabajos[3] && Alfajias_Stock >= Trabajos[2] && en_proceso == false)
+				if (Tablones_Stock > Trabajos[3] && Alfajias_Stock > Trabajos[2])
+				
 				{
 					if (en_proceso == false)
 					{
@@ -1598,8 +1605,8 @@
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 						Lista_Trabajos.En_Proceso.text = "Cliente en proceso:  " + Trabajo_Que_se_Procesa[2];
-						Alfajias_Stock = Alfajias_Stock - Trabajos[2];
-						Tablones_Stock = Tablones_Stock - Trabajos[3];
+						Alfajias_Stock = Alfajias_Stock - Trabajos[3];
+						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
 						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
@@ -1615,9 +1622,7 @@
 				else 
 				{
 					if (Trabajos[0] > 1){
-						if (en_proceso == false){
 					fnEn_Madera_pedido_Placa();
-					}
 					}
 				}
 			}
@@ -1726,7 +1731,7 @@
 			trace(texto);
 			var indice = ((randomRange(0, 1)));
 			if (Construccion == false){
-			Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
+				Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
 			}
 			else{
 				Placa_Clientes.Cliente_TXT.text = Client[texto][2];//[]convierte un string en el nombre de una variable
