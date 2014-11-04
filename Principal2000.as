@@ -31,8 +31,6 @@
 
 	public class Principal2 extends MovieClip
 	{
-		
-		var numero = 40; //prueba
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -68,17 +66,22 @@
 		var Nuevo_Nuevo = 0;// flag para ver si hay un nuevo cliente
 		var Cliente_var = "Mario";
 		var Velocidad_var = 0;
-		var Cliente_cara = "Placa_Clientes.Punk_MC";
+		var Cliente_cara = "";
+		//var Cliente_cara = "Placa_Clientes.Punk_MC";
+		var Empleado = false;
+		var Empleado_si = 1;
 	
 		
 		var snd:Sound = new Sound(new URLRequest("mp_ambiente_carpinteria.mp3"));
 		
 		var Consejo_Asesora = false;
-		var Consejo_Asesora_Array:Array = new Array(4,6,8);
+		var Consejo_Asesora_Array:Array = new Array(2,5,7, 9, 11, 13, 15);
 		var i = 0;
 		var Flag_Juego = false;
 		var Ya_jugo = false;
 		var Ya_jugo_2 = false;
+		var Ya_jugo_3 = false;
+		var Ya_jugo_4 = false;
 
 
 		//Timers
@@ -92,7 +95,8 @@
 		var Div_horas = 10;
 
 		//Variables generales
-		var Puntaje_var = 100000;
+		var Puntaje_var = 00000;
+		var Puntajej = "00000";
 		public var Comunidad_var = 600;
 		public var Dia_var = 1;
 		public var Semana_var = 1;
@@ -103,6 +107,8 @@
 		public var Dia_Semana = 0;// variable que cuenta los dias para llegar a a la semana
 		public var Cuota_Banco = 3000;
 		var Construccion = false;
+		var Comunidad_Aviso = false;
+		var numero = 0; // variable de horas de entrga
 		
 		// Cargar peli
 		
@@ -123,6 +129,7 @@
 		var pago_cuota_mes2 = false;
 
 		//Clientes
+		var Cliente_Arreglando = "";
 		var Cliente_Stage = false;
 		var Buscar = "";//nombre del cliente que termino
 		var Buscar_flag = false;// flag para saber si se termino un trabajo
@@ -136,6 +143,7 @@
 		var Character_yes = false;
 		var Malo = false;
 		var myMalo = new Malefico_todo();
+		//var myEmpleado = new boy_2_body();
 		var Malo_var = false;
 
 		//Materiales
@@ -178,9 +186,6 @@
 			init();
 		}
 		
-		/*public function remover(){
-			
-		}*/
 		
 		
 		public function init():void
@@ -196,13 +201,23 @@
 			cargador = new Loader() as Loader;
 			//carga peli externa
 			peli = new URLRequest("carpinteria1.swf");
-			peli2 = new URLRequest("carpinteria1.swf");
+			peli2 = new URLRequest("carpinteria2.swf");
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
 			Madera_MC.Tablones_Ingreso.restrict = "0-9";
 			
+			Gracias.Punk_MC.visible = false;
+			Gracias.Vieja_MC.visible = false;
+			Gracias.Viejo_MC.visible = false;
+			Gracias.Nena_MC.visible = false;
+			Gracias.Mormon_MC.visible = false;
+			Gracias.Coqueta_MC.visible = false;
 			
+			Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
+			Madera_MC.Tablon.text = "ALFAJÍA = $ " + String(Tablones_precio);
+			
+			//Graci.visible = false;
 
 			//clientes
 			Lista_Trabajos.Taburete_Roto.visible = false;
@@ -241,12 +256,13 @@
 			//Asesora_start.visible = false;
 
 			//pantallas
+			Empleado_Pantalla.visible = false;
 			Placa_Clientes.visible = false;
 			Lista_Trabajos.visible = false;
 			Barra.visible = false;
 			Madera_MC.visible = false;
 			Placa_financiera.visible = false;
-			Barrio.visible = false;
+			//Barrio.visible = false;
 			Placa_Malo_MC.visible = false;
 			Gracias.visible=false;
 			Placa_Construir.visible = false;
@@ -265,12 +281,13 @@
 			No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
+			numero = ((randomRange(80, 260))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
 		if (Character_var < 9 && Character_yes == false){// para retrasar carga de variable
 		switch (Character_var){
-			case 0:
+			case 3:
 			var myCharacter = new avriltodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
@@ -280,9 +297,22 @@
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
 			break;
+			case 2:
+			myCharacter = new lety_todo();
+			addChildAt(myCharacter, 10);
+			Character_yes = true;
+			break;
+			case 0:
+			myCharacter = new nacho_todo();
+			addChildAt(myCharacter, 10);
+			Character_yes = true;
+			break;
 			}
 		}
 		}
+		
+		
+		//************************************Botones Barraca***************************************
 		
 		public function Botones_Barra(event:MouseEvent):void{
 			
@@ -316,8 +346,9 @@
 				Comprar_Taladro_Pie();
 				break;
 			}
-			
 		}
+		
+		//******************************************Botones Stage y Otros*************************************************
 
 		public function Botones(evt:Event):void
 		{
@@ -332,24 +363,29 @@
 			Lista_Trabajos.Comprar_Madera.addEventListener(MouseEvent.MOUSE_DOWN, En_Madera);
 			Asesora_MC2.Close.addEventListener(MouseEvent.MOUSE_DOWN, Asesora_MC2_Cerrar);
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
+			Empleado_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleado);
+			Irse.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
 			Gracias.addEventListener(MouseEvent.MOUSE_DOWN, fnGracias);
 			
-			
+			Empleado_Pantalla.Aceptar.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoSi);
+			Empleado_Pantalla.Cancelar.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoNo);
 			
 			
 			
 			//Botones Cerrar pantallas;
+			
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
 			Lista_Trabajos.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCerrarLista);
 			Placa_financiera.btn_cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_Cerrar);
 			Placa_financiera.btn_pagar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_pagar);
-			Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
+			//Barrio.Comunidad_Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnComunidad);
 			Placa_Clientes.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Clientes_BT);
 			Carga_MC.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCarga_MC);
 			Placa_Construir.Yes.addEventListener(MouseEvent.MOUSE_DOWN, fnConstruir);
+			Placa_Construir.Cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnConstruirCerrar);
 			
 			
 			//******** ver si juego termino **********
@@ -361,8 +397,16 @@
 			}
 			
 			if (Ya_jugo_2 == true){
+				Empleado = true;
+				Empleado_Pantalla.Candado.visible = false;
+				Gracias.visible = true;
+				Gracias.Texto.text = "Ahora puedes contratar un asistente, los tiempos de producción se reducirán.";
+			}
+			
+			if (Ya_jugo_3 == true){
 				Lista_Trab.fnHacer(true);
 				Placa_Construir.visible = true;
+				Placa_Construir.Mensaje_TXT.text = "Ahora puedes fabricar muebles";
 			}
 			
 			
@@ -392,10 +436,27 @@
 				}
 			}
 		}
+		
+		function fnConstruirCerrar(event:MouseEvent):void{
+			Placa_Construir.visible = false;
+		}
+		
+		public function fnPuntaje():void
+		{
+			Puntaje.text = "00000";
+			Puntajej = Puntajej.substring(0, (5 - int(String(Puntaje_var).length)));
+			Puntaje.text = Puntajej + String(Puntaje_var);
+			var format2:TextFormat = new TextFormat();
+			format2.letterSpacing = 12;
+			Puntaje.setTextFormat(format2);
+		}
+		
+		
+		
 
 
 
-		//LINEA DE TIEMPO: acá se controla por tiempo todo;
+		//******************************LINEA DE TIEMPO: acá se controla por tiempo todo******************************
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -408,7 +469,8 @@
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
 			avance_porcentaje = avance_porcentaje - 1;
-			Texto.text = String(avance_porcentaje/porcentaje);
+			Texto.text = String(int((avance_porcentaje/porcentaje)*10));
+			Lista_Trabajos.Progreso.gotoAndStop(int((avance_porcentaje/porcentaje)*10));
 
 			//llama a un nuevo cliente
 			Lista_Trab.Tiempo(Time.Hora_var);
@@ -441,6 +503,9 @@
 			if (Cliente_Stage == false && Time.Dia_var == Time.Pedido_Comunidad_1 && Ya_pidio == false)
 			{
 				Pedido_Comunidad_MC.visible = true;
+				Pedido_Comunidad_MC.Texto.text = Client.Comunidad[0];
+				Pedido_Comunidad_MC.Tablones.text = String(Tablones_Stock);
+				Pedido_Comunidad_MC.Alfajias.text = String(Alfajias_Stock);
 				Ya_pidio = true;
 			}
 			
@@ -455,8 +520,15 @@
 				Ya_pidio = true;
 			}
 			
-			if (Comunidad_var < 50){
-				Texto.text = "comunidad baja";
+			if (Comunidad_var < 300 && Comunidad_Aviso == false){
+				Placa_Construir.visible = true;
+				Placa_Construir.Mensaje_TXT.text = "Puntos de Comunidad bajos. Atiende mejor a los clientes y realiza trabajos para la comunidad";
+				Comunidad_Aviso = true;
+				
+			}
+			
+			if (Comunidad_var > 50 ){
+				Comunidad_Aviso == false;
 			}
 			
 			/*Segundo Juego
@@ -474,19 +546,34 @@
 			if (Cliente_Stage == false && Time.Dia_var == Time.Primer_Juego && Ya_jugo == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
-				Cargar();
-				Time.Pausar();
+				//Cargar();
+				(root.loaderInfo.loader.root as Object).cargar2();
+				
+				//Time.Pausar();
 				Ya_jugo = true;
+				
+				
 			}
 			
 			//Segundo Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
-				peli = peli2;
+				peli 
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
+				
+				
+			}
+			
+			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_3 == false)
+			{
+				//Cliente_MC.Velocidad_var = Velocidad_var;
+				peli = peli2;
+				Cargar();
+				Time.Pausar();
+				Ya_jugo_3 = true;
 				Construccion= true;
 			}
 			
@@ -495,17 +582,15 @@
 			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
 			{
 				Placa_Malo_MC.visible = true;
+				//Placa_Malo_MC.Texto.text = "Hoy tengo un ofertón para nuevos emprendimientos! Te doy tablones por el espectacular precio de 300 pesos. Que dice Tío?";
+				Placa_Malo_MC.Texto.text = Client.Malo[0];
+				Placa_Malo_MC.TextoB.text = Client.Malo[1];
 				Malo_var = true;
 				fnMalo();
-				
 			}
-			
-			
 			
 			function fnMalo()
 			{
-				
-				
 				if (Malo == false){
 				addChildAt(myMalo, 10);
 				myMalo.x = 300;
@@ -546,16 +631,15 @@
 			}
 			
 			// Fracaso!!
-			if (Dinero_var <= 0){
+			if (Dinero_var <= 0 || Comunidad_var <= 0 ){
 				Loser.visible = true;
 			}
 			
 			
 
-        //************** Actualizaci{on permanente de datos existente **************
+        //************** Actualizacion permanente de datos existente **************
 		
-			Tablones.text = String(Tablones_Stock);
-			Alfajias.text = String(Alfajias_Stock);
+			
 			Madera_MC.Alf.text = String(Alfajias_Stock)
 			Madera_MC.Tab.text = String(Tablones_Stock);
 			Lista_Trabajos.Datos_Tablones.text = String(Tablones_Stock);
@@ -568,10 +652,16 @@
 			//num = Number( String( num ).split( "." )[ 1 ] );
 			
 			//Puntaje.text = String(num.toFixed(5));
-			var format2:TextFormat = new TextFormat();
+			
+			/*var format2:TextFormat = new TextFormat();
+			
 			format2.letterSpacing = 10;
+			format2..align='left';
+			
 			Puntaje.text = String((Puntaje_var/100000).toFixed(5));
-			Puntaje.setTextFormat(format2);
+			Puntaje.setTextFormat(format2);*/
+			fnPuntaje();
+			
 			
 			Hora_var = Time.Hora_var;
 			Horas.text = String(int(Time.Horas)) + "  horas";
@@ -600,11 +690,16 @@
 			}
 
 
-			Lista_Trabajos.Trabajo1.text = "Cliente:  " + String(Trabajos[6]) + "  Restan  " + String(int(Trabajos[7]/Div_horas)+1) + " hs.";
-			Lista_Trabajos.Trabajo2.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (1*multiplicador)]/Div_horas)+1) + "hs.";
-			Lista_Trabajos.Trabajo3.text = "Cliente:  " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (2*multiplicador)]/Div_horas)+1) + "hs.";
-			Lista_Trabajos.Trabajo4.text = "Cliente:  " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (3*multiplicador)]/Div_horas)+1) + "hs.";
-			Lista_Trabajos.Trabajo5.text = "Cliente:  " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan  " + String(int(Trabajos[7 + (4*multiplicador)]/Div_horas)+1) + "hs.";
+			Lista_Trabajos.Trabajo1.text = "Cliente: " + String(Trabajos[6]) + "  Restan " + String(int((Trabajos[7]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7]/Div_horas)) - ((int((Trabajos[7]/Div_horas)/8))*8)+1) + " Hs.";
+			Lista_Trabajos.Trabajo2.text = "Cliente: " + String(Trabajos[6 + (1*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (1*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (1*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo3.text = "Cliente: " + String(Trabajos[6 + (2*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (2*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (2*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
+			Lista_Trabajos.Trabajo4.text = "Cliente: " + String(Trabajos[6 + (3*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (3*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (3*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo5.text = "Cliente: " + String(Trabajos[6 + (4*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (4*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (4*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo6.text = "Cliente: " + String(Trabajos[6 + (5*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (5*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (5*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (5*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
+			Lista_Trabajos.Trabajo7.text = "Cliente: " + String(Trabajos[6 + (6*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (6*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (6*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (6*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
+			Lista_Trabajos.Trabajo8.text = "Cliente: " + String(Trabajos[6 + (7*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (7*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (7*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (7*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo9.text = "Cliente: " + String(Trabajos[6 + (8*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (8*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (8*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (8*multiplicador)]/Div_horas)/8))*8)) + " Hs.";
+			Lista_Trabajos.Trabajo10.text = "Cliente: " + String(Trabajos[6 + (9*multiplicador)]) + "  Restan " + String(int((Trabajos[7 + (9*multiplicador)]/Div_horas)/8)) + " Días  " + String((int(Trabajos[7 + (9*multiplicador)]/Div_horas)) - ((int((Trabajos[7 + (9*multiplicador)]/Div_horas)/8))*8)) + " Hs."; 
 
 			Visible();// vuelve los botones de los trabajos visibles o invisibles
 
@@ -628,6 +723,22 @@
 				fnBuscar_Trabajo2();
 				
 			}
+		}
+		
+		function fnEmpleado(event:MouseEvent):void{
+			Empleado_Pantalla.visible = true;
+		}
+		
+		function fnEmpleadoSi(event:MouseEvent):void{
+			if (Empleado == true){
+			Empleado_Pantalla.visible = false;
+			Sueldos = 3000;
+			Empleado_si = .5;
+			}
+		}
+		
+		function fnEmpleadoNo(event:MouseEvent):void{
+			Empleado_Pantalla.visible = false;
 		}
 
 
@@ -664,40 +775,56 @@
 		
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
-			//Texto.text = "hayyy";
 			for(var i:int=0; i<6; i++) {
-				if (Trabajos[(i*multiplicador)+7] < 3 )
+				if (Trabajos[(i*multiplicador)+7] < 3)
 				{
-				Texto.text = "me cagaste";
-				if (Cliente_Stage == false){
+				Gracias.visible = true;
+				var indice = ((randomRange(0, 5)));
+				Gracias.Texto.text = Client.TextosBronca[indice];
+				Comunidad_var -= 30;
+				Lista_Trabajos.En_Proceso.text = "";
+				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
-				Placa_Clientes.visible = true;
-				Placa_Clientes.gotoAndStop(6);
+				//Placa_Clientes.visible = true;
+				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
-				//Borrar_Cliente();
+				Gracias.Punk_MC.visible = false;
+				Gracias.Vieja_MC.visible = false;
+				Gracias.Viejo_MC.visible = false;
+				Gracias.Nena_MC.visible = false;
+				Gracias.Mormon_MC.visible = false;
+				Gracias.Coqueta_MC.visible = false;
+				Limpiar();
+
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
-							Placa_Clientes.Punk_MC.visible = true;
+							Gracias.Punk_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Olga":
-							Placa_Clientes.Vieja_MC.visible = true;
+							Gracias.Vieja_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Andrea":
-							Placa_Clientes.Coqueta_MC.visible = true;
+							Gracias.Coqueta_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Gustavo":
-							Placa_Clientes.Viejo_MC.visible = true;
+							Gracias.Viejo_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Lucía":
-							Placa_Clientes.Nena_MC.visible = true;
+							Gracias.Nena_MC.visible = true;
+							Borrar_Cliente();
 							break;
 						case "Martín":
-							Placa_Clientes.Mormon_MC.visible = true;
+							Gracias.Mormon_MC.visible = true;
+							Borrar_Cliente();
 							break;
 								}
 				//Trabajos.splice([i*multiplicador], 6);
 							}
-							}
+							//}
 						}
 					}
 				}
@@ -706,6 +833,32 @@
 		{
 			Trabajos.splice([Cliente_borrar], multiplicador);
 		}
+		
+		function Limpiar():void{
+					Lista_Trabajos.Datos_Materiales.text ="";
+					Lista_Trabajos.Datos_Alfajias.text = "";
+					Lista_Trabajos.Datos_Tablones.text = "";
+					Lista_Trabajos.Datos_Tiempo.text = "";
+					Lista_Trabajos.Datos_Precio.text = "";
+					Lista_Trabajos.Datos_Cliente.text = "";
+					Lista_Trabajos.Datos_Trabajo.text = "";
+					
+					//Buscar = Nombre[1];
+					Lista_Trabajos.Taburete_Roto.visible = false;
+					Lista_Trabajos.Silla_Roto.visible = false;
+					Lista_Trabajos.Mesa_Roto.visible = false;
+					Lista_Trabajos.Banquito_Roto.visible = false;
+					Lista_Trabajos.Mesita_Roto.visible = false;
+					Lista_Trabajos.Luz_Roto.visible = false;
+					Lista_Trabajos.Mormon_MC.visible = false;
+					Lista_Trabajos.Vieja_MC.visible = false;
+					Lista_Trabajos.Nena_MC.visible = false;
+					Lista_Trabajos.Coqueta_MC.visible = false;
+					Lista_Trabajos.Punk_MC.visible = false;
+					Lista_Trabajos.Raya.visible = false;
+					Lista_Trabajos.En_Proceso.text = "";
+		}
+		
 		
 		function Placa_no_cumpliste():void{
 			Placa_Clientes.visible = true;
@@ -744,7 +897,7 @@
 		}
 
 
-		//Funcion Random general
+		//*******************************Funcion Random general****************************
 
 		private function randomRange(minNum:Number, maxNum:Number):Number
 		{
@@ -752,7 +905,11 @@
 		}
 
 
-		//Botones en general
+		//**************************Botones en general***************************************
+		
+		public function Continuar():void{
+			Time.Empezar(true);
+		}
 		
 		 function fnCarga_MC(event:MouseEvent):void
 		 {
@@ -779,6 +936,8 @@
 			}
 			
 		}
+		
+		//***************************************Botones Iconos Stage***********************************
 
 		function fnBotonesStage(event:MouseEvent):void
 		{
@@ -794,7 +953,10 @@
 					break;
 				case "Comunidad_BT" :
 					if (Asesora_start.visible == false){
-						Barrio.visible = true;
+						Pedido_Comunidad_MC.visible = true;
+						Pedido_Comunidad_MC.Tablones.text = String(Tablones_Stock);
+						Pedido_Comunidad_MC.Alfajias.text = String(Alfajias_Stock);
+						Pedido_Comunidad_MC.Texto.text = Client.Comunidad[0];
 					}
 					break;
 				case "Ir_Pantalla_Trabajos_BT" :
@@ -826,7 +988,6 @@
 					(root.loaderInfo.loader.root as Object).cargar2();
 					Time.Pausar();
 					break;
-
 				case "Financiera_BT" :
 					if (Asesora_start.visible == false){
 						Placa_financiera.visible = true;
@@ -869,14 +1030,14 @@
 		}
 		
 
-		function fnComunidad(event:MouseEvent):void
+		/*function fnComunidad(event:MouseEvent):void
 		{
 			Barrio.visible = false;
-		}
+		}*/
 
 		function fnBarrio_Comunidad(event:MouseEvent):void
 		{
-			Barrio.visible = true;
+			//Barrio.visible = true;
 		}
 		public function fnCerrarLista(event:MouseEvent):void
 		{
@@ -942,17 +1103,33 @@
 			switch (event.target.name)
 			{
 				case "Aceptar_Comunidad" :
-					Pedido_Comunidad_MC.visible = false;
-					Comunidad_var = Comunidad_var + 300;
+				Comunidad_Yes();
+					
 					
 					break;
 				case "Cancelar_Comunidad" :
 					Pedido_Comunidad_MC.visible = false;
-					//Comunidad_var = Comunidad_var + 300;
+					Comunidad_var = Comunidad_var - 30;
 					
 					break;
 			}
 		}
+		
+		function Comunidad_Yes(): void
+		{
+			if (Tablones_Stock >= 2 && Alfajias_Stock >= 5){
+				Pedido_Comunidad_MC.visible = false;
+				Tablones_Stock = Tablones_Stock - 2;
+				Alfajias_Stock = Alfajias_Stock - 5;
+				Comunidad_var = Comunidad_var + 100;
+				}
+				else{
+					fnEn_Madera_pedido_Placa();
+					Pedido_Comunidad_MC.visible = false;
+				}
+		}
+		
+		
 
 		public function fnMalo(event:MouseEvent):void
 		{
@@ -960,10 +1137,12 @@
 			{
 				case "Cancelar1" :
 					Placa_Malo_MC.gotoAndStop(2);
-					Comunidad_var = Comunidad_var + 300;
+					Placa_Malo_MC.Texto2.text = Client.Malo[2];
 					break;
 				case "Cancelar2" :
 					Placa_Malo_MC.visible = false;
+					Comunidad_var = Comunidad_var + 100;
+					myMalo.gotoAndStop("Salida");
 					break;
 				case "Aceptar1" :
 					Placa_Malo_MC.visible = false;
@@ -991,6 +1170,28 @@
 		//Fin de botones
 
 		// vuelve o no visible los diferentes pedidos en la lista de pedidos
+		
+		
+		
+		/*function Visible():void
+		{
+			for (var i:uint=1; i<6; i++){
+		
+			if (Trabajos[i*multiplicador] > 2)
+			{
+				Lista_Trabajos.Trabajo[i].visible = true;
+				Lista_Trabajos.Linea(i).visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo[i].visible = false;
+				Lista_Trabajos.Linea(i).visible = false;
+			}
+		}
+		}*/
+		
+		
+			
 
 		function Visible():void
 		{
@@ -1047,7 +1248,59 @@
 				Lista_Trabajos.Linea5.visible = false;
 			}
 			
+			if (Trabajos[5*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo6.visible = true;
+				Lista_Trabajos.Linea6.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo6.visible = false;
+				Lista_Trabajos.Linea6.visible = false;
+			}
+			if (Trabajos[6*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo7.visible = true;
+				Lista_Trabajos.Linea7.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo7.visible = false;
+				Lista_Trabajos.Linea7.visible = false;
+			}
+			if (Trabajos[7*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo8.visible = true;
+				Lista_Trabajos.Linea8.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo8.visible = false;
+				Lista_Trabajos.Linea8.visible = false;
+			}
+			if (Trabajos[8*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo9.visible = true;
+				Lista_Trabajos.Linea9.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo9.visible = false;
+				Lista_Trabajos.Linea9.visible = false;
+			}
+			if (Trabajos[9*multiplicador] > 0)
+			{
+				Lista_Trabajos.Trabajo10.visible = true;
+				Lista_Trabajos.Linea10.visible = true;
+			}
+			else
+			{
+				Lista_Trabajos.Trabajo10.visible = false;
+				Lista_Trabajos.Linea10.visible = false;
+			}
+			
 		}
+		
 		function Placa_ir_Aserradero_Cerrar(event:MouseEvent):void{
 			Placa_ir_Aserradero.visible = false;
 		}
@@ -1079,7 +1332,7 @@
 		public function fnBuscar_Trabajo2()
 		{
 					Venir_Buscar.text =(String(Trabajos_Terminados_Entrega[2] + " venite a buscar el laburo"));
-					var client = Trabajos_Terminados_Entrega[2];
+					var client = Cliente_Arreglando;
 					Dinero_var = Dinero_var + (Trabajos_Terminados_Entrega[1]);
 					Trabajos.splice([Trabajos_Terminados_Entrega[3]], multiplicador);
 					Trabajos_Terminados_Entrega.splice([0], 4);
@@ -1106,37 +1359,40 @@
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
+					Lista_Trabajos.En_Proceso.text = "";
 					// Placa Clente buscar
 					
 					Dinero_caida.gotoAndPlay(2);
+					//Coqueta_MC2.gotoAndPlay(1);
+					Comunidad_var += 20;
 					
-					//Placa_Clientes.visible = true;
-					//Placa_Clientes.gotoAndStop(5);
-					Gracias.visible = true;
-					Gracias.Punk_MC.visible = false;
-					Gracias.Vieja_MC.visible = false;
-					Gracias.Viejo_MC.visible = false;
-					Gracias.Nena_MC.visible = false;
-					Gracias.Mormon_MC.visible = false;
+					Puntaje_var = Puntaje_var + 40;
+					
 					
 					switch(client){
 					case "Julio":
-						Gracias.Punk_MC.visible = true;
+						//Gracias.Punk_MC.visible = true;
+						Graci.Mormon_MC2.gotoAndPlay(1);
 						break;
 					case "Olga":
-						Gracias.Vieja_MC.visible = true;
+						//Gracias.Vieja_MC.visible = true;
+						Graci.Vieja_MC2.gotoAndPlay(1);
 						break;
-					//case "Andrea":
+					case "Andrea":
 						//Gracias.Coqueta_MC.visible = true;
-						//break;
+						Graci.Coqueta_MC2.gotoAndPlay(1);
+						break;
 					case "Gustavo":
-						Gracias.Viejo_MC.visible = true;
+						//Gracias.Viejo_MC.visible = true;
+						Graci.Viejo_MC2.gotoAndPlay(1);
 						break;
 					case "Lucía":
-						Gracias.Nena_MC.visible = true;
+						//Gracias.Nena_MC.visible = true;
+						Graci.Nena_MC2.gotoAndPlay(1);
 						break;
 					case "Martín":
-						Gracias.Mormon_MC.visible = true;
+						//Gracias.Mormon_MC.visible = true;
+						Graci.Punk_MC2.gotoAndPlay(1);
 						break;
 					}
 					
@@ -1147,8 +1403,27 @@
 		{
 			Gracias.visible = false;
 		}
-
+		
 		public function fnBotonesTrabajos(event:MouseEvent):void
+		{
+			for(var i:int=0; i<10; i++) {
+			switch (event.target.name)
+			{
+				case "Trabajo" + String(i + 1) :
+					mult = i*multiplicador;
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Arreglar_BT" :
+					fnIniciar_Trabajo();
+			}
+			}
+		}
+
+		/*public function fnBotonesTrabajos(event:MouseEvent):void
 		{
 			switch (event.target.name)
 			{
@@ -1196,20 +1471,61 @@
 					Nombre_Elegido = Trabajos[6 + mult];
 					fnLista_Trabajos();
 					break;
+				case "Trabajo6" :
+					mult = 5*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo7" :
+					mult = 6*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo8" :
+					mult = 7*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo9" :
+					mult = 8*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
+				case "Trabajo10" :
+					mult = 9*multiplicador;
+					trace("Soy   " + Trabajos);
+					tiempo = Trabajos[1 + mult];
+					Trabajo_Proceso = Trabajos[0 + mult];
+					Entrega = Trabajos[4 + mult];
+					Nombre_Elegido = Trabajos[6 + mult];
+					fnLista_Trabajos();
+					break;
 				case "Arreglar_BT" :
-					//trace (Trabajos [1] [4]);
 					fnIniciar_Trabajo();
 			}
-		}
-
+		}*/
 		function fnLista_Trabajos():void
 		{
 			Lista_Trabajos.Datos_Tiempo.text = String(Trabajos[1 + mult]);
 			Lista_Trabajos.Datos_Precio.text = String(Trabajos[0 + mult]);
 			Lista_Trabajos.Datos_Trabajo.text = String(Trabajos[5 + mult]);
 			Lista_Trabajos.Datos_Cliente.text = String(Trabajos[6 + mult]);
-			Lista_Trabajos.Datos_Alfajias.text = String(Trabajos[3 + mult]);
-			Lista_Trabajos.Datos_Tablones.text = String(Trabajos[2 + mult]);
 			Lista_Trabajos.Datos_Materiales.text = "Tablones " + String(Trabajos[2 + mult]) + "  Alfajías " + String(Trabajos[3 + mult]);
 			Lista_Trabajos.Mormon_MC.visible = false;
 			Lista_Trabajos.Vieja_MC.visible = false;
@@ -1252,14 +1568,14 @@
 				case "Mesa" :
 					Lista_Trabajos.Mesa_Roto.visible = true;
 					break;
-				case "Cama" :
+				case "Taburete" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
 				case "Mesa de Luz" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
-					Lista_Trabajos.Mesita_Roto.visible = true;
+					Lista_Trabajos.Banquito_Roto.visible = true;
 					break;
 			}
 		}
@@ -1272,25 +1588,26 @@
 		{
 			Venir_Buscar.text = String(Trabajos[2]);
 			if (Cala_little_var == 1 && Combi_var == 1) {
-				if (Tablones_Stock > Trabajos[2] && Alfajias_Stock > Trabajos[3])
+				if (Tablones_Stock > Trabajos[3] && Alfajias_Stock > Trabajos[2])
 				
-				{avance
+				{
 					if (en_proceso == false)
 					{
-						avance = Trabajos[1 + mult] + _timer.currentCount;
-						avance_porcentaje = Trabajos[1 + mult];
+						avance = ((Trabajos[1 + mult])*10) + _timer.currentCount;
+						avance_porcentaje = ((Trabajos[1 + mult])*10);
 						porcentaje = avance_porcentaje;
 						Trabajo_Que_se_Procesa.push(Trabajos[4 + mult]); //Tiempo
 						Trabajo_Que_se_Procesa.push(Trabajos[0 + mult]); //Dinero
 						Trabajo_Que_se_Procesa.push(Trabajos[6 + mult]); //Nombre
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
+						Lista_Trabajos.En_Proceso.text = "Cliente en proceso:  " + Trabajo_Que_se_Procesa[2];
 						Alfajias_Stock = Alfajias_Stock - Trabajos[3];
 						Tablones_Stock = Tablones_Stock - Trabajos[2];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
-						var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
-						
+						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
+						//var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
 					}
 						else
 						{
@@ -1326,7 +1643,7 @@
 		// Función de nuevo cliente
 		
 		public function Hola_Cliente():void{
-			Nuevo_Cliente = Client.Cliente[(randomRange(0, 4))];
+			Nuevo_Cliente = Client.Cliente[(randomRange(0, 5))];
 			//Texto.text = Nuevo_Cliente + "   " + Viejo_Cliente;
 			if (Viejo_Cliente == Nuevo_Cliente){
 				Hola_Cliente();
@@ -1379,7 +1696,7 @@
 					Cliente_var.visible = true;
 					break;
 				case "Julio" :
-					Placa_Clientes.Punk_MC.visible = true;
+					//Placa_Clientes.Punk_MC.visible = true;
 					Cliente_cara = Placa_Clientes.Punk_MC;
 					Velocidad_var = 6;
 					Cliente_var = Punk;
@@ -1397,65 +1714,10 @@
 					break;
 			}
 		}
+		
+		//****************************[]convierte un string en el nombre de una variable************************************
 
-		//  Función que hace que el cliente venga a buscar el trabajo
-
-		public function Venite_Buscar():void
-		{
-			switch (Buscar)
-			{
-				case "Martín" :
-					Cliente_cara = Placa_Clientes.Mormon_MC;
-					Velocidad_var = 6;
-					Cliente_var = Mormon;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Olga" :
-					Cliente_cara = Placa_Clientes.Vieja_MC;
-					Velocidad_var = 10;
-					Cliente_var = Vieja;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Lucía" :
-					Cliente_cara = Placa_Clientes.Nena_MC;
-					Velocidad_var = 4;
-					Cliente_var = Nena;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Andrea" :
-					Cliente_cara = Placa_Clientes.Coqueta_MC;
-					Velocidad_var = 7;
-					Cliente_var = Coqueta;
-					Mover_cliente_Buscar();
-					//fnTexto_Pedido();
-					Cliente_var.visible = true;
-					break;
-				case "Julio" :
-					Cliente_cara = Placa_Clientes.Punk_MC;
-					Velocidad_var = 6;
-					Cliente_var = Punk;
-					Mover_cliente_Buscar();
-					Cliente_var.visible = true;
-					//fnTexto_Pedido();
-					break;
-				case "Gustavo" :
-					Cliente_cara = Placa_Clientes.Viejo_MC;
-					Velocidad_var = 10;
-					Cliente_var = Viejo;
-					Mover_cliente_Buscar();
-					Cliente_var.visible = true;
-					//fnTexto_Pedido();
-					break;
-			}
-		}
-
-
+		
 		function fnTexto_Pedido():void
 		{
 			Placa_Clientes.Precio_TXT.text = Lista_Trab.Trabajo[0];
@@ -1464,7 +1726,13 @@
 			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[1];
 			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
 			trace(texto);
-			Placa_Clientes.Cliente_TXT.text = Client[texto][0];//[]convierte un string en el nombre de una variable
+			var indice = ((randomRange(0, 1)));
+			if (Construccion == false){
+				Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
+			}
+			else{
+				Placa_Clientes.Cliente_TXT.text = Client[texto][2];//[]convierte un string en el nombre de una variable
+			}
 		}
 	
 		function Mover_cliente():void
@@ -1479,20 +1747,6 @@
 			Cliente_MC.y=500;
 			Cliente_Stage = true;
 		}
-
-		function Mover_cliente_Buscar():void
-		{
-			_timer_jugador.start();
-			Cliente_var.visible = true;
-			Cliente_var.globito.gotoAndStop("bien");
-			Cliente_Stage = true;
-			Cliente_Buscar = true;
-			//_timer_espera_cliente.start();
-			var Posicion_en_vertical =((randomRange(600,800)));
-			var myPunkx:Tween = new Tween(Cliente_var,"x",None.easeInOut,200,600,Velocidad_var,true);
-			var myPunky:Tween = new Tween(Cliente_var,"y",None.easeInOut,474,Posicion_en_vertical,Velocidad_var,true);
-		}
-
 
 		function fnPlaca_Cliente(event:MouseEvent):void
 		{
@@ -1512,9 +1766,16 @@
 			switch (event.target.name)
 			{
 				case "Yes_BT" :
+					if (Lista_Trabajos.Trabajo10.visible == false){
 					fnClientes_Pedido();
+					}
+					else
+					{
+						Gracias.visible = true;
+						Gracias.Texto.text = "Tienes demasiados trabajos pendientes, realiza algunos antes de seguir aceptando más.";
+					}
 					Cliente_MC.irse();
-					Puntaje_var = Puntaje_var + 40;
+					//Puntaje_var = Puntaje_var + 40;
 					break;
 				case "Yes_BT_Buscar" :
 					fnClientes_Pedido_Buscar();
@@ -1542,7 +1803,7 @@
 		function fnClientes_Pedido():void
 		{
 			Trabajos.push(Lista_Trab.Trabajo[0]);
-			Trabajos.push(Lista_Trab.Trabajo[1]);
+			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
 			Trabajos.push(Lista_Trab.Trabajo[2]);
 			Trabajos.push(Lista_Trab.Trabajo[3]);
 			Trabajos.push(Lista_Trab.Trabajo[4]);
@@ -1567,7 +1828,7 @@
 			Placa_Clientes.Vieja_MC.visible = false;
 			Placa_Clientes.Viejo_MC.visible = false;
 			Placa_Clientes.Coqueta_MC.visible = false;
-			Cliente_var.gotoAndPlay("espalda");
+			//Cliente_var.gotoAndPlay("espalda");
 			Cliente_var.visible= false;
 			Cliente_Stage = false;
 		}

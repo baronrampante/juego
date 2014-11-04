@@ -781,7 +781,7 @@
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
 				Gracias.Texto.text = Client.TextosBronca[indice];
-				
+				Comunidad_var -= 30;
 				Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
@@ -789,12 +789,12 @@
 				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
 				Gracias.Punk_MC.visible = false;
-			Gracias.Vieja_MC.visible = false;
-			Gracias.Viejo_MC.visible = false;
-			Gracias.Nena_MC.visible = false;
-			Gracias.Mormon_MC.visible = false;
-			Gracias.Coqueta_MC.visible = false;
-			Limpiar();
+				Gracias.Vieja_MC.visible = false;
+				Gracias.Viejo_MC.visible = false;
+				Gracias.Nena_MC.visible = false;
+				Gracias.Mormon_MC.visible = false;
+				Gracias.Coqueta_MC.visible = false;
+				Limpiar();
 
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
