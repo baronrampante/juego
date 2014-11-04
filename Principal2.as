@@ -1588,7 +1588,7 @@
 		{
 			Venir_Buscar.text = String(Trabajos[2]);
 			if (Cala_little_var == 1 && Combi_var == 1) {
-				if (Tablones_Stock > Trabajos[2] && Alfajias_Stock > Trabajos[3])
+				if (Tablones_Stock > Trabajos[3] && Alfajias_Stock > Trabajos[2])
 				
 				{
 					if (en_proceso == false)
