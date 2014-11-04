@@ -1721,7 +1721,8 @@
 			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[1];
 			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
 			trace(texto);
-			Placa_Clientes.Cliente_TXT.text = Client[texto][0];//[]convierte un string en el nombre de una variable
+			var indice = ((randomRange(0, 1)));
+			Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
 		}
 	
 		function Mover_cliente():void
