@@ -281,10 +281,10 @@
 		
 		private function enterFrameHandler(event:Event):void
 		{
-			No_cumpliste();
+			//No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
-			numero = ((randomRange(120, 260))); //Tiempo de entrega
+			numero = ((randomRange(60, 100))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
@@ -753,7 +753,7 @@
 		function Trabajos_No_Entregados():void{
 			
 			if (Trabajos[0] > 1){
-			for(var i:int=0; i<5; i++) {
+			for(var i:int=0; i<9; i++) {
 				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
 				
 				//numero = Trabajos[(i*multiplicador)+7];
@@ -761,7 +761,9 @@
 				//Trabajos[(i*multiplicador)+7] = numero;
 				if (Trabajos[(i*multiplicador)+7] > 1){
 				Trabajos[(i*multiplicador)+7] = (Trabajos[(i*multiplicador)+7] - 1);
-					
+				}
+				else {
+					No_cumpliste();
 				}
 				Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7] - 1);
 				
@@ -773,14 +775,14 @@
 		
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
-			for(var i:int=0; i<6; i++) {
+			for(var i:int=0; i<9; i++) {
 				if (Trabajos[(i*multiplicador)+7] < 3)
 				{
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
 				Gracias.Texto.text = Client.TextosBronca[indice];
 				
-				Lista_Trabajos.En_Proceso.text = "";
+				//Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
 				//Placa_Clientes.visible = true;
@@ -854,7 +856,8 @@
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
-					Lista_Trabajos.En_Proceso.text = "";
+					Lista_Trabajos.Viejo_MC.visible = false;
+					//Lista_Trabajos.En_Proceso.text = "";
 		}
 		
 		
@@ -1361,7 +1364,7 @@
 					
 					Dinero_caida.gotoAndPlay(2);
 					//Coqueta_MC2.gotoAndPlay(1);
-					Comunidad_var += 20;
+					Comunidad_var += 30;
 					
 					Puntaje_var = Puntaje_var + 40;
 					
@@ -1587,6 +1590,7 @@
 			if (Cala_little_var == 1 && Combi_var == 1) {
 				if (Tablones_Stock >= Trabajos[3 + mult] && Alfajias_Stock >= Trabajos[2 + mult] && en_proceso == false)
 				{
+					if (Trabajos[7 + mult] > ((Trabajos[1 + mult])*10))
 					if (en_proceso == false)
 					{
 						avance = ((Trabajos[1 + mult])*10) + _timer.currentCount;
@@ -1610,6 +1614,10 @@
 							trace("esperá");
 							//Trabajo_Proceso.splice(0,0);
 							tiempo = 0;
+						}
+						else{
+							Gracias.visible = true;
+							Gracias.Texto.text = "No puedes empezar el trabajo porque van a venir a buscarlo antes de que lo puedas terminar. Cuida mas los tiempos de entrega"
 						}
 					}
 				else 
