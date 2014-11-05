@@ -10,8 +10,8 @@
 	 */
 	public class Main extends MovieClip 
 	{
-		public	var ancho = 1.30;
-		public	var largo = 2.10;
+		public	var ancho = 0;
+		public	var largo = 0;
 		public	var temp = 0;
 		public var re = 0;
 		public var n1:String;
@@ -21,8 +21,8 @@
 		public function Main():void 
 		
 		{
-			if (stage) init();
-			else addEventListener(Event.ADDED_TO_STAGE, init);
+			 init();
+			
 		}
 		
 		private function init(e:Event = null):void 

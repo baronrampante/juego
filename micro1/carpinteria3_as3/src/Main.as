@@ -23,8 +23,8 @@
 		
 		public function Main():void 
 		{
-			if (stage) init();
-			else addEventListener(Event.ADDED_TO_STAGE, init);
+			init();
+			
 		}
 		
 		private function init(e:Event = null):void 

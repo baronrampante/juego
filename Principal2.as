@@ -284,7 +284,7 @@
 			//No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
-			numero = ((randomRange(60, 100))); //Tiempo de entrega
+			numero = ((randomRange(100, 200))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
@@ -564,7 +564,7 @@
 				
 				
 			}
-			
+			//tercer juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_3 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
@@ -1621,7 +1621,7 @@
 						}
 						else{
 							Gracias.visible = true;
-							Gracias.Texto.text = "No puedes empezar el trabajo porque van a venir a buscarlo antes de que lo puedas terminar. Cuida mas los tiempos de entrega"
+							Gracias.Texto.text = "No puedes empezar el trabajo porque van a venir a buscarlo antes de que lo puedas terminar. Cuida más los tiempos de entrega"
 						}
 					}
 				else 

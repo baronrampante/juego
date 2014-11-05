@@ -10,7 +10,7 @@
 	 */
 	public class Main extends MovieClip 
 	{
-		public var diam = 1.30;
+		public var diam = 0;
 		public var temp = 0;
 		public var re = 0;
 
@@ -24,8 +24,9 @@
 		
 		public function Main():void 
 		{
-			if (stage) init();
-			else addEventListener(Event.ADDED_TO_STAGE, init);
+			//if (stage) 
+			init();
+			//else addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 		
 		private function init(e:Event = null):void 
