@@ -199,7 +199,7 @@
 			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
 			snd.play(0, 100);
 			
-			
+			Lista_Trabajos.Progreso.gotoAndStop(10);
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
@@ -468,7 +468,7 @@
 			
 			avance_porcentaje = avance_porcentaje - 1;
 			Texto.text = String(int((avance_porcentaje/porcentaje)*10));
-			Lista_Trabajos.Progreso.gotoAndStop(int((avance_porcentaje/porcentaje)*10));
+			Lista_Trabajos.Progreso.gotoAndStop((int((avance_porcentaje/porcentaje)*10)+1));
 
 			//llama a un nuevo cliente
 			Lista_Trab.Tiempo(Time.Hora_var);
@@ -781,7 +781,7 @@
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
 				Gracias.Texto.text = Client.TextosBronca[indice];
-				
+				Comunidad_var -= 30;
 				//Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
@@ -789,12 +789,12 @@
 				//Placa_Clientes.gotoAndStop(6);
 				Cliente_borrar = (i*multiplicador);
 				Gracias.Punk_MC.visible = false;
-			Gracias.Vieja_MC.visible = false;
-			Gracias.Viejo_MC.visible = false;
-			Gracias.Nena_MC.visible = false;
-			Gracias.Mormon_MC.visible = false;
-			Gracias.Coqueta_MC.visible = false;
-			Limpiar();
+				Gracias.Vieja_MC.visible = false;
+				Gracias.Viejo_MC.visible = false;
+				Gracias.Nena_MC.visible = false;
+				Gracias.Mormon_MC.visible = false;
+				Gracias.Coqueta_MC.visible = false;
+				Limpiar();
 
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
@@ -857,7 +857,9 @@
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
 					Lista_Trabajos.Viejo_MC.visible = false;
-					//Lista_Trabajos.En_Proceso.text = "";
+					if (en_proceso == false){
+					Lista_Trabajos.En_Proceso.text = ""; //para no borrar el nombre del trabajo en proceso
+					}
 		}
 		
 		
@@ -1361,6 +1363,7 @@
 					Lista_Trabajos.Raya.visible = false;
 					Lista_Trabajos.En_Proceso.text = "";
 					// Placa Clente buscar
+					Lista_Trabajos.Progreso.gotoAndStop(10);
 					
 					Dinero_caida.gotoAndPlay(2);
 					//Coqueta_MC2.gotoAndPlay(1);
@@ -1606,6 +1609,7 @@
 						Tablones_Stock = Tablones_Stock - Trabajos[3 + mult];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
+						Lista_Trabajos.Progreso.Barra.visible = false;
 						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
 						//var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
 					}
