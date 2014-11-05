@@ -29,7 +29,7 @@
 		public var Pedido_Comunidad_1 = 8;// pedido comunidad en días
 		public var Segundo_Pedido_Comunidad = 15;// segundo pedido de la comunidad
 
-		public var Primer_Juego = 4;//días para primer juego
+		public var Primer_Juego = 6;//días para primer juego
 		public var Segundo_Juego = 7;// días para segundo juego
 		public var Tercer_Juego = 14;// días para segundo juego
 

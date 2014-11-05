@@ -151,7 +151,7 @@
 		//Materiales
 		var Alfajias_var_Numb = 0;
 		var Tablones_var_Numb = 0;
-		public var Dinero_var = 12000;
+		public var Dinero_var = 6000;
 		var Tablones_Stock:Number = 0;
 		var Alfajias_Stock:Number = 0;
 		var Alfajias_precio = 100;
@@ -284,7 +284,7 @@
 			No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
-			numero = ((randomRange(80, 260))); //Tiempo de entrega
+			numero = ((randomRange(120, 260))); //Tiempo de entrega
 		}
 		
 		function fnCharacter():void{
@@ -1598,8 +1598,8 @@
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 						Lista_Trabajos.En_Proceso.text = "Cliente en proceso:  " + Trabajo_Que_se_Procesa[2];
-						Alfajias_Stock = Alfajias_Stock - Trabajos[2 + multi];
-						Tablones_Stock = Tablones_Stock - Trabajos[3 + multi];
+						Alfajias_Stock = Alfajias_Stock - Trabajos[2 + mult];
+						Tablones_Stock = Tablones_Stock - Trabajos[3 + mult];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
 						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
