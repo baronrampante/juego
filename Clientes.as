@@ -28,9 +28,9 @@
 		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se partió una pata de la mesa de luz. ¿Podrá arreglarlo?","¡Hola, buenas tardes! Necesito una mesa de luz nueva, ya que la que tengo esta muy viejita. ¿Tú podrías hacerla?");
 		
 		
-		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Antes de prometer","Diablos","¡DIJISTE QUE PODÍAS ARREGLARLO Y NO CUMPLISTE TU PALABRA!!!!","¡ME DIJISTE QUE PODÍAS HACERLO ¿Y AHORA DECÍS QUE NO?!!!!! ¡QUIERO UN REMBOLSO","¿Que te pasa?");
+		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Antes de comprometerte pensá si podés cumplir","¡¡No me arreglaste el mueble que te pedi!!","¡DIJISTE QUE PODÍAS ARREGLARLO Y NO CUMPLISTE TU PALABRA!!!!","¡ME DIJISTE QUE PODÍAS HACERLO ¿Y AHORA DECÍS QUE NO?!!!!! ¡QUIERO UN REMBOLSO");
 		
-		public var TextosAsesora:Array = new Array("El oficio del carpintero es el trabajo con la madera, ya sea en la construcción &#40;andamios, ventanas, puertas, etc&#41; o en la manufactura de mobiliario &#40;mesas, sillas, armarios" , 
+		public var TextosAsesora:Array = new Array("El oficio del carpintero es el trabajo con la madera, ya sea en la construcción; andamios, ventanas, puertas, etc; o en la manufactura de mobiliario;mesas, sillas, armarios" , 
 		"El trabajo de la madera es una de las actividades de la industria humana más antiguas que existen, por lo cual en cada cultura y regiones encontraremos diferentes maneras y herramientas para trabajar este material",
 		"La unidad básica de longitud es el metro. El centímetro y el kilómetro derivan del metro, y son unidades utilizadas habitualmente.El oficio del carpintero es el trabajo con la madera, ya sea en la construcción &#41;andamios, ventanas, puertas, etc.; o en la manufactura de mobiliario &#40;mesas, sillas, armarios&#41",
 		"El trabajo de la madera es una de las actividades de la industria humana más antiguas que existen, por lo cual en cada cultura y regiones encontraremos diferentes maneras y herramientas para trabajar este material.",

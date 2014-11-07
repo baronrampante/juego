@@ -780,7 +780,7 @@
 				{
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
-				Gracias.Texto.text = Client.TextosBronca[indice];
+				
 				Comunidad_var -= 30;
 				//Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
@@ -799,26 +799,32 @@
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
 							Gracias.Punk_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[0];
 							Borrar_Cliente();
 							break;
 						case "Olga":
 							Gracias.Vieja_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[1];
 							Borrar_Cliente();
 							break;
 						case "Andrea":
 							Gracias.Coqueta_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[2];
 							Borrar_Cliente();
 							break;
 						case "Gustavo":
 							Gracias.Viejo_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[3];
 							Borrar_Cliente();
 							break;
 						case "Lucía":
 							Gracias.Nena_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[4];
 							Borrar_Cliente();
 							break;
 						case "Martín":
 							Gracias.Mormon_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[5];
 							Borrar_Cliente();
 							break;
 								}
