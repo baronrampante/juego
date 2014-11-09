@@ -44,6 +44,7 @@
 		public var coso:Object;
 		var Time:Temporizador = new Temporizador  ;
 		var Jogo = 0;
+		var Eleccion = false;
 		
 		
 
@@ -120,6 +121,7 @@
 
 			addChildAt(cargador, 19);
 			pelicula.Character_var = Character;
+			pelicula.Carpinteria_Juego = Eleccion;
 			//pelicula.Comunidad();
 			//agregamos el listener que llamara a la funcion de peli a load_btn;
 			//load_btn.addEventListener(MouseEvent.CLICK, llamarfuncionpeli);
@@ -289,13 +291,15 @@
 					Tira_MC.Textil_MC.visible = false;
 					Tira_MC.Carpinteria_MC.visible = true;
 					Juego = "micro.swf";
+					Eleccion = true;
 					Jogo = 1;
 					break;
 				case "Textil_BT" :
 					Tira_MC.Feria_MC.visible = false;
 					Tira_MC.Textil_MC.visible = true;
 					Tira_MC.Carpinteria_MC.visible = false;
-					Juego = "Textil";
+					Juego = "textil.swf";
+					Eleccion = false;
 					Jogo = 1;
 					break;
 			}
