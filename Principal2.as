@@ -1817,13 +1817,13 @@
 			{
 			Cliente_MC.Velocidad_var = Velocidad_var;
 			addChildAt(Cliente_MC,12);
-			Cliente_MC._timer.start();
+			//Cliente_MC._timer.start();
 			Cliente_MC.gotoAndPlay("frente");
 			Cliente_MC.cliente_stage = true;
 			Cliente_MC.adelante = true;
 			if (Carpinteria_Juego == true){
-			Cliente_MC.x=200;
-			Cliente_MC.y=500;
+				Cliente_MC.x=200;
+				Cliente_MC.y=500;
 			}
 			if (Carpinteria_Juego == false){
 				Cliente_MC.x=950;

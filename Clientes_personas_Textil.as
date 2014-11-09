@@ -11,6 +11,7 @@
 		public var _timer:Timer = new Timer(1000);// se ejecuta cada un segundo
 		public var cliente_stage = true;
 		public var Irse = false;
+		var contador = 0;
 
 
 
@@ -28,6 +29,7 @@
 
 		function mover(e:Event):void
 		{
+			contador += 1;
 
 			if (_timer.currentCount == 15)
 			{
