@@ -24,6 +24,7 @@
 	import Barrio_MC;
 	import Temporizador;
 	import Aserradero;
+	import Clientes_Textil;
 
 
 
@@ -62,7 +63,7 @@
 		var Entrega = 0;// tiempo que el cliente viene a buscar el trabajo
 		var contador = 0;
 
-		var Lista_Trab:Lista_Trabaj = new Lista_Trabaj();
+		var Lista_Trab:Object;
 		var Barr:Barrio_MC = new Barrio_MC();
 		var Nombre:Array = new Array();
 		var Nombre_Elegido = "";
@@ -137,7 +138,8 @@
 		var Buscar = "";//nombre del cliente que termino
 		var Buscar_flag = false;// flag para saber si se termino un trabajo
 		var Cliente_Buscar = false;// determina si el cliente que está en el stage es el que viene abuscar el pedido
-		var Client:Clientes = new Clientes();
+		//var Client:Clientes = new Clientes();
+		var Client:Object;
 		var Cliente = 0;
 		var Nuevo_Cliente = "";
 		var Viejo_Cliente = "";
@@ -218,13 +220,21 @@
 			Gracias.Mormon_MC.visible = false;
 			Gracias.Coqueta_MC.visible = false;
 			
+			
+			
 			if (Carpinteria_Juego == true){
 				Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
 				Madera_MC.Tablon.text = "TABLON = $ " + String(Tablones_precio);
+				Client = new Clientes();
+				Lista_Trab = new Lista_Trabaj();
+				
 			}
 			else{
 				Madera_MC.Alfajia.text = "HILOS = $ " + String(Alfajias_precio);
 				Madera_MC.Tablon.text = "TELAS = $ " + String(Tablones_precio);
+				Client = new Clientes_Textil();
+				Lista_Trab = new Lista_Trabaj_Textil();
+				
 			}
 			
 			//Graci.visible = false;
@@ -1576,6 +1586,7 @@
 					Lista_Trabajos.Viejo_MC.visible = true;
 					break;
 			}
+			if (Carpinteria_Juego == true){
 			switch (Trabajos[5 + mult])
 			{
 				case "Silla" :
@@ -1593,6 +1604,28 @@
 				case "Banco" :
 					Lista_Trabajos.Banquito_Roto.visible = true;
 					break;
+				}
+			
+			}
+			if (Carpinteria_Juego == false){
+				switch (Trabajos[5 + mult])
+				{
+				case "Campera" :
+					Lista_Trabajos.Silla_Roto.visible = true;
+					break;
+				case "Buzo" :
+					Lista_Trabajos.Mesa_Roto.visible = true;
+					break;
+				case "Chaleco" :
+					Lista_Trabajos.Taburete_Roto.visible = true;
+					break;
+				case "Mesa de Luz" :
+					Lista_Trabajos.Luz_Roto.visible = true;
+					break;
+				case "Banco" :
+					Lista_Trabajos.Banquito_Roto.visible = true;
+					break;
+				}
 			}
 		}
 
