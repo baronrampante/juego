@@ -25,6 +25,7 @@
 	import Temporizador;
 	import Aserradero;
 	import Clientes_Textil;
+	import Lista_Trabaj_Textil;
 
 
 
@@ -33,7 +34,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		public var Carpinteria_Juego = false;
+		public var Carpinteria_Juego:Boolean;
 		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
@@ -304,6 +305,15 @@
 			numero = ((randomRange(100, 200))); //Tiempo de entrega
 		}
 		
+		function fnTipoJuego():void{
+			/*If (Carpinteria_Juego == true){
+				Carpinteria_Juego = true;
+			}
+			else{
+				Carpinteria_Juego = false;
+			}*/
+		}
+		
 		function fnCharacter():void{
 		if (Character_var < 9 && Character_yes == false){// para retrasar carga de variable
 		switch (Character_var){
@@ -479,6 +489,7 @@
 			
 			
 			fnCharacter();
+			fnTipoJuego();
 			Trabajos_No_Entregados();
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
