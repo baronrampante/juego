@@ -200,6 +200,7 @@
 		{
 			_timer.start();
 			
+			Carpinteria_Juego = false;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -326,25 +327,25 @@
 			var myCharacter = new avriltodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
-			Carpinteria_Juego = true;
+			
 			break;
 			case 1:
 			myCharacter = new Ivantodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
-			Carpinteria_Juego = true;
+			
 			break;
 			case 2:
 			myCharacter = new lety_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
-			Carpinteria_Juego = true;
+			
 			break;
 			case 0:
 			myCharacter = new nacho_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
-			Carpinteria_Juego = true;
+			
 			break;
 			}
 		}
@@ -500,7 +501,7 @@
 			fnCharacter();
 			fnTipoJuego();
 			Trabajos_No_Entregados();
-			Carpinteria_Juego = true;
+			
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
@@ -1419,27 +1420,27 @@
 					switch(client){
 					case "Julio":
 						//Gracias.Punk_MC.visible = true;
-						Graci.Mormon_MC2.gotoAndPlay(1);
+						Graci.Mormon_MC2.gotoAndPlay(2);
 						break;
 					case "Olga":
 						//Gracias.Vieja_MC.visible = true;
-						Graci.Vieja_MC2.gotoAndPlay(1);
+						Graci.Vieja_MC2.gotoAndPlay(2);
 						break;
 					case "Andrea":
 						//Gracias.Coqueta_MC.visible = true;
-						Graci.Coqueta_MC2.gotoAndPlay(1);
+						Graci.Coqueta_MC2.gotoAndPlay(2);
 						break;
 					case "Gustavo":
 						//Gracias.Viejo_MC.visible = true;
-						Graci.Viejo_MC2.gotoAndPlay(1);
+						Graci.Viejo_MC2.gotoAndPlay(2);
 						break;
 					case "Lucía":
 						//Gracias.Nena_MC.visible = true;
-						Graci.Nena_MC2.gotoAndPlay(1);
+						Graci.Nena_MC2.gotoAndPlay(2);
 						break;
 					case "Martín":
 						//Gracias.Mormon_MC.visible = true;
-						Graci.Punk_MC2.gotoAndPlay(1);
+						Graci.Punk_MC2.gotoAndPlay(2);
 						break;
 					}
 					

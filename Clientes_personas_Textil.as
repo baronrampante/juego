@@ -22,8 +22,7 @@
 
 			addEventListener(Event.ENTER_FRAME, mover);
 			this.scaleX *= -1;
-
-
+			Irse = false;
 		}
 
 
@@ -38,14 +37,12 @@
 				this.gotoAndPlay("espalda");
 				_timer.stop();
 				_timer.reset();
-
-
 				irse();
 			}
 			this.x -=  Velocidad_var;
 			this.y +=  Velocidad_var;
 
-			if (this.x <= 700)
+			if (this.x <= 700 && Irse == false)
 			{
 				_timer.start();
 				Velocidad_var = 0;
@@ -57,20 +54,21 @@
 			{
 				cliente_stage = false;
 				this.globito.gotoAndPlay("normal");
+				Irse = false;
 				if (stage != null)
 				{
 					this.parent.removeChild(this);
+					
 				}
 			}
 		}
 		public function irse():void
 		{
-
-			Irse = true;
 			_timer.stop();
 			_timer.reset();
 			this.gotoAndPlay("espalda");
 			Velocidad_var = -10;
+			Irse = true;
 			this.addEventListener(Event.ENTER_FRAME, mover);
 		}
 
