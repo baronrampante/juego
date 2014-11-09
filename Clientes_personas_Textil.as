@@ -16,11 +16,12 @@
 
 
 
-		public function Clientes_personas()
+		public function Clientes_personas_Textil()
 		{
 			// constructor code
 
 			addEventListener(Event.ENTER_FRAME, mover);
+			this.scaleX *= -1;
 
 
 		}
@@ -41,10 +42,10 @@
 
 				irse();
 			}
-			this.x +=  Velocidad_var;
+			this.x -=  Velocidad_var;
 			this.y +=  Velocidad_var;
 
-			if (this.x >= 500)
+			if (this.x <= 700)
 			{
 				_timer.start();
 				Velocidad_var = 0;
@@ -52,7 +53,7 @@
 				Irse = false;
 			}
 
-			if (this.x < 180)
+			if (this.y < 450)
 			{
 				cliente_stage = false;
 				this.globito.gotoAndPlay("normal");

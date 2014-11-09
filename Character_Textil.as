@@ -11,11 +11,12 @@
 		public var Velocidad_var = 2;
 		public var Tiempo = 0;
 
-		public function Character()
+		public function Character_Textil()
 		{
 			// constructor code
-			this.x = 917;
+			this.x = 350;
 			this.y = 275;
+			this.scaleX *= -1;
 			addEventListener(Event.ENTER_FRAME, Mover);
 
 
@@ -28,7 +29,7 @@
 			if ( Tiempo < 100)
 			{
 				gotoAndStop("Adelante");
-				this.x -=  Velocidad_var;
+				this.x +=  Velocidad_var;
 				this.y +=  Velocidad_var;
 			}
 			if (Tiempo > 100 && Tiempo <400 )
@@ -39,7 +40,7 @@
 			{
 				gotoAndStop("Atras");
 				Velocidad_var = 2;
-				this.x +=  Velocidad_var;
+				this.x -=  Velocidad_var;
 				this.y -=  Velocidad_var;
 			}
 			

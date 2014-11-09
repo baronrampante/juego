@@ -34,7 +34,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
-		public var Carpinteria_Juego:Boolean;
+		var Carpinteria_Juego:Boolean;
 		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
@@ -190,6 +190,7 @@
 		{
 			//this.addEventListener(Event.ENTER_FRAME, Botones);
 			init();
+			
 		}
 		
 		
@@ -198,6 +199,8 @@
 		public function init():void
 		{
 			_timer.start();
+			
+			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
 			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
@@ -220,6 +223,7 @@
 			Gracias.Nena_MC.visible = false;
 			Gracias.Mormon_MC.visible = false;
 			Gracias.Coqueta_MC.visible = false;
+			
 			
 			
 			
@@ -305,11 +309,12 @@
 			numero = ((randomRange(100, 200))); //Tiempo de entrega
 		}
 		
-		function fnTipoJuego():void{
-			/*If (Carpinteria_Juego == true){
+		public function fnTipoJuego(){
+			/*if (Character_var == 3){
 				Carpinteria_Juego = true;
 			}
-			else{
+			
+				if (Character_var == 1){
 				Carpinteria_Juego = false;
 			}*/
 		}
@@ -321,21 +326,25 @@
 			var myCharacter = new avriltodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			Carpinteria_Juego = true;
 			break;
 			case 1:
 			myCharacter = new Ivantodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			Carpinteria_Juego = true;
 			break;
 			case 2:
 			myCharacter = new lety_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			Carpinteria_Juego = true;
 			break;
 			case 0:
 			myCharacter = new nacho_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			Carpinteria_Juego = true;
 			break;
 			}
 		}
@@ -491,6 +500,7 @@
 			fnCharacter();
 			fnTipoJuego();
 			Trabajos_No_Entregados();
+			Carpinteria_Juego = true;
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
@@ -1810,8 +1820,15 @@
 			Cliente_MC.gotoAndPlay("frente");
 			Cliente_MC.cliente_stage = true;
 			Cliente_MC.adelante = true;
+			if (Carpinteria_Juego == true){
 			Cliente_MC.x=200;
 			Cliente_MC.y=500;
+			}
+			if (Carpinteria_Juego == false){
+				Cliente_MC.x=950;
+				Cliente_MC.y=500;
+			
+			}
 			Cliente_Stage = true;
 		}
 

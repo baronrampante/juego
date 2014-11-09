@@ -121,7 +121,7 @@
 
 			addChildAt(cargador, 19);
 			pelicula.Character_var = Character;
-			pelicula.Carpinteria_Juego = Eleccion;
+			//pelicula.Carpinteria_Juego = Eleccion;
 			//pelicula.Comunidad();
 			//agregamos el listener que llamara a la funcion de peli a load_btn;
 			//load_btn.addEventListener(MouseEvent.CLICK, llamarfuncionpeli);
