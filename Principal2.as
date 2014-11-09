@@ -32,6 +32,7 @@
 	public class Principal2 extends MovieClip
 	{
 		
+		public var Carpinteria_Juego = false;
 		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
@@ -217,8 +218,14 @@
 			Gracias.Mormon_MC.visible = false;
 			Gracias.Coqueta_MC.visible = false;
 			
-			Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
-			Madera_MC.Tablon.text = "ALFAJÍA = $ " + String(Tablones_precio);
+			if (Carpinteria_Juego == true){
+				Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
+				Madera_MC.Tablon.text = "TABLON = $ " + String(Tablones_precio);
+			}
+			else{
+				Madera_MC.Alfajia.text = "HILOS = $ " + String(Alfajias_precio);
+				Madera_MC.Tablon.text = "TELAS = $ " + String(Tablones_precio);
+			}
 			
 			//Graci.visible = false;
 
