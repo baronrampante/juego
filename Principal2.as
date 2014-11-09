@@ -1817,7 +1817,7 @@
 			{
 			Cliente_MC.Velocidad_var = Velocidad_var;
 			addChildAt(Cliente_MC,12);
-			//Cliente_MC._timer.start();
+			Cliente_MC._timer.start();
 			Cliente_MC.gotoAndPlay("frente");
 			Cliente_MC.cliente_stage = true;
 			Cliente_MC.adelante = true;
