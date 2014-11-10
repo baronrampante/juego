@@ -19,6 +19,8 @@
 		
 		public var Objetos:Array = new Array(Coso1, Coso2, Coso3, Coso4, Coso5, Banco, Silla, Mesa, Cama, Mesa_Luz);
 		
+		public var Prendas:Array = new Array("Chaleco", "Campera","Buzo","Pollera","Vestido","Short");
+		
 		
 		
 		public var TextosChaleco:Array = new Array("¡Hola! Se me rompió la prenda que uso para salir. ¿Lo podrías arreglar?","¡Que tal?, se me rompió una pata del banco. ¡Te agradezco si lo podés arreglar?","¡Buenas tardes! ¿Necesito un banco bajo donde pueda apoyar mis pies mientras tejo? ¿Podría hacerlo?");

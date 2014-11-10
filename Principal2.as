@@ -642,7 +642,7 @@
 			if (Cliente_Stage == false && Time.Dia_var == Consejo_Asesora_Array[i] && Consejo_Asesora == false)
 			{
 				Asesora_MC2.visible = true;
-				var Text_Asesora = ((randomRange(0, 15)));
+				var Text_Asesora = ((randomRange(0, 20)));
 				Asesora_MC2.Texto.text = Client.TextosAsesora[Text_Asesora];
 				Consejo_Asesora = true;
 				i = i+1;
@@ -1902,6 +1902,13 @@
 
 		function fnClientes_Pedido():void
 		{
+			
+			if (Nuevo_Cliente == "Martín" || Nuevo_Cliente == "Julio" || Nuevo_Cliente == "Gustavo"){
+				var indice = ((randomRange(0, 2)));
+			}
+			if (Nuevo_Cliente == "Olga" || Nuevo_Cliente == "Andrea" || Nuevo_Cliente == "Lucía"){
+				 indice = ((randomRange(3, 5)));
+			}
 			if (Carpinteria_Juego == true){
 			Trabajos.push(Lista_Trab.Trabajo[0]);
 			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
@@ -1920,7 +1927,7 @@
 			Trabajos.push(Lista_Trab.Trabajo[3]);
 			Trabajos.push(Lista_Trab.Trabajo[4]);
 			//Trabajos.push(Lista_Trab.Trabajo[5]);
-			Trabajos.push("Pollera");
+			Trabajos.push(Client.Prendas[indice]);
 			Trabajos.push(Nuevo_Cliente);
 			Trabajos.push(numero);
 			}
