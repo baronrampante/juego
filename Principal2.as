@@ -1411,7 +1411,7 @@
 					Lista_Trabajos.Progreso.gotoAndStop(10);
 					
 					Dinero_caida.gotoAndPlay(2);
-					//Coqueta_MC2.gotoAndPlay(1);
+					
 					Comunidad_var += 30;
 					
 					Puntaje_var = Puntaje_var + 40;
@@ -1420,27 +1420,27 @@
 					switch(client){
 					case "Julio":
 						//Gracias.Punk_MC.visible = true;
-						Graci.Mormon_MC2.gotoAndPlay(2);
+						Graci.Punk_MC2.gotoAndPlay(1);
 						break;
 					case "Olga":
 						//Gracias.Vieja_MC.visible = true;
-						Graci.Vieja_MC2.gotoAndPlay(2);
+						Graci.Vieja_MC2.gotoAndPlay(1);
 						break;
 					case "Andrea":
 						//Gracias.Coqueta_MC.visible = true;
-						Graci.Coqueta_MC2.gotoAndPlay(2);
+						Graci.Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Gustavo":
 						//Gracias.Viejo_MC.visible = true;
-						Graci.Viejo_MC2.gotoAndPlay(2);
+						Graci.Viejo_MC2.gotoAndPlay(1);
 						break;
 					case "Lucía":
 						//Gracias.Nena_MC.visible = true;
-						Graci.Nena_MC2.gotoAndPlay(2);
+						Graci.Nena_MC2.gotoAndPlay(1);
 						break;
 					case "Martín":
 						//Gracias.Mormon_MC.visible = true;
-						Graci.Punk_MC2.gotoAndPlay(2);
+						Graci.Mormon_MC2.gotoAndPlay(1);
 						break;
 					}
 					
@@ -1812,12 +1812,14 @@
 				Placa_Clientes.Cliente_TXT.text = Client[texto][2];//[]convierte un string en el nombre de una variable
 			}
 		}
+		
+		//********************************Nuevo Cliente**********************************************
 	
 		function Mover_cliente():void
 			{
 			Cliente_MC.Velocidad_var = Velocidad_var;
 			addChildAt(Cliente_MC,12);
-			Cliente_MC._timer.start();
+			Cliente_MC._timer.reset();
 			Cliente_MC.gotoAndPlay("frente");
 			Cliente_MC.cliente_stage = true;
 			Cliente_MC.adelante = true;
