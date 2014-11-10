@@ -24,13 +24,19 @@
 	import Barrio_MC;
 	import Temporizador;
 	import Aserradero;
+	import Clientes_Textil;
+	import Lista_Trabaj_Textil;
 
 
 
 
 
-	public class Principal2 extends MovieClip
+	public class Principal2000 extends MovieClip
 	{
+		
+		var Carpinteria_Juego:Boolean;
+		var Prenda="";
+		
 		//creación personajes
 		var Mormon1:Clientes_mormon = new Clientes_mormon;
 		var Coqueta1:Clientes_coqueta = new Clientes_coqueta;
@@ -59,7 +65,7 @@
 		var Entrega = 0;// tiempo que el cliente viene a buscar el trabajo
 		var contador = 0;
 
-		var Lista_Trab:Lista_Trabaj = new Lista_Trabaj();
+		var Lista_Trab:Object;
 		var Barr:Barrio_MC = new Barrio_MC();
 		var Nombre:Array = new Array();
 		var Nombre_Elegido = "";
@@ -134,7 +140,8 @@
 		var Buscar = "";//nombre del cliente que termino
 		var Buscar_flag = false;// flag para saber si se termino un trabajo
 		var Cliente_Buscar = false;// determina si el cliente que está en el stage es el que viene abuscar el pedido
-		var Client:Clientes = new Clientes();
+		//var Client:Clientes = new Clientes();
+		var Client:Object;
 		var Cliente = 0;
 		var Nuevo_Cliente = "";
 		var Viejo_Cliente = "";
@@ -149,7 +156,7 @@
 		//Materiales
 		var Alfajias_var_Numb = 0;
 		var Tablones_var_Numb = 0;
-		public var Dinero_var = 12000;
+		public var Dinero_var = 6000;
 		var Tablones_Stock:Number = 0;
 		var Alfajias_Stock:Number = 0;
 		var Alfajias_precio = 100;
@@ -180,23 +187,28 @@
 		var variable = Time.Dia_var;
 
 
-		public function Principal2()
+		public function Principal2000()
 		{
 			//this.addEventListener(Event.ENTER_FRAME, Botones);
 			init();
+			
 		}
+		
 		
 		
 		
 		public function init():void
 		{
 			_timer.start();
+			
+			Carpinteria_Juego = false;
+			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
 			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
 			snd.play(0, 100);
 			
-			
+			Lista_Trabajos.Progreso.gotoAndStop(10);
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
@@ -214,8 +226,23 @@
 			Gracias.Mormon_MC.visible = false;
 			Gracias.Coqueta_MC.visible = false;
 			
-			Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
-			Madera_MC.Tablon.text = "ALFAJÍA = $ " + String(Tablones_precio);
+			
+			
+			
+			if (Carpinteria_Juego == true){
+				Madera_MC.Alfajia.text = "ALFAJÍA = $ " + String(Alfajias_precio);
+				Madera_MC.Tablon.text = "TABLON = $ " + String(Tablones_precio);
+				Client = new Clientes();
+				Lista_Trab = new Lista_Trabaj();
+				
+			}
+			else{
+				Madera_MC.Alfajia.text = "HILOS = $ " + String(Alfajias_precio);
+				Madera_MC.Tablon.text = "TELAS = $ " + String(Tablones_precio);
+				Client = new Clientes_Textil();
+				Lista_Trab = new Lista_Trabaj_Textil();
+				
+			}
 			
 			//Graci.visible = false;
 
@@ -278,10 +305,20 @@
 		
 		private function enterFrameHandler(event:Event):void
 		{
-			No_cumpliste();
+			//No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
-			numero = ((randomRange(80, 260))); //Tiempo de entrega
+			numero = ((randomRange(100, 200))); //Tiempo de entrega
+		}
+		
+		public function fnTipoJuego(){
+			/*if (Character_var == 3){
+				Carpinteria_Juego = true;
+			}
+			
+				if (Character_var == 1){
+				Carpinteria_Juego = false;
+			}*/
 		}
 		
 		function fnCharacter():void{
@@ -291,28 +328,29 @@
 			var myCharacter = new avriltodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			
 			break;
 			case 1:
 			myCharacter = new Ivantodo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			
 			break;
 			case 2:
 			myCharacter = new lety_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			
 			break;
 			case 0:
 			myCharacter = new nacho_todo();
 			addChildAt(myCharacter, 10);
 			Character_yes = true;
+			
 			break;
 			}
 		}
 		}
-		
-		
-		//************************************Botones Barraca***************************************
 		
 		public function Botones_Barra(event:MouseEvent):void{
 			
@@ -346,9 +384,8 @@
 				Comprar_Taladro_Pie();
 				break;
 			}
+			
 		}
-		
-		//******************************************Botones Stage y Otros*************************************************
 
 		public function Botones(evt:Event):void
 		{
@@ -376,7 +413,6 @@
 			
 			
 			//Botones Cerrar pantallas;
-			
 			Lista_Trabajos.addEventListener(MouseEvent.MOUSE_DOWN,fnBotonesTrabajos);
 			Lista_Trabajos.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnCerrarLista);
 			Placa_financiera.btn_cerrar.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Financiera_Cerrar);
@@ -456,7 +492,7 @@
 
 
 
-		//******************************LINEA DE TIEMPO: acá se controla por tiempo todo******************************
+		//LINEA DE TIEMPO: acá se controla por tiempo todo;
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -464,13 +500,15 @@
 			
 			
 			fnCharacter();
+			fnTipoJuego();
 			Trabajos_No_Entregados();
+			
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
 			
 			avance_porcentaje = avance_porcentaje - 1;
 			Texto.text = String(int((avance_porcentaje/porcentaje)*10));
-			Lista_Trabajos.Progreso.gotoAndStop(int((avance_porcentaje/porcentaje)*10));
+			Lista_Trabajos.Progreso.gotoAndStop((int((avance_porcentaje/porcentaje)*10)+1));
 
 			//llama a un nuevo cliente
 			Lista_Trab.Tiempo(Time.Hora_var);
@@ -566,7 +604,7 @@
 				
 				
 			}
-			
+			//tercer juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_3 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
@@ -755,7 +793,7 @@
 		function Trabajos_No_Entregados():void{
 			
 			if (Trabajos[0] > 1){
-			for(var i:int=0; i<5; i++) {
+			for(var i:int=0; i<9; i++) {
 				//Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7]);
 				
 				//numero = Trabajos[(i*multiplicador)+7];
@@ -763,7 +801,9 @@
 				//Trabajos[(i*multiplicador)+7] = numero;
 				if (Trabajos[(i*multiplicador)+7] > 1){
 				Trabajos[(i*multiplicador)+7] = (Trabajos[(i*multiplicador)+7] - 1);
-					
+				}
+				else {
+					No_cumpliste();
 				}
 				Venir_Buscar.text = String(Trabajos[(i*multiplicador)+7] - 1);
 				
@@ -775,14 +815,16 @@
 		
 		function No_cumpliste():void{
 			if (Trabajos[0] > 1){// verifica haya trabajos en la lista
-			for(var i:int=0; i<6; i++) {
+			for(var i:int=0; i<9; i++) {
 				if (Trabajos[(i*multiplicador)+7] < 3)
 				{
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
-				Gracias.Texto.text = Client.TextosBronca[indice];
+				var snd:Sound = new Sound(new URLRequest("mp_sfx_clienteenojadoOP2.mp3")); 
+					snd.play();
+				
 				Comunidad_var -= 30;
-				Lista_Trabajos.En_Proceso.text = "";
+				//Lista_Trabajos.En_Proceso.text = "";
 				//if (Cliente_Stage == false){
 				//Placa_no_cumpliste();
 				//Placa_Clientes.visible = true;
@@ -799,26 +841,32 @@
 				switch(Trabajos[(i*multiplicador)+6]){
 						case "Julio":
 							Gracias.Punk_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[0];
 							Borrar_Cliente();
 							break;
 						case "Olga":
 							Gracias.Vieja_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[1];
 							Borrar_Cliente();
 							break;
 						case "Andrea":
 							Gracias.Coqueta_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[2];
 							Borrar_Cliente();
 							break;
 						case "Gustavo":
 							Gracias.Viejo_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[3];
 							Borrar_Cliente();
 							break;
 						case "Lucía":
 							Gracias.Nena_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[4];
 							Borrar_Cliente();
 							break;
 						case "Martín":
 							Gracias.Mormon_MC.visible = true;
+							Gracias.Texto.text = Client.TextosBronca[5];
 							Borrar_Cliente();
 							break;
 								}
@@ -856,7 +904,10 @@
 					Lista_Trabajos.Coqueta_MC.visible = false;
 					Lista_Trabajos.Punk_MC.visible = false;
 					Lista_Trabajos.Raya.visible = false;
-					Lista_Trabajos.En_Proceso.text = "";
+					Lista_Trabajos.Viejo_MC.visible = false;
+					if (en_proceso == false){
+					Lista_Trabajos.En_Proceso.text = ""; //para no borrar el nombre del trabajo en proceso
+					}
 		}
 		
 		
@@ -936,8 +987,6 @@
 			}
 			
 		}
-		
-		//***************************************Botones Iconos Stage***********************************
 
 		function fnBotonesStage(event:MouseEvent):void
 		{
@@ -1340,6 +1389,7 @@
 					//Borrar todos los datos de la lista de trabajos a la derecha
 					Lista_Trabajos.Datos_Materiales.text ="";
 					Lista_Trabajos.Datos_Alfajias.text = "";
+
 					Lista_Trabajos.Datos_Tablones.text = "";
 					Lista_Trabajos.Datos_Tiempo.text = "";
 					Lista_Trabajos.Datos_Precio.text = "";
@@ -1361,10 +1411,13 @@
 					Lista_Trabajos.Raya.visible = false;
 					Lista_Trabajos.En_Proceso.text = "";
 					// Placa Clente buscar
+					Lista_Trabajos.Progreso.gotoAndStop(10);
+					var snd:Sound = new Sound(new URLRequest("mp_sfx_ingresos.mp3")); 
+					snd.play();
 					
 					Dinero_caida.gotoAndPlay(2);
-					//Coqueta_MC2.gotoAndPlay(1);
-					Comunidad_var += 20;
+					
+					Comunidad_var += 30;
 					
 					Puntaje_var = Puntaje_var + 40;
 					
@@ -1372,7 +1425,7 @@
 					switch(client){
 					case "Julio":
 						//Gracias.Punk_MC.visible = true;
-						Graci.Mormon_MC2.gotoAndPlay(1);
+						Graci.Punk_MC2.gotoAndPlay(1);
 						break;
 					case "Olga":
 						//Gracias.Vieja_MC.visible = true;
@@ -1392,7 +1445,7 @@
 						break;
 					case "Martín":
 						//Gracias.Mormon_MC.visible = true;
-						Graci.Punk_MC2.gotoAndPlay(1);
+						Graci.Mormon_MC2.gotoAndPlay(1);
 						break;
 					}
 					
@@ -1560,6 +1613,7 @@
 					Lista_Trabajos.Viejo_MC.visible = true;
 					break;
 			}
+			if (Carpinteria_Juego == true){
 			switch (Trabajos[5 + mult])
 			{
 				case "Silla" :
@@ -1577,6 +1631,28 @@
 				case "Banco" :
 					Lista_Trabajos.Banquito_Roto.visible = true;
 					break;
+				}
+			
+			}
+			if (Carpinteria_Juego == false){
+				switch (Trabajos[5 + mult])
+				{
+				case "Campera" :
+					Lista_Trabajos.Silla_Roto.visible = true;
+					break;
+				case "Buzo" :
+					Lista_Trabajos.Mesa_Roto.visible = true;
+					break;
+				case "Chaleco" :
+					Lista_Trabajos.Taburete_Roto.visible = true;
+					break;
+				case "Pollera" :
+					Lista_Trabajos.Luz_Roto.visible = true;
+					break;
+				case "Banco" :
+					Lista_Trabajos.Banquito_Roto.visible = true;
+					break;
+				}
 			}
 		}
 
@@ -1588,9 +1664,9 @@
 		{
 			Venir_Buscar.text = String(Trabajos[2]);
 			if (Cala_little_var == 1 && Combi_var == 1) {
-				if (Tablones_Stock > Trabajos[3] && Alfajias_Stock > Trabajos[2])
-				
+				if (Tablones_Stock >= Trabajos[3 + mult] && Alfajias_Stock >= Trabajos[2 + mult] && en_proceso == false)
 				{
+					if (Trabajos[7 + mult] > ((Trabajos[1 + mult])*10))
 					if (en_proceso == false)
 					{
 						avance = ((Trabajos[1 + mult])*10) + _timer.currentCount;
@@ -1602,10 +1678,11 @@
 						Trabajo_Que_se_Procesa.push(mult); //Posición
 						Lista_Trabajos.Arreglar_BT.gotoAndStop(2);
 						Lista_Trabajos.En_Proceso.text = "Cliente en proceso:  " + Trabajo_Que_se_Procesa[2];
-						Alfajias_Stock = Alfajias_Stock - Trabajos[3];
-						Tablones_Stock = Tablones_Stock - Trabajos[2];
+						Alfajias_Stock = Alfajias_Stock - Trabajos[2 + mult];
+						Tablones_Stock = Tablones_Stock - Trabajos[3 + mult];
 						en_proceso = true;
 						Lista_Trabajos.Raya.visible =true;
+						Lista_Trabajos.Progreso.Barra.visible = false;
 						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
 						//var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
 					}
@@ -1615,11 +1692,17 @@
 							//Trabajo_Proceso.splice(0,0);
 							tiempo = 0;
 						}
+						else{
+							Gracias.visible = true;
+							Gracias.Texto.text = "No puedes empezar el trabajo porque van a venir a buscarlo antes de que lo puedas terminar. Cuida más los tiempos de entrega"
+						}
 					}
 				else 
 				{
 					if (Trabajos[0] > 1){
+						if (en_proceso == false){
 					fnEn_Madera_pedido_Placa();
+					}
 					}
 				}
 			}
@@ -1716,35 +1799,64 @@
 		}
 		
 		//****************************[]convierte un string en el nombre de una variable************************************
+		//******************************Texto Pedido***********************************************************************
 
 		
 		function fnTexto_Pedido():void
 		{
 			Placa_Clientes.Precio_TXT.text = Lista_Trab.Trabajo[0];
+			
+			if (Carpinteria_Juego == true){
 			Placa_Clientes.Alfajias_TXT.text = "Alfajías " + Lista_Trab.Trabajo[2];
 			Placa_Clientes.Tablones_TXT.text = "Tablones " + Lista_Trab.Trabajo[3];
+			texto = "Textos" + String(Lista_Trab.Trabajo[5]);
+			}
+			
+			if (Carpinteria_Juego == false){
+			Placa_Clientes.Alfajias_TXT.text = "Hilos " + Lista_Trab.Trabajo[2];
+			Placa_Clientes.Tablones_TXT.text = "Tela " + Lista_Trab.Trabajo[3];
+			if (Nuevo_Cliente == "Martín" || Nuevo_Cliente == "Julio" || Nuevo_Cliente == "Gustavo"){
+				var indicex = ((randomRange(0, 2)));
+				 Prenda = Client.Prendas[indicex];
+			}
+			else{
+				 indicex = ((randomRange(3, 5)));
+				 Prenda = Client.Prendas[indicex];
+			}
+			var texto = "Textos" + String(Prenda);
+			}
+			
+			
 			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[1];
-			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
-			trace(texto);
+			
 			var indice = ((randomRange(0, 1)));
 			if (Construccion == false){
-				Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
+			Placa_Clientes.Cliente_TXT.text = Client[texto][indice];//[]convierte un string en el nombre de una variable
 			}
 			else{
 				Placa_Clientes.Cliente_TXT.text = Client[texto][2];//[]convierte un string en el nombre de una variable
 			}
 		}
+		
+		//********************************Nuevo Cliente**********************************************
 	
 		function Mover_cliente():void
 			{
 			Cliente_MC.Velocidad_var = Velocidad_var;
 			addChildAt(Cliente_MC,12);
-			Cliente_MC._timer.start();
+			Cliente_MC._timer.reset();
 			Cliente_MC.gotoAndPlay("frente");
 			Cliente_MC.cliente_stage = true;
 			Cliente_MC.adelante = true;
-			Cliente_MC.x=200;
-			Cliente_MC.y=500;
+			if (Carpinteria_Juego == true){
+				Cliente_MC.x=200;
+				Cliente_MC.y=500;
+			}
+			if (Carpinteria_Juego == false){
+				Cliente_MC.x=950;
+				Cliente_MC.y=500;
+			
+			}
 			Cliente_Stage = true;
 		}
 
@@ -1798,10 +1910,20 @@
 					break;
 			}
 		}
+		
+		//****************************Nuevo Trabajo*************************************
 
 
 		function fnClientes_Pedido():void
 		{
+			
+			/*if (Nuevo_Cliente == "Martín" || Nuevo_Cliente == "Julio" || Nuevo_Cliente == "Gustavo"){
+				var indice = ((randomRange(0, 2)));
+			}
+			if (Nuevo_Cliente == "Olga" || Nuevo_Cliente == "Andrea" || Nuevo_Cliente == "Lucía"){
+				 indice = ((randomRange(3, 5)));
+			}*/
+			if (Carpinteria_Juego == true){
 			Trabajos.push(Lista_Trab.Trabajo[0]);
 			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
 			Trabajos.push(Lista_Trab.Trabajo[2]);
@@ -1810,6 +1932,19 @@
 			Trabajos.push(Lista_Trab.Trabajo[5]);
 			Trabajos.push(Nuevo_Cliente);
 			Trabajos.push(numero);
+			}
+			
+			if (Carpinteria_Juego == false){
+			Trabajos.push(Lista_Trab.Trabajo[0]);
+			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
+			Trabajos.push(Lista_Trab.Trabajo[2]);
+			Trabajos.push(Lista_Trab.Trabajo[3]);
+			Trabajos.push(Lista_Trab.Trabajo[4]);
+			//Trabajos.push(Lista_Trab.Trabajo[5]);
+			Trabajos.push(Prenda);
+			Trabajos.push(Nuevo_Cliente);
+			Trabajos.push(numero);
+			}
 			
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);

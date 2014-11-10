@@ -200,7 +200,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = false;
+			Carpinteria_Juego = true;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -1475,103 +1475,6 @@
 			}
 		}
 
-		/*public function fnBotonesTrabajos(event:MouseEvent):void
-		{
-			switch (event.target.name)
-			{
-				case "Trabajo1" :
-					mult = 0;
-					tiempo = (Trabajos[1]);
-					Trabajo_Proceso = Trabajos[0];
-					Entrega = Trabajos[4];
-					Nombre_Elegido = Trabajos[6];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo2" :
-					mult = 1*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo3" :
-					mult = 2*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo4" :
-					mult = 3*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo5" :
-					mult = 4*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo6" :
-					mult = 5*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo7" :
-					mult = 6*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo8" :
-					mult = 7*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo9" :
-					mult = 8*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo10" :
-					mult = 9*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Arreglar_BT" :
-					fnIniciar_Trabajo();
-			}
-		}*/
 		function fnLista_Trabajos():void
 		{
 			Lista_Trabajos.Datos_Tiempo.text = String(Trabajos[1 + mult]);
@@ -1645,7 +1548,7 @@
 				case "Chaleco" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
-				case "Pollera" :
+				case "Mesa de Luz" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
@@ -1803,15 +1706,8 @@
 		function fnTexto_Pedido():void
 		{
 			Placa_Clientes.Precio_TXT.text = Lista_Trab.Trabajo[0];
-			if (Carpinteria_Juego == true){
 			Placa_Clientes.Alfajias_TXT.text = "Alfajías " + Lista_Trab.Trabajo[2];
 			Placa_Clientes.Tablones_TXT.text = "Tablones " + Lista_Trab.Trabajo[3];
-			}
-			if (Carpinteria_Juego == false){
-			Placa_Clientes.Alfajias_TXT.text = "Hilos " + Lista_Trab.Trabajo[2];
-			Placa_Clientes.Tablones_TXT.text = "Tela " + Lista_Trab.Trabajo[3];
-			}
-			
 			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[1];
 			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
 			trace(texto);
@@ -1896,20 +1792,10 @@
 					break;
 			}
 		}
-		
-		//****************************Nuevo Trabajo*************************************
 
 
 		function fnClientes_Pedido():void
 		{
-			
-			if (Nuevo_Cliente == "Martín" || Nuevo_Cliente == "Julio" || Nuevo_Cliente == "Gustavo"){
-				var indice = ((randomRange(0, 2)));
-			}
-			if (Nuevo_Cliente == "Olga" || Nuevo_Cliente == "Andrea" || Nuevo_Cliente == "Lucía"){
-				 indice = ((randomRange(3, 5)));
-			}
-			if (Carpinteria_Juego == true){
 			Trabajos.push(Lista_Trab.Trabajo[0]);
 			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
 			Trabajos.push(Lista_Trab.Trabajo[2]);
@@ -1918,19 +1804,6 @@
 			Trabajos.push(Lista_Trab.Trabajo[5]);
 			Trabajos.push(Nuevo_Cliente);
 			Trabajos.push(numero);
-			}
-			
-			if (Carpinteria_Juego == false){
-			Trabajos.push(Lista_Trab.Trabajo[0]);
-			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
-			Trabajos.push(Lista_Trab.Trabajo[2]);
-			Trabajos.push(Lista_Trab.Trabajo[3]);
-			Trabajos.push(Lista_Trab.Trabajo[4]);
-			//Trabajos.push(Lista_Trab.Trabajo[5]);
-			Trabajos.push(Client.Prendas[indice]);
-			Trabajos.push(Nuevo_Cliente);
-			Trabajos.push(numero);
-			}
 			
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
