@@ -819,6 +819,8 @@
 				{
 				Gracias.visible = true;
 				var indice = ((randomRange(0, 5)));
+				var snd:Sound = new Sound(new URLRequest("mp_sfx_clienteenojadoOP2.mp3")); 
+					snd.play();
 				
 				Comunidad_var -= 30;
 				//Lista_Trabajos.En_Proceso.text = "";
@@ -1409,6 +1411,8 @@
 					Lista_Trabajos.En_Proceso.text = "";
 					// Placa Clente buscar
 					Lista_Trabajos.Progreso.gotoAndStop(10);
+					var snd:Sound = new Sound(new URLRequest("mp_sfx_ingresos.mp3")); 
+					snd.play();
 					
 					Dinero_caida.gotoAndPlay(2);
 					
