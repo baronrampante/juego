@@ -642,7 +642,7 @@
 			if (Cliente_Stage == false && Time.Dia_var == Consejo_Asesora_Array[i] && Consejo_Asesora == false)
 			{
 				Asesora_MC2.visible = true;
-				var Text_Asesora = ((randomRange(0, 20)));
+				var Text_Asesora = ((randomRange(0, 15)));
 				Asesora_MC2.Texto.text = Client.TextosAsesora[Text_Asesora];
 				Consejo_Asesora = true;
 				i = i+1;
@@ -1645,7 +1645,7 @@
 				case "Chaleco" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
-				case "Mesa de Luz" :
+				case "Pollera" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
@@ -1803,8 +1803,15 @@
 		function fnTexto_Pedido():void
 		{
 			Placa_Clientes.Precio_TXT.text = Lista_Trab.Trabajo[0];
+			if (Carpinteria_Juego == true){
 			Placa_Clientes.Alfajias_TXT.text = "Alfajías " + Lista_Trab.Trabajo[2];
 			Placa_Clientes.Tablones_TXT.text = "Tablones " + Lista_Trab.Trabajo[3];
+			}
+			if (Carpinteria_Juego == false){
+			Placa_Clientes.Alfajias_TXT.text = "Hilos " + Lista_Trab.Trabajo[2];
+			Placa_Clientes.Tablones_TXT.text = "Tela " + Lista_Trab.Trabajo[3];
+			}
+			
 			Placa_Clientes.Tiempo_para_Hacer_TXT.text = Lista_Trab.Trabajo[1];
 			var texto = "Textos" + String(Lista_Trab.Trabajo[5]);
 			trace(texto);
@@ -1889,10 +1896,13 @@
 					break;
 			}
 		}
+		
+		//****************************Nuevo Trabajo*************************************
 
 
 		function fnClientes_Pedido():void
 		{
+			if (Carpinteria_Juego == true){
 			Trabajos.push(Lista_Trab.Trabajo[0]);
 			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
 			Trabajos.push(Lista_Trab.Trabajo[2]);
@@ -1901,6 +1911,19 @@
 			Trabajos.push(Lista_Trab.Trabajo[5]);
 			Trabajos.push(Nuevo_Cliente);
 			Trabajos.push(numero);
+			}
+			
+			if (Carpinteria_Juego == false){
+			Trabajos.push(Lista_Trab.Trabajo[0]);
+			Trabajos.push(Lista_Trab.Trabajo[1] * Empleado_si);
+			Trabajos.push(Lista_Trab.Trabajo[2]);
+			Trabajos.push(Lista_Trab.Trabajo[3]);
+			Trabajos.push(Lista_Trab.Trabajo[4]);
+			//Trabajos.push(Lista_Trab.Trabajo[5]);
+			Trabajos.push("Pollera");
+			Trabajos.push(Nuevo_Cliente);
+			Trabajos.push(numero);
+			}
 			
 			Nombre.push(Nuevo_Cliente);
 			trace(Trabajos);
