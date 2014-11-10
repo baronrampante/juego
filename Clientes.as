@@ -10,7 +10,7 @@
 		public var Silla:Array = new Array(300,8,0.25,0.25, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Mesa:Array = new Array(1900,8,0.5,0.5, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
 		public var Cama:Array = new Array(1200,4,1,1, 10, "Taburete");// precio, tiempo de arreglo, alfajías, tablones, tiempo de buscar, objeto
-		public var Mesa_Luz:Array = new Array(500,4,1,0.25, 10, "Mesa de Luz");// precio, tiempo de arreglo, alfajías, tablones
+		public var Mesa_Luz:Array = new Array(500,4,1,0.25, 10, "Mesita");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso1:Array = new Array(3000,8,1,4, 10, "Banco");// precio, tiempo de arreglo, alfajías, tablones,  nombre
 		public var Coso2:Array = new Array(300,14,2,4, 10, "Silla");// precio, tiempo de arreglo, alfajías, tablones
 		public var Coso3:Array = new Array(1900,18,4,4, 10, "Mesa");// precio, tiempo de arreglo, alfajías, tablones
@@ -24,9 +24,10 @@
 		public var TextosBanco:Array = new Array("¡Hola! Se me rompió el banco que uso para tocar piano. ¿Lo podrías arreglar?","¡Que tal?, se me rompió una pata del banco. ¡Te agradezco si lo podés arreglar?","¡Buenas tardes! ¿Necesito un banco bajo donde pueda apoyar mis pies mientras tejo? ¿Podría hacerlo?");
 		public var TextosSilla:Array = new Array("Hola, tengo una silla que esta rota!, ¿Me la podés arreglar?","¡Que tal?, el respaldo de la silla se me rompió, lo podr{as reparar?","¡Buenasssss! Estoy necesitando una silla, ya que un amigo se quedará en casa durante un tiempo ¿Es posible?" );
 		public var TextosMesa:Array = new Array("Hola que tal? Se me rompió la mesa donde acostumbro a leer. ¿Se podrá arreglar?","¡Cómo estás, La mesa se me rompío, la estará necesitando medio urgente?","¿Que tal? Estoy necesitando una mesa rústica para el jardín de mi casa ¿Hacen ese tipo de piezas aquí?");
-		public var TextosCama:Array = new Array("Hola, ayer se me rompió el taburete que acostumbro usar","Hola, la pata del taburete se me partió, ¿es posible arreglarlo?","¡Hola! ¡Buenas! Mirá necesito hacer un taburete alto.  ¿Podés hacerlo?");
+		public var TextosTaburete:Array = new Array("Hola, ayer se me rompió el taburete que acostumbro usar","Hola, la pata del taburete se me partió, ¿es posible arreglarlo?","¡Hola! ¡Buenas! Mirá necesito hacer un taburete alto.  ¿Podés hacerlo?");
+		public var TextosMesita:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se partió una pata de la mesa de luz. ¿Podrá arreglarlo?","¡Hola, buenas tardes! Necesito una mesa de luz nueva, ya que la que tengo esta muy viejita. ¿Tú podrías hacerla?");
 		public var TextosMesa_Luz:Array = new Array("¿Qué tal? el cajón de la mesita de luz no abre, ¿será difícil arreglarlo?", "Hola, se partió una pata de la mesa de luz. ¿Podrá arreglarlo?","¡Hola, buenas tardes! Necesito una mesa de luz nueva, ya que la que tengo esta muy viejita. ¿Tú podrías hacerla?");
-		
+
 		
 		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Antes de comprometerte pensá si podés cumplir","¡¡No me arreglaste el mueble que te pedi!!","¡DIJISTE QUE PODÍAS ARREGLARLO Y NO CUMPLISTE TU PALABRA!!!!","¡ME DIJISTE QUE PODÍAS HACERLO ¿Y AHORA DECÍS QUE NO?!!!!! ¡QUIERO UN REMBOLSO");
 		

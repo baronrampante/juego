@@ -242,11 +242,13 @@
 				Client = new Clientes_Textil();
 				Lista_Trab = new Lista_Trabaj_Textil();
 				
+				
 			}
 			
 			//Graci.visible = false;
 
 			//clientes
+			Lista_Trabajos.Campera.visible = false;
 			Lista_Trabajos.Taburete_Roto.visible = false;
 			Lista_Trabajos.Silla_Roto.visible = false;
 			Lista_Trabajos.Mesa_Roto.visible = false;
@@ -894,6 +896,7 @@
 					//Buscar = Nombre[1];
 					Lista_Trabajos.Taburete_Roto.visible = false;
 					Lista_Trabajos.Silla_Roto.visible = false;
+					Lista_Trabajos.Campera.visible = false;
 					Lista_Trabajos.Mesa_Roto.visible = false;
 					Lista_Trabajos.Banquito_Roto.visible = false;
 					Lista_Trabajos.Mesita_Roto.visible = false;
@@ -1399,6 +1402,7 @@
 					Buscar = Nombre[1];
 					Lista_Trabajos.Taburete_Roto.visible = false;
 					Lista_Trabajos.Silla_Roto.visible = false;
+					Lista_Trabajos.Campera.visible = false;
 					Lista_Trabajos.Mesa_Roto.visible = false;
 					Lista_Trabajos.Banquito_Roto.visible = false;
 					Lista_Trabajos.Mesita_Roto.visible = false;
@@ -1476,103 +1480,7 @@
 			}
 		}
 
-		/*public function fnBotonesTrabajos(event:MouseEvent):void
-		{
-			switch (event.target.name)
-			{
-				case "Trabajo1" :
-					mult = 0;
-					tiempo = (Trabajos[1]);
-					Trabajo_Proceso = Trabajos[0];
-					Entrega = Trabajos[4];
-					Nombre_Elegido = Trabajos[6];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo2" :
-					mult = 1*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo3" :
-					mult = 2*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo4" :
-					mult = 3*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo5" :
-					mult = 4*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo6" :
-					mult = 5*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo7" :
-					mult = 6*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo8" :
-					mult = 7*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo9" :
-					mult = 8*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Trabajo10" :
-					mult = 9*multiplicador;
-					trace("Soy   " + Trabajos);
-					tiempo = Trabajos[1 + mult];
-					Trabajo_Proceso = Trabajos[0 + mult];
-					Entrega = Trabajos[4 + mult];
-					Nombre_Elegido = Trabajos[6 + mult];
-					fnLista_Trabajos();
-					break;
-				case "Arreglar_BT" :
-					fnIniciar_Trabajo();
-			}
-		}*/
+		
 		function fnLista_Trabajos():void
 		{
 			Lista_Trabajos.Datos_Tiempo.text = String(Trabajos[1 + mult]);
@@ -1588,6 +1496,7 @@
 			Lista_Trabajos.Viejo_MC.visible = false;
 			Lista_Trabajos.Taburete_Roto.visible = false;
 			Lista_Trabajos.Silla_Roto.visible = false;
+			Lista_Trabajos.Campera.visible = false;
 			Lista_Trabajos.Mesa_Roto.visible = false;
 			Lista_Trabajos.Banquito_Roto.visible = false;
 			Lista_Trabajos.Mesita_Roto.visible = false;
@@ -1625,7 +1534,7 @@
 				case "Taburete" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
-				case "Mesa de Luz" :
+				case "Mesita" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
@@ -1638,7 +1547,7 @@
 				switch (Trabajos[5 + mult])
 				{
 				case "Campera" :
-					Lista_Trabajos.Silla_Roto.visible = true;
+					Lista_Trabajos.Campera.visible = true;
 					break;
 				case "Buzo" :
 					Lista_Trabajos.Mesa_Roto.visible = true;

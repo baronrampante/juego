@@ -1527,7 +1527,7 @@
 				case "Taburete" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
-				case "Mesa de Luz" :
+				case "Mesita" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
@@ -1548,7 +1548,7 @@
 				case "Chaleco" :
 					Lista_Trabajos.Taburete_Roto.visible = true;
 					break;
-				case "Mesa de Luz" :
+				case "Mesaita" :
 					Lista_Trabajos.Luz_Roto.visible = true;
 					break;
 				case "Banco" :
