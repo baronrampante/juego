@@ -1487,7 +1487,12 @@
 			Lista_Trabajos.Datos_Precio.text = String(Trabajos[0 + mult]);
 			Lista_Trabajos.Datos_Trabajo.text = String(Trabajos[5 + mult]);
 			Lista_Trabajos.Datos_Cliente.text = String(Trabajos[6 + mult]);
+			if (Carpinteria_Juego == true){
 			Lista_Trabajos.Datos_Materiales.text = "Tablones " + String(Trabajos[2 + mult]) + "  Alfajías " + String(Trabajos[3 + mult]);
+			}
+			if (Carpinteria_Juego == false){
+			Lista_Trabajos.Datos_Materiales.text = "Tela " + String(Trabajos[2 + mult]) + "  Hilo " + String(Trabajos[3 + mult]);
+			}
 			Lista_Trabajos.Mormon_MC.visible = false;
 			Lista_Trabajos.Vieja_MC.visible = false;
 			Lista_Trabajos.Nena_MC.visible = false;
