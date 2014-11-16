@@ -120,6 +120,7 @@
 		
 		public var peli2:URLRequest;
 		public var peli:URLRequest;
+		public var peli1:URLRequest;
 		public var cargador:Loader;
 		public var pelicula:Object;
 
@@ -212,8 +213,7 @@
 			//asignamos a memoria la variable que cargara el archivo
 			cargador = new Loader() as Loader;
 			//carga peli externa
-			peli = new URLRequest("carpinteria1.swf");
-			peli2 = new URLRequest("carpinteria2.swf");
+			
 			
 			//restringir valores campo numérico
 			Madera_MC.Alfajias_Ingreso.restrict = "0-9";
@@ -234,6 +234,8 @@
 				Madera_MC.Tablon.text = "TABLON = $ " + String(Tablones_precio);
 				Client = new Clientes();
 				Lista_Trab = new Lista_Trabaj();
+				peli1 = new URLRequest("carpinteria1.swf");
+			peli2 = new URLRequest("carpinteria2.swf");
 				
 			}
 			else{
@@ -241,6 +243,9 @@
 				Madera_MC.Tablon.text = "TELAS = $ " + String(Tablones_precio);
 				Client = new Clientes_Textil();
 				Lista_Trab = new Lista_Trabaj_Textil();
+				peli = new URLRequest("mini_ropa.swf");
+				peli1 = new URLRequest("textil1.swf");
+			peli2 = new URLRequest("textil2.swf");
 				
 				
 			}
@@ -587,7 +592,16 @@
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
 				//Cargar();
+				if (Carpinteria_Juego == true){
 				(root.loaderInfo.loader.root as Object).cargar2();
+				}
+				else
+				{
+					peli;
+				Cargar();
+				Time.Pausar();
+				}
+				
 				
 				//Time.Pausar();
 				Ya_jugo = true;
@@ -599,7 +613,7 @@
 			if (Cliente_Stage == false && Time.Dia_var == Time.Segundo_Juego && Ya_jugo_2 == false)
 			{
 				//Cliente_MC.Velocidad_var = Velocidad_var;
-				peli 
+				peli = peli1;
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;

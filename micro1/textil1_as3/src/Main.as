@@ -22,13 +22,13 @@
 
 		public function Main():void
 		{
-			
-				init();
-			
-			
+
+			init();
+
+
 		}
 
-		 function init(e:Event = null):void
+		function init(e:Event = null):void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point
@@ -50,19 +50,26 @@
 
 		}
 
+		public function fnClose(e:MouseEvent):void
+		{
+			termino = true;
+			//gotoAndStop(1);
+		}
+
 		public function funcionBotonUno(e:MouseEvent):void
 		{
 			n1 = resp.text;
 			var A = n1;
 			var decimal:Array = A.split(",");
-			var decimalComa:String = decimal[0] + "." + decimal[1]; 
+			var decimalComa:String = decimal[0] + "." + decimal[1];
 			//n1 = resp.text.slice(0, -1);
-			
-			
+
+
 			if (decimalComa == re)
 			{
 				gotoAndStop(2);
 				trace("RESPUESTA CORRECTA");
+				Close.addEventListener(MouseEvent.MOUSE_DOWN, fnClose);
 			}
 			else
 			{
