@@ -164,13 +164,13 @@
 		var Tablones_precio = 500;
 
 		//Precios
-		var Caladora_precio = 1000;
+		var Caladora_precio = 1500;
 		var Taladro_banco_precio = 3000;
-		var Cafetera_precio = 1500;
-		var Mesa_Combinada_precio = 3000;
-		var Pinturas_precio = 1000;
-		var Caladora_Pie_precio = 4000;
-		var Taladro_Pie_precio = 3000;
+		var Cafetera_precio = 800;
+		var Mesa_Combinada_precio = 3500;
+		var Pinturas_precio = 500;
+		var Caladora_Pie_precio = 3000;
+		var Taladro_Pie_precio = 2000;
 
 		public var Cala_little_var = 0;
 		public var Sierra_pie_var = 0;
@@ -202,7 +202,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = false;
+			Carpinteria_Juego = true;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
