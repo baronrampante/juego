@@ -202,7 +202,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = true;
+			Carpinteria_Juego = false;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -315,6 +315,7 @@
 			//No_cumpliste();
 			this.addEventListener(Event.ENTER_FRAME, Botones);
 			Barra.addEventListener(MouseEvent.MOUSE_DOWN, Botones_Barra);
+			Cliente_MC.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
 			numero = ((randomRange(100, 200))); //Tiempo de entrega
 		}
 		
@@ -521,7 +522,7 @@
 			Lista_Trab.Tiempo(Time.Hora_var);
 			
 			//Botones_clientes
-			Cliente_MC.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
+			//Cliente_MC.globito.addEventListener(MouseEvent.MOUSE_DOWN, fnPlaca_Cliente);
 			
 			Cliente_Stage = Cliente_MC.cliente_stage;
 			
