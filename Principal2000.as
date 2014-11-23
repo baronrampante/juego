@@ -169,7 +169,7 @@
 		var Cafetera_precio = 800;
 		var Mesa_Combinada_precio = 3500;
 		var Pinturas_precio = 500;
-		var Caladora_Pie_precio = 3000;
+		var Sierra_Pie_precio = 3000;
 		var Taladro_Pie_precio = 2000;
 
 		public var Cala_little_var = 0;
@@ -2051,69 +2051,106 @@
 		
 		public function Comprar_Caladora():void
 		{
-			cala_little.visible = true;
-			Barra.Caladora_Manox.gotoAndStop(2);
-			if (Cala_little_var == 0){
-			Dinero_var = Dinero_var - Caladora_precio;
-			}
 			
-			Cala_little_var = 1;
+			if (Cala_little_var == 0){
+				if ((Dinero_var - Caladora_precio) > 0){
+					cala_little.visible = true;
+					Barra.Caladora_Manox.gotoAndStop(2);
+					Dinero_var = Dinero_var - Caladora_precio;
+					Cala_little_var = 1;
+				}
+				else{
+					NoTienesDinero();
+				}
+			}
 		}
 
 		public function Comprar_Sierra_Pie():void
 		{
-			Caladora_de_Pie.visible = true;
-			Barra.Sierra_Piex.gotoAndStop(2);
-			if (Sierra_pie_var == 0){
-			Dinero_var = Dinero_var - Caladora_Pie_precio;
-			}
 			
-			Sierra_pie_var = 1;
+			if (Sierra_pie_var == 0){
+				if (Dinero_var - Sierra_Pie_precio > 0){
+					Dinero_var = Dinero_var - Sierra_Pie_precio;
+					Caladora_de_Pie.visible = true;
+					Barra.Sierra_Piex.gotoAndStop(2);
+					Sierra_pie_var = 1;
+					}
+			else{
+				NoTienesDinero();
+				}
+			}
 		}
 
 		public function Comprar_Pintura():void
 		{
-			Lata_Pintura_MC.visible = true;
-			Barra.Lata_Pinturax.gotoAndStop(2);
-			if (Pintura_var == 0){
-			Dinero_var = Dinero_var - Pinturas_precio;
-			}
 			
-			Pintura_var = 1;
+			if (Pintura_var == 0){
+				if(Dinero_var - Pinturas_precio > 0){
+				Dinero_var = Dinero_var - Pinturas_precio;
+				Lata_Pintura_MC.visible = true;
+				Barra.Lata_Pinturax.gotoAndStop(2);
+				Pintura_var = 1;}
+			else{
+				NoTienesDinero();
+				}
+			}
 		}
 
 		public function Comprar_Cafetera_Chica():void
 		{
-			Cafetera_Chica.visible = true;
-			Barra.Cafetera_Chicax.gotoAndStop(2);
+			
 			
 			if (Cafe_var == 0){
-			Dinero_var = Dinero_var - Cafetera_precio;
+				if(Dinero_var - Cafetera_precio > 0){
+				Dinero_var = Dinero_var - Cafetera_precio;
+				Cafetera_Chica.visible = true;
+				Barra.Cafetera_Chicax.gotoAndStop(2);
+				Cafe_var = 1;
+			}
+			else{
+				NoTienesDinero();
+			}
 			}
 			
-			Cafe_var = 1;
 		}
 
 		public function Comprar_Mesa_Combinada():void
 		{
-			Combinada_MC.visible = true;
-			Barra.Mesa_Combinadax.gotoAndStop(2);
+			
 			if (Combi_var == 0){
-			Dinero_var = Dinero_var - Mesa_Combinada_precio;
+				if(Dinero_var - Mesa_Combinada_precio > 0){
+				Dinero_var = Dinero_var - Mesa_Combinada_precio;
+				Combinada_MC.visible = true;
+				Barra.Mesa_Combinadax.gotoAndStop(2);
+				Combi_var = 1;
+			}
+			else{
+				NoTienesDinero();
+				}
 			}
 			
-			Combi_var = 1;
 		}
 
 		public function Comprar_Taladro_Pie():void
 		{
-			cala_big.visible = true;
-			Barra.Taladro_Piex.gotoAndStop(2);
+			
 			if (Tala_pie_var == 0){
-			Dinero_var = Dinero_var - Taladro_Pie_precio;
+				if(Dinero_var - Taladro_Pie_precio > 0){
+				Dinero_var = Dinero_var - Taladro_Pie_precio;
+				cala_big.visible = true;
+				Barra.Taladro_Piex.gotoAndStop(2);
+				Tala_pie_var = 1;
+				}
+			else{
+				NoTienesDinero();
+				}
 			}
 			
-			Tala_pie_var = 1;
+		}
+		
+		public function NoTienesDinero(){
+			Placa_Construir.visible = true;
+			Placa_Construir.Mensaje_TXT.text ="No tienes suficiente dinero para comprar";
 		}
 	}
 }
