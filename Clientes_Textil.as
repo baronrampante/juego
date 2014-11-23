@@ -56,7 +56,7 @@
 
 		public var Malo:Array = new Array("Buenos dias joven emprendedor! Yo soy el magnifico vendedor ambulante, aqui para satisfacer todos necesidades empresariales!","Hoy tengo un ofertón para nuevos emprendimientos! Te doy tablones por el espectacular precio de 300 pesos. Que dice Tío?", "Ah, no estas convencidos, que tal si te los vendo a 200 pesos, si escuchaste bien tablones por solo 200 pesos, mi ultima oferta!");
 		
-		public var Comunidad:Array = new Array("Hola, te gustaría contribuir con la comunidad?, Necesitamos arreglar unos bancos de la Escuela? Gastarás unos pocos materiales. Son 2 tablones y 5 alfajías");
+		public var Comunidad:Array = new Array("Hola, te gustaría contribuir con la comunidad?, Necesitamos arreglar unas cortinas de la Escuela? Gastarás unos pocos materiales. Son 2 telas y 5 rollos de hilos");
 
 		public function Clientes()
 		{
