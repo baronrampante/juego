@@ -74,20 +74,17 @@
 			Adelante_Juego.visible = false;
 			snd.play(0, 100);
 			this.addEventListener(Event.ENTER_FRAME, Personajes);
-			Loady.visible = false;
-
+			Loady.visible = false;  // Loader
 			//pelicula.Cargar_Peli.addEventListener(MouseEvent.MOUSE_DOWN, Cargar_2);
-
 			//addChild
-
 			addChildAt(Atras_BT, 10);
 			Atras_BT.x = 470;
 			Atras_BT.y = 737;
 			Atras_BT.mouseEnabled = true;
-
 		}
 
-
+	//+++++++++++++++++++++++++Carga Juego *************************************************
+		
 		public function cargar():void
 		{
 			//cargamos el archivo
@@ -103,6 +100,8 @@
 			cargador.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, loop);
 			cargador.contentLoaderInfo.addEventListener(Event.COMPLETE, fincarga);
 		}
+		
+	//+++++++++++++++ Muestra el progreso de la carga +++++++++++++++++++++++++++++++++++
 
 		public function loop(e:ProgressEvent):void
 		{
@@ -127,6 +126,9 @@
 			//load_btn.addEventListener(MouseEvent.CLICK, llamarfuncionpeli);
 			//load_btn.text_btn.text = "mover";
 		}
+
+
+//********** Por algún motivo no funciona la carga del cortar árboles desde la película y la vcargamos desde acá*****************
 
 		public function cargar2():void
 		{
@@ -156,8 +158,6 @@
 			cargador = null;
 			Jugar_BT.visible = visible;
 			Placa_Start.visible = visible;
-
-
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
 		}
@@ -168,9 +168,6 @@
 			cargador2.unloadAndStop();
 			cargador2.removeChildAt(20);
 			cargador2 = null;
-
-
-
 			//cargador.visible =true;
 			//pelicula.Time.Empezar(true);
 		}

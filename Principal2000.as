@@ -202,7 +202,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = true;
+			Carpinteria_Juego = false;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
