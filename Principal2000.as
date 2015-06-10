@@ -202,7 +202,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = false;
+			Carpinteria_Juego = true;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -1923,7 +1923,7 @@
 			Placa_Clientes.gotoAndStop(1);
 		}
 
-
+//**********************************Función de descargar pelicula *******************************************
 		 function MeVoy(event:MouseEvent):void
 		 {
 			(root.loaderInfo.loader.root as Object).descargar();

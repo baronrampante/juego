@@ -128,7 +128,7 @@
 		}
 
 
-//********** Por algún motivo no funciona la carga del cortar árboles desde la película y la vcargamos desde acá*****************
+//********** Por algún motivo no funciona la carga del cortar árboles desde la película y la cargamos desde acá*****************
 
 		public function cargar2():void
 		{
@@ -150,6 +150,8 @@
 				//agregamos el listener que llamara a la funcion de peli a load_btn;
 			}
 		}
+		
+//***************************** función llamada dsde el script del juego para descargarlo **********************************
 
 		public function descargar()
 		{
@@ -269,8 +271,11 @@
 						break;
 				}
 			}
-
 		}
+		
+		
+//*******************************Aqui se carga en la variable Juego el jiego a cargar*********************************
+
 
 		function fnTira(event:MouseEvent):void
 		{
@@ -317,7 +322,6 @@
 			Avril_.visible = false;
 			var myTween:Tween = new Tween(Tira_MC,"y",Regular.easeOut,-400,400,2,true);
 			Jugador = Cabeza;
-
 		}
 
 
@@ -341,5 +345,4 @@
 
 		}
 	}
-
 }
