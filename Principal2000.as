@@ -202,7 +202,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = true;
+			Carpinteria_Juego = false;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -410,6 +410,7 @@
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
 			Empleado_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleado);
 			Irse.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
+			Empleado_Pantalla.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoClose);
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
@@ -782,6 +783,10 @@
 		
 		function fnEmpleado(event:MouseEvent):void{
 			Empleado_Pantalla.visible = true;
+		}
+		
+		function fnEmpleadoClose(event:MouseEvent):void{
+			Empleado_Pantalla.visible = false;
 		}
 		
 		function fnEmpleadoSi(event:MouseEvent):void{
@@ -1985,6 +1990,10 @@
 			}
 			else {
 			Madera_MC.Total_TX.text = "no te alcanza";
+			Alfajias_var_Numb = 0;
+			Tablones_var_Numb = 0;
+			Madera_MC.Tablones_Ingreso.text = "0";
+			Madera_MC.Alfajias_Ingreso.text = "0";
 			}
 		}
 

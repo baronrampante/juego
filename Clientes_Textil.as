@@ -31,7 +31,7 @@
 		public var TextosVestido:Array = new Array("¿Qué tal? se me rompió el cierre del vestido, ¿será difícil arreglarlo?", "¿Qué tal? la prenda no abre, ¿será difícil arreglarlo?","¡Hola, buenas tardes! Necesito una mesa de luz nueva, ya que la que tengo esta muy viejita. ¿Tú podrías hacerla?");
 
 		
-		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Antes de comprometerte pensá si podés cumplir","¡¡No me arreglaste el mueble que te pedi!!","¡DIJISTE QUE PODÍAS ARREGLARLO Y NO CUMPLISTE TU PALABRA!!!!","¡ME DIJISTE QUE PODÍAS HACERLO ¿Y AHORA DECÍS QUE NO?!!!!! ¡QUIERO UN REMBOLSO");
+		public var TextosBronca:Array = new Array("Lo estaba necesitando, no me cumpliste!", "No cumpliste con lo prometido!","Antes de comprometerte pensá si podés cumplir","¡¡No me arreglaste la prenda que te pedi!!","¡DIJISTE QUE PODÍAS ARREGLARLO Y NO CUMPLISTE TU PALABRA!!!!","¡ME DIJISTE QUE PODÍAS HACERLO ¿Y AHORA DECÍS QUE NO?!!!!! ¡QUIERO UN REMBOLSO");
 		
 		public var TextosAsesora:Array = new Array(
 		
