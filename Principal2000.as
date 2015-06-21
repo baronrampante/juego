@@ -235,8 +235,7 @@
 				Client = new Clientes();
 				Lista_Trab = new Lista_Trabaj();
 				peli1 = new URLRequest("carpinteria1.swf");
-			peli2 = new URLRequest("carpinteria2.swf");
-				
+				peli2 = new URLRequest("carpinteria2.swf");
 			}
 			else{
 				Madera_MC.Alfajia.text = "HILOS = $ " + String(Alfajias_precio);
@@ -245,9 +244,7 @@
 				Lista_Trab = new Lista_Trabaj_Textil();
 				peli = new URLRequest("mini_ropa.swf");
 				peli1 = new URLRequest("textil1.swf");
-			peli2 = new URLRequest("textil2.swf");
-				
-				
+				peli2 = new URLRequest("textil2.swf");
 			}
 			
 			//Graci.visible = false;
@@ -501,7 +498,7 @@
 
 
 
-		//LINEA DE TIEMPO: acá se controla por tiempo todo;
+//********************************************** LINEA DE TIEMPO: acá se controla por tiempo todo ********************************************
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -619,9 +616,8 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
-				
-				
 			}
+			
 			//tercer juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_3 == false)
 			{
@@ -633,14 +629,19 @@
 				Construccion= true;
 			}
 			
-						
-			//Malo;
+//+++++++++++++++++++++++++++++++++++++++++++++++ MALO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			
 			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
 			{
 				Placa_Malo_MC.visible = true;
 				//Placa_Malo_MC.Texto.text = "Hoy tengo un ofertón para nuevos emprendimientos! Te doy tablones por el espectacular precio de 300 pesos. Que dice Tío?";
 				Placa_Malo_MC.Texto.text = Client.Malo[0];
+				if (Carpinteria_Juego == true){
 				Placa_Malo_MC.TextoB.text = Client.Malo[1];
+				}
+				if (Carpinteria_Juego == false){
+				Placa_Malo_MC.TextoB.text = Client.Malo[3];
+				}
 				Malo_var = true;
 				fnMalo();
 			}
@@ -656,7 +657,7 @@
 				}
 			}
 			
-			//Consejos Asesora
+//******************************* Consejos Asesora *******************************************************************************************
 			
 			if (Cliente_Stage == false && Time.Dia_var == Consejo_Asesora_Array[i] && Consejo_Asesora == false)
 			{
@@ -674,7 +675,7 @@
 				Time.Pausar();
 			}
 			
-			// ************** Final ******************
+// ****************************************************** Final ************************************************************************
 			
 			if (Time.Dia_var == Time.Fin_de_Juego){
 				Time.Terminar();
