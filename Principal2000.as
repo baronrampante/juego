@@ -167,7 +167,7 @@
 		var Caladora_precio = 1500;
 		var Taladro_banco_precio = 3000;
 		var Cafetera_precio = 800;
-		var Mesa_Combinada_precio = 3500;
+		var Mesa_Combinada_precio = 2000;
 		var Pinturas_precio = 500;
 		var Sierra_Pie_precio = 3000;
 		var Taladro_Pie_precio = 2000;
@@ -499,6 +499,7 @@
 
 
 //********************************************** LINEA DE TIEMPO: acá se controla por tiempo todo ********************************************
+//********************************************************************************************************************************************
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -508,6 +509,7 @@
 			fnCharacter();
 			fnTipoJuego();
 			Trabajos_No_Entregados();
+			
 			
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
@@ -586,6 +588,10 @@
 				Construccion= true;
 				}*/
 			
+			
+//********************************************** JUEGOS ****************************************************************************
+
+
 			//Primer Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Primer_Juego && Ya_jugo == false)
 			{
@@ -629,7 +635,9 @@
 				Construccion= true;
 			}
 			
+			
 //+++++++++++++++++++++++++++++++++++++++++++++++ MALO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 			
 			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
 			{
