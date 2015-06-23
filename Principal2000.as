@@ -2012,12 +2012,21 @@
 			Tablones_var_Numb = Number(Madera_MC.Tablones_Ingreso.text);
 			var Alfajias_var_compra = Alfajias_var_Numb * Alfajias_precio;
 			var Tablones_var_compra = Tablones_var_Numb * Tablones_precio;
+			if (Dinero_var > (Alfajias_var_compra + Tablones_var_compra)){
 			Dinero_var = Dinero_var - Alfajias_var_compra - Tablones_var_compra;
 			Dinero.text = String(Dinero_var);
 			Madera_MC.Total_TX.text = "";
 			Alfajias_Stock = Alfajias_Stock + Alfajias_var_Numb;
 			Tablones_Stock = Tablones_Stock + Tablones_var_Numb;
 			Madera_MC.visible = false;
+			}
+			else {
+			Madera_MC.Total_TX.text = "no te alcanza";
+			Alfajias_var_Numb = 0;
+			Tablones_var_Numb = 0;
+			Madera_MC.Tablones_Ingreso.text = "0";
+			Madera_MC.Alfajias_Ingreso.text = "0";
+			}
 		}
 		
 		
