@@ -202,7 +202,7 @@
 		{
 			_timer.start();
 			
-			Carpinteria_Juego = false;
+			Carpinteria_Juego = true;
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, fnBotonesStage);
 			_timer.addEventListener(TimerEvent.TIMER, timerListener);
@@ -235,7 +235,8 @@
 				Client = new Clientes();
 				Lista_Trab = new Lista_Trabaj();
 				peli1 = new URLRequest("carpinteria1.swf");
-				peli2 = new URLRequest("carpinteria2.swf");
+			peli2 = new URLRequest("carpinteria2.swf");
+				
 			}
 			else{
 				Madera_MC.Alfajia.text = "HILOS = $ " + String(Alfajias_precio);
@@ -244,7 +245,9 @@
 				Lista_Trab = new Lista_Trabaj_Textil();
 				peli = new URLRequest("mini_ropa.swf");
 				peli1 = new URLRequest("textil1.swf");
-				peli2 = new URLRequest("textil2.swf");
+			peli2 = new URLRequest("textil2.swf");
+				
+				
 			}
 			
 			//Graci.visible = false;
@@ -407,7 +410,6 @@
 			Pausa_BT.addEventListener(MouseEvent.MOUSE_DOWN, Pausar);
 			Empleado_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleado);
 			Irse.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
-			Empleado_Pantalla.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoClose);
 			
 			Loser.MeVoy.addEventListener(MouseEvent.MOUSE_DOWN, MeVoy);
 			Loser.DeNuevo.addEventListener(MouseEvent.MOUSE_DOWN, DeNuevo);
@@ -415,6 +417,7 @@
 			
 			Empleado_Pantalla.Aceptar.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoSi);
 			Empleado_Pantalla.Cancelar.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoNo);
+			Empleado_Pantalla.Cerrar_BT.addEventListener(MouseEvent.MOUSE_DOWN, fnEmpleadoNo);
 			
 			
 			
@@ -498,8 +501,7 @@
 
 
 
-//********************************************** LINEA DE TIEMPO: acá se controla por tiempo todo ********************************************
-//********************************************************************************************************************************************
+		//LINEA DE TIEMPO: acá se controla por tiempo todo;
 
 		public function timerListener(e:TimerEvent):void
 		{
@@ -509,7 +511,6 @@
 			fnCharacter();
 			fnTipoJuego();
 			Trabajos_No_Entregados();
-			
 			
 			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
@@ -588,10 +589,6 @@
 				Construccion= true;
 				}*/
 			
-			
-//********************************************** JUEGOS ****************************************************************************
-
-
 			//Primer Juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Primer_Juego && Ya_jugo == false)
 			{
@@ -622,8 +619,9 @@
 				Cargar();
 				Time.Pausar();
 				Ya_jugo_2 = true;
+				
+				
 			}
-			
 			//tercer juego
 			if (Cliente_Stage == false && Time.Dia_var == Time.Tercer_Juego && Ya_jugo_3 == false)
 			{
@@ -635,11 +633,10 @@
 				Construccion= true;
 			}
 			
+						
+			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++MALO+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			
-//+++++++++++++++++++++++++++++++++++++++++++++++ MALO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-			
-			if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
+				if (Cliente_Stage == false && Time.Semana_var == Time.Malo_ && Malo_var == false)
 			{
 				Placa_Malo_MC.visible = true;
 				//Placa_Malo_MC.Texto.text = "Hoy tengo un ofertón para nuevos emprendimientos! Te doy tablones por el espectacular precio de 300 pesos. Que dice Tío?";
@@ -665,7 +662,7 @@
 				}
 			}
 			
-//******************************* Consejos Asesora *******************************************************************************************
+			//Consejos Asesora
 			
 			if (Cliente_Stage == false && Time.Dia_var == Consejo_Asesora_Array[i] && Consejo_Asesora == false)
 			{
@@ -683,7 +680,7 @@
 				Time.Pausar();
 			}
 			
-// ****************************************************** Final ************************************************************************
+			// ************** Final ******************
 			
 			if (Time.Dia_var == Time.Fin_de_Juego){
 				Time.Terminar();
@@ -792,10 +789,6 @@
 		
 		function fnEmpleado(event:MouseEvent):void{
 			Empleado_Pantalla.visible = true;
-		}
-		
-		function fnEmpleadoClose(event:MouseEvent):void{
-			Empleado_Pantalla.visible = false;
 		}
 		
 		function fnEmpleadoSi(event:MouseEvent):void{
@@ -1937,7 +1930,7 @@
 			Placa_Clientes.gotoAndStop(1);
 		}
 
-//**********************************Función de descargar pelicula *******************************************
+
 		 function MeVoy(event:MouseEvent):void
 		 {
 			(root.loaderInfo.loader.root as Object).descargar();
