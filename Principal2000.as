@@ -506,18 +506,19 @@
 		public function timerListener(e:TimerEvent):void
 		{
 			
-			
-			
 			fnCharacter();
 			fnTipoJuego();
 			Trabajos_No_Entregados();
 			
-			
 			Dinero_caida.Caida.Texto.text = Dinero_var;
-			
+			// barra de progreso
 			avance_porcentaje = avance_porcentaje - 1;
+			if(avance_porcentaje <= 1){
+				avance_porcentaje = 1;
+			}
 			Texto.text = String(int((avance_porcentaje/porcentaje)*10));
 			Lista_Trabajos.Progreso.gotoAndStop((int((avance_porcentaje/porcentaje)*10)+1));
+			Lista_Trabajos.porcentajeText.text = String((int((avance_porcentaje/porcentaje)*10)+1));
 
 			//llama a un nuevo cliente
 			Lista_Trab.Tiempo(Time.Hora_var);
@@ -530,7 +531,6 @@
 			if (Dinero_var < 50){
 				Texto.text = "dinero bajo";
 			}
-			
 			
 			
 			//Pagar cuota
@@ -1450,32 +1450,30 @@
 					
 					switch(client){
 					case "Julio":
-						//Gracias.Punk_MC.visible = true;
+						Gracias.Punk_MC.visible = true;
 						Graci.Punk_MC2.gotoAndPlay(1);
 						break;
 					case "Olga":
-						//Gracias.Vieja_MC.visible = true;
+						Gracias.Vieja_MC.visible = true;
 						Graci.Vieja_MC2.gotoAndPlay(1);
 						break;
 					case "Andrea":
-						//Gracias.Coqueta_MC.visible = true;
+						Gracias.Coqueta_MC.visible = true;
 						Graci.Coqueta_MC2.gotoAndPlay(1);
 						break;
 					case "Gustavo":
-						//Gracias.Viejo_MC.visible = true;
+						Gracias.Viejo_MC.visible = true;
 						Graci.Viejo_MC2.gotoAndPlay(1);
 						break;
 					case "Lucía":
-						//Gracias.Nena_MC.visible = true;
+						Gracias.Nena_MC.visible = true;
 						Graci.Nena_MC2.gotoAndPlay(1);
 						break;
 					case "Martín":
-						//Gracias.Mormon_MC.visible = true;
+						Gracias.Mormon_MC.visible = true;
 						Graci.Mormon_MC2.gotoAndPlay(1);
 						break;
 					}
-					
-					//Buscar_flag= false;
 				}
 
 		function fnGracias(event:MouseEvent):void
@@ -1620,7 +1618,7 @@
 						Lista_Trabajos.Raya.visible =true;
 						Lista_Trabajos.Progreso.Barra.visible = false;
 						Cliente_Arreglando = Trabajo_Que_se_Procesa[2];
-						//var myPunkx:Tween = new Tween(Lista_Trabajos.Raya,"x",None.easeInOut,-831,-672,porcentaje,true);
+						
 					}
 						else
 						{
